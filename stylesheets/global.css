@@ -1,0 +1,35 @@
+:root {
+  /* colors */
+  --c-text: rgb(0, 0, 0);
+  --c-accent: #98161b;
+  --c-primary: #7c0283;
+  --c-secondary: #460349;
+  --c-background-white: rgb(255, 255, 255);
+  --c-background-gray: rgb(230, 230, 230);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+}
+
+/* - - - NAVIGATION - - - */
+nav {
+}
+
+/* - - - FOOTER - - - */
+footer {
+  width: 100%;
+}
+
+footer div {
+  height: 140px;
+
+  background-color: var(--c-background-gray);
+
+  margin: 20px;
+  border-radius: 15px;
+}

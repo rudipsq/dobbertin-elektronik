@@ -3,7 +3,7 @@
 ## TODO
 
 ### Default Seite erstellen
-- [ ] navbar
+- [ ] navbar: logo, links zu produkt seiten, language switcher
 - [ ] footer
 
 
@@ -11,7 +11,7 @@
 ### Template
 - [ ] templates erstellen
 - [ ] Meta Tags Placeholder
-- [ ] template generator: one page html, integrated js, css erstellen
+- [ ] template generator: one page html, integrated js, css erstellen ()
 - [ ] template generator: downloadable template file, kopierbare inhaltsverzeichnis zeile
 - [ ] template generator: html template als string, placeholder fuer werte und texte
 - [ ] template generator: 2 languages
