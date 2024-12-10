@@ -2,7 +2,7 @@
   /* colors */
   --c-text: rgb(0, 0, 0);
   --c-accent: #98161b;
-  --c-primary: #7c0283;
+  --c-primary: #daf4ff;
   --c-secondary: #460349;
   --c-background-white: rgb(255, 255, 255);
   --c-background-gray: rgb(230, 230, 230);
@@ -34,6 +34,7 @@ header {
 
   position: fixed;
   top: 0;
+  z-index: 10;
 
   display: flex;
   flex-direction: row;
@@ -44,20 +45,20 @@ header > div {
   max-width: 1000px;
   /* height: var(--e-header-height); */
 
-  background-color: var(--c-background-white);
-
-  margin: 10px;
-  padding: 15px;
-  border-radius: 20px;
-  border: solid var(--c-background-gray) 2px;
-  box-shadow: 0px 6px 0px var(--c-background-gray);
-
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
   gap: 10px;
+
+  background-color: var(--c-background-white);
+
+  border-radius: 20px;
+  border: solid var(--c-background-gray) 2px;
+  box-shadow: 0px 6px 0px var(--c-background-gray);
+
+  margin: 10px;
+  padding: 15px;
 
   transition: all 0.2s ease;
 }
@@ -73,7 +74,13 @@ main {
   max-width: 100%;
   min-height: calc(100vh - var(--e-header-height) - 50px);
 
-  padding-top: calc(var(--e-header-height) + 50px);
+  padding: 20px;
+  padding-top: calc(var(--e-header-height) + 50px + 20px);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 80px;
 }
 
 /* - - - FOOTER - - - */
@@ -94,7 +101,7 @@ footer > div {
   border-radius: 15px;
 }
 
-#footer-left {
+#footer_left {
   width: 260px;
 
   display: flex;
@@ -102,7 +109,7 @@ footer > div {
   justify-content: space-between;
 }
 
-#footer-right {
+#footer_right {
   height: 100%;
 
   display: flex;
