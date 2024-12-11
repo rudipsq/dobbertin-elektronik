@@ -16,7 +16,7 @@ thead {
   translate: -7px;
 
   width: calc(100% - 80px);
-  max-width: 1070px;
+  max-width: 1050px;
 
   background-color: var(--c-background-light);
   border-radius: 20px;
@@ -105,7 +105,7 @@ section {
   top: 164px;
 
   width: calc(100% - 46px);
-  max-width: 1102px;
+  max-width: 1084px;
 }
 
 #search > div {

@@ -80,11 +80,14 @@ header > div nav a {
 }
 
 header > div nav a.active {
-  outline: solid var(--c-background-gray) 1px;
+  /* outline: solid var(--c-background-gray) 1px; */
+  background-color: var(--c-primary);
+  outline: solid var(--c-primary) 1px;
 }
 
 header > div nav a:hover {
-  outline: solid var(--c-background-gray) 1px;
+  /* outline: solid var(--c-background-gray) 1px; */
+  outline: solid var(--c-primary) 1px;
 }
 
 header > div nav a:active {
