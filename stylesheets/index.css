@@ -2,15 +2,19 @@ section {
   width: calc(100% - 40px);
   max-width: 1070px;
 
-  padding: 15px;
-
   border-radius: 20px;
+  border: solid var(--c-background-gray) 2px;
+  box-shadow: 0px 6px 0px var(--c-background-gray);
+
+  padding: 15px;
 
   background-color: var(--c-background-light);
 }
 
 section h2 {
+  margin: 0;
   margin-bottom: 15px;
+  /* font-weight: 900; */
 }
 
 section .product_container {
@@ -34,12 +38,13 @@ section .product_container .product_item {
   align-items: center;
 
   border-radius: 10px;
-  border: solid rgba(0, 0, 0, 0.5) 1px;
+  border: solid var(--c-background-gray) 1px;
   text-decoration: none;
 
+  margin-bottom: 2px;
   padding: 20px;
 
-  transition: all 0.2s ease-out;
+  transition: all 0.25s ease;
 }
 
 section .product_container .product_item:hover {
