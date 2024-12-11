@@ -1,0 +1,105 @@
+:root {
+  --e-table-offset: 220px;
+}
+
+table {
+  /* position: sticky; */
+
+  width: 100%;
+
+  border-collapse: collapse;
+}
+
+thead {
+  position: fixed;
+  top: var(--e-table-offset);
+  translate: -17px;
+
+  width: calc(100% - 80px);
+  max-width: 1070px;
+
+  background-color: var(--c-background-light);
+  border-radius: 20px;
+  border: solid var(--c-background-gray) 2px;
+  box-shadow: 0px 3px 0px var(--c-background-gray);
+
+  padding: 4px 15px;
+}
+
+tr {
+  display: flex;
+  flex-direction: row;
+}
+
+th {
+  text-align: start;
+  height: 30px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+td {
+  /* height: 300px; */
+}
+
+/* table columns */
+th:nth-child(1),
+td:nth-child(1) {
+  width: 40%;
+}
+
+th:nth-child(2),
+td:nth-child(2) {
+  width: 30%;
+}
+
+th:nth-child(3),
+td:nth-child(3) {
+  width: 30%;
+}
+
+#test {
+  background-color: var(--c-background-white);
+  position: fixed;
+
+  top: 0px;
+
+  width: 100%;
+  height: calc(var(--e-table-offset) + 30px);
+}
+
+main {
+  gap: 0;
+
+  padding-top: 0;
+}
+
+section {
+  padding-top: calc(var(--e-table-offset) + 44px);
+}
+
+#search {
+  position: fixed;
+  top: 164px;
+
+  width: calc(100% - 44px);
+  max-width: 1102px;
+}
+
+#search > div {
+  max-width: 370px;
+  height: 30px;
+
+  background-color: var(--c-background-light);
+  border-radius: 20px;
+  border: solid var(--c-background-gray) 2px;
+  box-shadow: 0px 3px 0px var(--c-background-gray);
+
+  padding: 4px 15px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
