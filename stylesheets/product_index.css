@@ -13,7 +13,7 @@ table {
 thead {
   position: fixed;
   top: var(--e-table-offset);
-  translate: -17px;
+  translate: -7px;
 
   width: calc(100% - 80px);
   max-width: 1070px;
@@ -29,6 +29,10 @@ thead {
 tr {
   display: flex;
   flex-direction: row;
+
+  border-radius: 50px;
+
+  transition: all 0.25s ease;
 }
 
 th {
@@ -44,6 +48,14 @@ td {
   /* height: 300px; */
 }
 
+tbody tr {
+  padding: 4px 10px;
+}
+
+tbody tr:hover {
+  background-color: var(--c-primary);
+}
+
 /* table columns */
 th:nth-child(1),
 td:nth-child(1) {
@@ -52,12 +64,17 @@ td:nth-child(1) {
 
 th:nth-child(2),
 td:nth-child(2) {
-  width: 30%;
+  width: 20%;
 }
 
 th:nth-child(3),
 td:nth-child(3) {
-  width: 30%;
+  width: 20%;
+}
+
+th:nth-child(4),
+td:nth-child(4) {
+  width: 20%;
 }
 
 #test {
@@ -77,6 +94,9 @@ main {
 }
 
 section {
+  width: calc(100% - 20px);
+
+  padding: 5px;
   padding-top: calc(var(--e-table-offset) + 44px);
 }
 
@@ -84,7 +104,7 @@ section {
   position: fixed;
   top: 164px;
 
-  width: calc(100% - 44px);
+  width: calc(100% - 46px);
   max-width: 1102px;
 }
 
