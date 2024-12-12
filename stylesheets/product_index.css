@@ -48,8 +48,13 @@ td {
   /* height: 300px; */
 }
 
+/* table rows */
 tbody tr {
   padding: 4px 10px;
+}
+
+tbody tr[data-href] {
+  cursor: pointer;
 }
 
 tbody tr:hover {
