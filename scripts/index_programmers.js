@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
   rows.forEach((row) => {
     row.addEventListener("click", () => {
       const href = row.getAttribute("data-href");
-      console.log(href);
+
       if (href) {
         window.location.href = href;
       }

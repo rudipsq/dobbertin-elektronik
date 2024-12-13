@@ -2,6 +2,8 @@
  
 ## TODO
 
+- [ ] links: remove country code
+
 ### Default Seite erstellen
 - [ ] navbar: logo, links zu produkt seiten, language switcher
 - [ ] footer
