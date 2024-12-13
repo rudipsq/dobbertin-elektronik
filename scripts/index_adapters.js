@@ -1,4 +1,4 @@
-//* enable link to product details page
+//* link to adapter details page
 document.addEventListener("DOMContentLoaded", () => {
   const rows = document.querySelectorAll("tbody tr");
 
@@ -12,8 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-//* enaable search bar
-
+//* search bar
 const rows = document.querySelectorAll("#product_list tr");
 let searchInput = document.getElementById("search_input");
 

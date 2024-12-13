@@ -1,0 +1,74 @@
+section h1 {
+  margin-bottom: 12px;
+  font-size: 1.45em;
+}
+
+/* - - - product list - - - */
+#product_list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+#product_list > li {
+  height: 200px;
+
+  display: flex;
+  flex-direction: row;
+
+  border-radius: 15px;
+  cursor: pointer;
+
+  padding-left: 20px;
+  padding-right: 20px;
+
+  transition: all 0.25s ease;
+}
+
+#product_list > li:hover {
+  background-color: var(--c-primary);
+}
+
+/* - - - product list: column 1 - - - */
+#product_list > li:not(:first-child) div {
+  border-top: solid var(--c-background-3) 1px;
+}
+
+#product_list div:nth-child(1) {
+  /* background-color: blue; */
+
+  width: 200px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#product_list div:nth-child(1) img {
+  width: 100%;
+  height: auto;
+
+  mix-blend-mode: darken;
+}
+
+/* - - - product list: column 2 - - - */
+#product_list div:nth-child(2) {
+  flex-grow: 1;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+
+  padding-top: 20px;
+  padding-left: 20px;
+}
+
+#product_list div:nth-child(2) h2 {
+  margin: 0;
+  font-size: 1.25em;
+}
+
+#product_list div:nth-child(2) ul {
+  list-style: disc;
+  font-size: 0.95em;
+}
