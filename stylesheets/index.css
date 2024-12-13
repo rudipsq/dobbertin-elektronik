@@ -4,7 +4,7 @@ section {
 
   border-radius: 20px;
   border: solid var(--c-background-gray) 2px;
-  box-shadow: 0px 6px 0px var(--c-background-gray);
+  /* box-shadow: 0px 6px 0px var(--c-background-gray); */
 
   padding: 15px;
 
