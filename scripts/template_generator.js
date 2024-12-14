@@ -15,11 +15,11 @@ function generateTemplateString(jsonObject) {
   // title
   let title_section;
 
-  // image
-  let image_section;
-
   // description
   let description_section;
+
+  // image
+  let image_section;
 
   // manual
   let manual_section;

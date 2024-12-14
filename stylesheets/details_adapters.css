@@ -1,0 +1,44 @@
+main {
+  min-height: auto;
+
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0;
+}
+
+section {
+  width: auto;
+
+  box-shadow: none;
+  /* border: none; */
+  border-radius: 0;
+}
+
+/* - - - sections - - - */
+#title_section {
+  grid-column: span 2;
+}
+
+#description_section {
+  grid-column: span 1;
+}
+
+#image_section {
+  grid-column: span 1;
+}
+
+#manual_section {
+  grid-column: span 2;
+}
+
+#packages_section {
+  grid-column: span 2;
+}
+
+#table_section {
+  grid-column: span 2;
+}
+
+#programmers_section {
+  grid-column: span 2;
+}
