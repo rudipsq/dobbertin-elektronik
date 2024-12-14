@@ -8,11 +8,26 @@ function downloadFileFromString(htmlString) {
   a.click();
 }
 
-function generateNewJsonObject(_id, _name) {
+function generateNewJsonObject(
+  _id,
+  _name,
+  _price,
+  _socket,
+  _bottom,
+  _subclass
+) {
   let jsonObject = {
     id: _id,
     name: _name,
     orderNumber: _orderNumber,
+    price: _price,
+    socket: _socket,
+    bottom: _bottom,
+    class: _class,
+    subclass: _subclass,
+    descriptionObjectArray: [],
+    image1: _image1,
+    image2: _image2,
     manualObjectArray: [],
     packagesObjectArray: [],
     programmersObjectArray: [],
@@ -27,13 +42,24 @@ function generateTemplateString(jsonObject) {
   const string = ``;
 
   // title
-  let title_section = generateTitleSection(data.name, data.orderNumber);
+  let title_section = generateTitleSection(
+    data.name,
+    data.orderNumber,
+    data.price
+  );
 
   // description
-  let description_section;
+  let description_section = generateDescriptionSection(
+    data.orderNumber,
+    data.socket,
+    data.bottom,
+    data.class,
+    data.subclass,
+    data.descriptionObjectArray
+  );
 
   // image
-  let image_section;
+  let image_section = generateImageSection(data.image1, data.image2);
 
   // manual
   let manual_section = "";
@@ -58,11 +84,84 @@ function generateTemplateString(jsonObject) {
   return string;
 }
 
-function generateTitleSection(name, orderNumber) {
+function generateTitleSection(name, orderNumber, price) {
   let string = `<section id="title_section">
-                  <h1>${name}</h1>
-                  <p>${orderNumber}</p>
+                  <div>
+                    <h1>${name}</h1>
+                    <p>${orderNumber}</p>
+                  </div>
+                  <p>Price: ${price}</p>
                 </section>;`;
+
+  return string;
+}
+
+function generateImageSection(image1, image2) {
+  let string;
+  let imageString = `<img src="${image1}" alt="" />`;
+
+  if (image2) {
+    imageString += `<img src="${image2}" alt="" />`;
+  }
+
+  string = `<section id="image_section">
+                <div>
+                  ${imageString}
+                </div>
+              </section>`;
+
+  return string;
+}
+
+function generateDescriptionSection(
+  orderNumber,
+  socket,
+  bottom,
+  classname,
+  subclass,
+  descriptionObjectArray
+) {
+  let string;
+  let liTagString;
+  let table = `<table>
+                <tbody>
+                  <tr>
+                    <td>Ord. no.</td>
+                    <td>${orderNumber}</td>
+                  </tr>
+                  <tr>
+                    <td>Socket</td>
+                    <td>${socket}</td>
+                  </tr>
+                  <tr>
+                    <td>Bottom</td>
+                    <td>${bottom}</td>
+                  </tr>
+                  <tr>
+                    <td>Class</td>
+                    <td>${classname}</td>
+                  </tr>
+                  <tr>
+                    <td>Subclass</td>
+                    <td>${subclass}</td>
+                  </tr>
+                </tbody>
+              </table>`;
+
+  for (const liString of descriptionObjectArray) {
+    if (liString.isBold) {
+      liTagString += `<li class="bold">${liString.text}</li>`;
+    } else {
+      liTagString += `<li>${liString.text}</li>`;
+    }
+  }
+
+  string = `<section id="description_section">
+              <ul>
+                ${liTagString}
+              </ul>
+              ${table}
+            </section>`;
 
   return string;
 }
@@ -110,7 +209,7 @@ function generatePackagesSection(packagesObjectArray) {
   }
 
   string = `<section id="packages_section">
-              <h2>accepted packages</h2>
+              <h2>Accepted package(s)</h2>
                 ${packagesString}
             </section>`;
 
@@ -126,7 +225,7 @@ function generateProgrammersSection(programmersObjectArray) {
   }
 
   string = `<section id="programmers_section">
-              <h2>useable for programmers</h2>
+              <h2>Useable for programmers</h2>
               <div id="programmer_list">
                 ${aTagString}
               </div>

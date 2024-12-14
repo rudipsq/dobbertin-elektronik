@@ -1,16 +1,16 @@
 main {
   min-height: auto;
 
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 0;
-
   display: flex;
 }
 
 main > div {
   width: calc(100% - 80px);
   max-width: 1030px;
+
+  display: grid;
+  grid-template-columns: 1fr 315px;
+  gap: 0;
 
   border-radius: 20px;
   border: solid var(--c-background-3) 1px;
@@ -28,29 +28,87 @@ section {
   border-radius: 0;
 }
 
+.bold {
+  font-weight: 900;
+}
+
 /* - - - SECTIONS - - - */
+
+/* - - - title section - - - */
 #title_section {
   grid-column: span 2;
+
+  display: flex;
+  justify-content: space-between;
 }
 
 #title_section h1 {
   margin: 0;
 }
 
+#title_section > p {
+  padding-top: 12px;
+  font-size: large;
+}
+
+/* - - - description section - - - */
 #description_section {
   grid-column: span 1;
 }
 
+#description_section > div {
+  border: solid var(--c-background-3) 1px;
+  border-radius: 10px;
+  background-color: var(--c-background-1);
+
+  padding: 20px;
+}
+
+#description_section table {
+  border-collapse: collapse;
+
+  margin-top: 20px;
+
+  width: 100%;
+}
+
+#description_section table tr {
+  border-top: solid var(--c-background-3) 1px;
+}
+
+#description_section table td:nth-child(2) {
+  padding-left: 20px;
+}
+
+/* - - - image section - - - */
 #image_section {
   grid-column: span 1;
+
+  /* background-color: red; */
+  /* padding: 0; */
+  padding: 15px 15px 15px 0;
 }
 
+#image_section > div {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+#image_section > div img {
+  position: absolute;
+
+  border-radius: 10px;
+
+  transition: all 0.08s ease-out;
+}
+
+#image_section > div:hover img:first-child:nth-child(1):has(~ :nth-child(2)) {
+  opacity: 0;
+}
+
+/* - - - manual section - - - */
 #manual_section {
   grid-column: span 2;
-}
-
-#manual_section .bold {
-  font-weight: 900;
 }
 
 #manual_section li:empty {
@@ -74,7 +132,9 @@ section {
   border: solid var(--c-background-3) 1px;
 
   border-radius: 10px;
-  background-color: white;
+  background-color: var(--c-background-1);
+
+  overflow-y: auto;
 }
 
 #packages_section > div > div:nth-child(1) {
@@ -125,7 +185,7 @@ section {
 
   border-radius: 50px;
   border: solid var(--c-background-3) 1px;
-  background-color: white;
+  background-color: var(--c-background-1);
 
   transition: all 0.12s ease;
 }
