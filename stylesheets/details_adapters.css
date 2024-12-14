@@ -4,19 +4,37 @@ main {
   display: grid;
   grid-template-columns: 1fr auto;
   gap: 0;
+
+  display: flex;
+}
+
+main > div {
+  width: calc(100% - 80px);
+  max-width: 1030px;
+
+  border-radius: 20px;
+  border: solid var(--c-background-3) 1px;
+  box-shadow: var(--e-big-shadow);
+  background-color: var(--c-background-2);
+
+  padding: 20px;
 }
 
 section {
   width: auto;
 
   box-shadow: none;
-  /* border: none; */
+  border: none;
   border-radius: 0;
 }
 
-/* - - - sections - - - */
+/* - - - SECTIONS - - - */
 #title_section {
   grid-column: span 2;
+}
+
+#title_section h1 {
+  margin: 0;
 }
 
 #description_section {
@@ -31,14 +49,96 @@ section {
   grid-column: span 2;
 }
 
+#manual_section .bold {
+  font-weight: 900;
+}
+
+#manual_section li:empty {
+  height: 20px;
+
+  list-style: none;
+}
+
+/* - - - packages section - - - */
 #packages_section {
   grid-column: span 2;
 }
 
+#packages_section div {
+  display: flex;
+
+  text-align: center;
+}
+
+#packages_section > div {
+  border: solid var(--c-background-3) 1px;
+
+  border-radius: 10px;
+  background-color: white;
+}
+
+#packages_section > div > div:nth-child(1) {
+  flex-direction: column;
+}
+
+#packages_section > div div:nth-child(1) div {
+  flex: 1;
+
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 0 25px;
+}
+
+#packages_section > div > div:nth-child(2) {
+  flex: 1;
+
+  display: flex;
+  justify-content: center;
+
+  border-left: solid var(--c-background-3) 1px;
+}
+
+/* - - - table section - - - */
 #table_section {
   grid-column: span 2;
 }
 
+/* - - - programmers section - - - */
 #programmers_section {
   grid-column: span 2;
+}
+
+#programmers_section #programmer_list {
+  padding: 10px 0 10px 0;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+#programmers_section #programmer_list > div {
+  width: fit-content;
+  height: 30px;
+
+  display: flex;
+
+  border-radius: 50px;
+  border: solid var(--c-background-3) 1px;
+  background-color: white;
+
+  transition: all 0.12s ease;
+}
+
+#programmers_section #programmer_list > div:active {
+  transform: scale(0.95);
+}
+
+#programmers_section #programmer_list > div a {
+  padding: 4px 10px;
+  text-decoration: none;
+}
+
+#programmers_section p {
+  font-size: smaller;
 }
