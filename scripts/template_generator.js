@@ -1,7 +1,7 @@
 function main() {
   // TEST:
   let jsonObject = generateNewJsonObject(
-    "TESTID",
+    "ap1",
     "AP1 SSOP42 ZIF 330mil",
     "71-1866",
     "280.00 € excl. VAT",
@@ -102,21 +102,44 @@ function main() {
   // );
 
   let string = generateTemplateString(jsonObject);
-  downloadFileFromString(string);
+
+  console.log(getTableLink(jsonObject));
+  downloadFileFromString(string, jsonObject);
 }
 
-function downloadFileFromString(htmlString) {
+function downloadFileFromString(htmlString, jsonObject) {
   const content = htmlString;
   const blob = new Blob([content], { type: "text/html" });
 
   const a = document.createElement("a");
   a.href = URL.createObjectURL(blob);
-  a.download = "output.html";
+  a.download = jsonObject.id + ".html";
   a.click();
 }
 
+function getTableLink(jsonObject) {
+  // TODO: remove if tr link works without it
+  // let link;
+  // if (jsonObject.type == "ap1") {
+  //   link = `/products/ap1-programming-modules/${jsonObject.id}.html`;
+  // } else if (jsonObject.type == "ap3") {
+  //   link = `/products/ap3-programming-modules/${jsonObject.id}.html`;
+  // } else {
+  //   link = `/products/programming-adapters/${jsonObject.id}.html`;
+  // }
+
+  let string = `<tr data-href="/${jsonObject.id}.html">
+                  <td>${jsonObject.name}</td>
+                  <td>${jsonObject.class}</td>
+                  <td>${jsonObject.subclass}</td>
+                  <td>${jsonObject.orderNumber}</td>
+                </tr>`;
+
+  return string;
+}
+
 function generateNewJsonObject(
-  _id,
+  _type,
   _name,
   _orderNumber,
   _price,
@@ -131,8 +154,11 @@ function generateNewJsonObject(
   _packagesObjectArray,
   _programmersObjectArray
 ) {
+  const _id = nameToId(_name);
+
   let jsonObject = {
-    id: _id,
+    id: _id, // can be adapter, ap1 or ap3
+    type: _type,
     name: _name,
     orderNumber: _orderNumber,
     price: _price,
@@ -199,7 +225,7 @@ function generateTemplateString(jsonObject) {
               <head>
                 <meta charset="UTF-8" />
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-                <title>Universal Programmers</title>
+                <title>${data.name}</title>
 
                 <link rel="stylesheet" href="../../../stylesheets/global.css" />
                 <link rel="stylesheet" href="../../../stylesheets/details_adapters.css" />
@@ -213,15 +239,21 @@ function generateTemplateString(jsonObject) {
 
                     <nav>
                       <a href="/de/index.html">Home</a>
-                      <a href="/de/products/universal-programmers/" class="active"
+                      <a href="/de/products/universal-programmers/"
                         >Universal Programmers</a
                       >
                       <a href="/de/products/production-programmers/"
                         >Production Programmers</a
                       >
-                      <a href="/de/products/programming-adapters/">Adapters</a>
-                      <a href="/de/products/ap1-programming-modules/">AP1 Modules</a>
-                      <a href="/de/products/ap3-programming-modules/">AP3 Modules</a>
+                      <a href="/de/products/programming-adapters/" ${
+                        data.type === "adapter" ? 'class="active"' : ""
+                      }>Adapters</a>
+                      <a href="/de/products/ap1-programming-modules/" ${
+                        data.type === "ap1" ? 'class="active"' : ""
+                      }>AP1 Modules</a>
+                      <a href="/de/products/ap3-programming-modules/" ${
+                        data.type === "ap3" ? 'class="active"' : ""
+                      }>AP3 Modules</a>
                     </nav>
                   </div>
                 </header>
@@ -261,16 +293,28 @@ function generateTemplateString(jsonObject) {
   return string;
 }
 
+function nameToId(string) {
+  return string.replace(/[/ ]/g, "_");
+}
+
 //*
 //* - - - Section generation functions
 //*
 function generateTitleSection(name, orderNumber, price) {
+  let priceString;
+
+  if (price) {
+    priceString = `Price: ${price}`;
+  } else {
+    priceString = `Ask for price`;
+  }
+
   let string = `<section id="title_section">
                   <div>
                     <h1>${name}</h1>
                     <p>(Ord. no. ${orderNumber})</p>
                   </div>
-                  <p>Price: ${price}</p>
+                  <p>${priceString}</p>
                 </section>`;
 
   return string;
@@ -406,7 +450,7 @@ function generateProgrammersSection(programmersObjectArray) {
               <div id="programmer_list">
                 ${aTagString}
               </div>
-              <p>Note: This programming adapter / module may not support all devices in the package(s) mentioned above on your programmer. Please, verify situation for particular device(s) you are going to work with using actual Device list of your programmer..</p>
+              <p>Note: This programming adapter / module may not support all devices in the package(s) mentioned above on your programmer. Please, verify situation for particular device(s) you are going to work with using actual Device list of your programmer.</p>
             </section>`;
 
   return string;

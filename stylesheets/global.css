@@ -56,6 +56,11 @@ body {
   color: var(--c-text);
 }
 
+a {
+  color: var(--c-text);
+  /* text-decoration: none; */
+}
+
 /* - - - NAVIGATION - - - */
 header {
   width: 100%;
@@ -93,7 +98,7 @@ header > div {
   /* margin: 10px; */
   padding: 10px 15px 14px 15px;
 
-  transition: all 0.2s ease;
+  /* transition: all 0.2s ease; */
 }
 
 header > div nav {
@@ -108,7 +113,8 @@ header > div nav a {
   padding: 3px 9px;
   text-decoration: none;
 
-  transition: all 0.12s ease;
+  transition: background-color 0.12s ease, outline 0.12s ease,
+    transform 0.12s ease;
 }
 
 header > div nav a.active {
@@ -127,10 +133,11 @@ header > div nav a:active {
 /* - - - MAIN - - - */
 main {
   max-width: 100%;
-  min-height: calc(100vh - var(--e-header-height) - 50px);
+  min-height: calc(100vh - var(--e-header-height) - 120px);
 
   padding: 20px;
   padding-top: calc(var(--e-header-height) + 50px + 20px);
+  padding-bottom: 60px;
 
   display: flex;
   flex-direction: column;
@@ -174,6 +181,7 @@ section ul {
 /* - - - FOOTER - - - */
 footer {
   width: 100%;
+  /* padding-top: 80px; */
 }
 
 footer > div {

@@ -20,7 +20,7 @@
 
 
 ### Legal
-- [ ] agb kopieren
+- [x] agb kopieren
 - [ ] impressum neu erstellen
 - [ ] datenschutz neu erstellen
 
