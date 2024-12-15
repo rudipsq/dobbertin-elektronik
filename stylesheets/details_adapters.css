@@ -28,6 +28,10 @@ section {
   border-radius: 0;
 }
 
+section h2 {
+  margin-top: 36px;
+}
+
 .bold {
   font-weight: 900;
 }
@@ -62,6 +66,10 @@ section {
   background-color: var(--c-background-1);
 
   padding: 20px;
+}
+
+#description_section ul {
+  padding: 0 0 0 20px;
 }
 
 #description_section table {
@@ -135,6 +143,10 @@ section {
   background-color: var(--c-background-1);
 
   overflow-y: auto;
+}
+
+#packages_section > div:not(:last-child) {
+  margin-bottom: 10px;
 }
 
 #packages_section > div > div:nth-child(1) {

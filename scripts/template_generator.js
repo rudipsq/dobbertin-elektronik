@@ -1,3 +1,110 @@
+function main() {
+  // TEST:
+  let jsonObject = generateNewJsonObject(
+    "TESTID",
+    "AP1 SSOP42 ZIF 330mil",
+    "71-1866",
+    "280.00 € excl. VAT",
+    "ZIF SSOP42, OpenTop type",
+    "2 female connectors by 32 pins, DIN41612 B/2",
+    "Universal",
+    "(T)SSOP",
+    [
+      {
+        text: "universal programming module for devices in SSOP package, body 300mil, 0.4mm pitch",
+        isBold: true,
+      },
+      {
+        text: "operating (mechanical) warranty of ZIF socket - 10,000 actuations",
+      },
+    ],
+    "../../../img/pic/mod4676b.jpg",
+    "",
+    [
+      {
+        text: "Programmer don`t need to be switched off and SW can be running during inserting/removing programming module",
+        isBold: true,
+      },
+      {
+        text: "Protect the contacts of module connectors and ZIF socket from contamination. Any dirt and/or fat on contacts may cause errors during programming.",
+        isBold: true,
+      },
+      {
+        text: "",
+      },
+      {
+        text: "Unscrew 2 knurled thumb screws. Insert programming module into Programming Module Interface connectors, until it clicks. Due to connectors shape, only one orientation and position of programming module in Programming Module",
+      },
+    ],
+    [
+      {
+        name: "SSOP42",
+        image1: "../../../img/pic/bga1p.gif",
+        image2: "../../../img/pic/bgauni1m.gif",
+      },
+      {
+        name: "SSOP43",
+        image1: "../../../img/pic/bga1p.gif",
+        image2: "../../../img/pic/bgauni1m.gif",
+      },
+    ],
+    [
+      { link: "D", name: "BeeHive240AP" },
+      { link: "E", name: "BeeHive240AP-AU" },
+      { link: "F", name: "BeeProg2AP" },
+    ]
+  );
+  // let jsonObject = generateNewJsonObject(
+  //   "TESTID",
+  //   "AP1 SSOP42 ZIF 330mil",
+  //   "71-1866",
+  //   "280.00 € excl. VAT",
+  //   "ZIF SSOP42, OpenTop type",
+  //   "2 female connectors by 32 pins, DIN41612 B/2",
+  //   "Universal",
+  //   "(T)SSOP",
+  //   [
+  //     {
+  //       text: "universal programming module for devices in SSOP package, body 300mil, 0.4mm pitch",
+  //       bold: true,
+  //     },
+  //     {
+  //       text: "operating (mechanical) warranty of ZIF socket - 10,000 actuations",
+  //     },
+  //   ],
+  //   "X",
+  //   "Y",
+  //   [
+  //     {
+  //       text: "Programmer don`t need to be switched off and SW can be running during inserting/removing programming module",
+  //       bold: true,
+  //     },
+  //     {
+  //       text: "Protect the contacts of module connectors and ZIF socket from contamination. Any dirt and/or fat on contacts may cause errors during programming.",
+  //       bold: true,
+  //     },
+  //     {
+  //       text: "",
+  //     },
+  //     {
+  //       text: "Unscrew 2 knurled thumb screws. Insert programming module into Programming Module Interface connectors, until it clicks. Due to connectors shape, only one orientation and position of programming module in Programming Module",
+  //     },
+  //   ],
+  //   [
+  //     { name: "SSOP42", image1: "Z", image2: "A" },
+  //     { name: "SSOP43", image1: "B", image2: "C" },
+  //   ],
+  //   [
+  //     { link: "D", name: "BeeHive240AP" },
+  //     { link: "E", name: "BeeHive240AP-AU" },
+  //     { link: "F", name: "BeeProg2AP" },
+  //   ]
+  // );
+
+  let string = generateTemplateString(jsonObject);
+  downloadFileFromString(string);
+}
+
 function downloadFileFromString(htmlString) {
   const content = htmlString;
   const blob = new Blob([content], { type: "text/html" });
@@ -11,10 +118,18 @@ function downloadFileFromString(htmlString) {
 function generateNewJsonObject(
   _id,
   _name,
+  _orderNumber,
   _price,
   _socket,
   _bottom,
-  _subclass
+  _class,
+  _subclass,
+  _descriptionObjectArray,
+  _image1,
+  _image2,
+  _manualObjectArray,
+  _packagesObjectArray,
+  _programmersObjectArray
 ) {
   let jsonObject = {
     id: _id,
@@ -25,12 +140,12 @@ function generateNewJsonObject(
     bottom: _bottom,
     class: _class,
     subclass: _subclass,
-    descriptionObjectArray: [],
+    descriptionObjectArray: _descriptionObjectArray,
     image1: _image1,
     image2: _image2,
-    manualObjectArray: [],
-    packagesObjectArray: [],
-    programmersObjectArray: [],
+    manualObjectArray: _manualObjectArray,
+    packagesObjectArray: _packagesObjectArray,
+    programmersObjectArray: _programmersObjectArray,
   };
 
   return jsonObject;
@@ -38,8 +153,6 @@ function generateNewJsonObject(
 
 function generateTemplateString(jsonObject) {
   const data = jsonObject;
-
-  const string = ``;
 
   // title
   let title_section = generateTitleSection(
@@ -63,7 +176,7 @@ function generateTemplateString(jsonObject) {
 
   // manual
   let manual_section = "";
-  if (data.manualArray) {
+  if (data.manualObjectArray) {
     manual_section = generateManualSection(data.manualObjectArray);
   }
 
@@ -71,7 +184,7 @@ function generateTemplateString(jsonObject) {
   let packages_section = generatePackagesSection(data.packagesObjectArray);
 
   // table
-  let table_section;
+  let table_section = "";
 
   // programmers
   let programmers_section = "";
@@ -81,30 +194,96 @@ function generateTemplateString(jsonObject) {
     );
   }
 
+  let string = `<!DOCTYPE html>
+            <html lang="de">
+              <head>
+                <meta charset="UTF-8" />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <title>Universal Programmers</title>
+
+                <link rel="stylesheet" href="../../../stylesheets/global.css" />
+                <link rel="stylesheet" href="../../../stylesheets/details_adapters.css" />
+              </head>
+              <body>
+                <header>
+                  <div>
+                    <div>
+                      <img src="../../../img/logo/banner_no_lines.gif" alt="" />
+                    </div>
+
+                    <nav>
+                      <a href="/de/index.html">Home</a>
+                      <a href="/de/products/universal-programmers/" class="active"
+                        >Universal Programmers</a
+                      >
+                      <a href="/de/products/production-programmers/"
+                        >Production Programmers</a
+                      >
+                      <a href="/de/products/programming-adapters/">Adapters</a>
+                      <a href="/de/products/ap1-programming-modules/">AP1 Modules</a>
+                      <a href="/de/products/ap3-programming-modules/">AP3 Modules</a>
+                    </nav>
+                  </div>
+                </header>
+
+                <main>
+                  <div>
+                    ${title_section}
+                    ${description_section}
+                    ${image_section}
+                    ${manual_section}
+                    ${packages_section}
+                    ${table_section}
+                    ${programmers_section}
+                  </div>
+                </main>
+
+                <footer>
+                  <div>
+                    <div id="footer_left">
+                      <img src="../../../img/logo/dobbertin.gif" alt="" />
+                      <img src="../../../img/logo/industrie-elektronik.gif" alt="" />
+                    </div>
+
+                    <div id="footer_right">
+                      <a href="/de/impressum.html">Impressum</a>
+                      <a href="/de/agb.html">AGB</a>
+                      <a href="/de/datenschutz.html">Datenschutz</a>
+                      <a href="quicksite.me">by Quicksite</a>
+                    </div>
+                  </div>
+                </footer>
+
+                <script src="../../../scripts/language.js"></script>
+              </body>
+            </html>`;
+
   return string;
 }
 
+//*
+//* - - - Section generation functions
+//*
 function generateTitleSection(name, orderNumber, price) {
   let string = `<section id="title_section">
                   <div>
                     <h1>${name}</h1>
-                    <p>${orderNumber}</p>
+                    <p>(Ord. no. ${orderNumber})</p>
                   </div>
                   <p>Price: ${price}</p>
-                </section>;`;
+                </section>`;
 
   return string;
 }
 
 function generateImageSection(image1, image2) {
-  let string;
   let imageString = `<img src="${image1}" alt="" />`;
 
   if (image2) {
     imageString += `<img src="${image2}" alt="" />`;
   }
 
-  string = `<section id="image_section">
+  let string = `<section id="image_section">
                 <div>
                   ${imageString}
                 </div>
@@ -121,8 +300,7 @@ function generateDescriptionSection(
   subclass,
   descriptionObjectArray
 ) {
-  let string;
-  let liTagString;
+  let liTagString = "";
   let table = `<table>
                 <tbody>
                   <tr>
@@ -156,19 +334,20 @@ function generateDescriptionSection(
     }
   }
 
-  string = `<section id="description_section">
-              <ul>
-                ${liTagString}
-              </ul>
-              ${table}
+  let string = `<section id="description_section">
+              <div>
+                <ul>
+                  ${liTagString}
+                </ul>
+                ${table}
+              </div>
             </section>`;
 
   return string;
 }
 
 function generateManualSection(manualObjectArray) {
-  let string;
-  let liTagString;
+  let liTagString = "";
 
   for (const liString of manualObjectArray) {
     if (liString.isBold) {
@@ -180,8 +359,8 @@ function generateManualSection(manualObjectArray) {
     }
   }
 
-  string = `<section id="manual_section">
-              <h2>adapter manual</h2>
+  let string = `<section id="manual_section">
+              <h2>Adapter manual</h2>
               <ul>
                 ${liTagString}
               </ul>
@@ -191,24 +370,23 @@ function generateManualSection(manualObjectArray) {
 }
 
 function generatePackagesSection(packagesObjectArray) {
-  let string;
-  let packagesString;
+  let packagesString = "";
 
   for (const packageObject of packagesObjectArray) {
     packagesString += `<div>
                         <div>
                           <h3>${packageObject.name}</h3>
                           <div>
-                            <img src="${packageObject.image1}" alt="${packageObject.name} image small" />
+                            <img src="${packageObject.image1}" alt="${packageObject.name} package small" />
                           </div>
                         </div>
                         <div>
-                          <img src="${packageObject.image1}" alt="${packageObject.name} image big" />
+                          <img src="${packageObject.image2}" alt="${packageObject.name} package big" />
                         </div>
                       </div>`;
   }
 
-  string = `<section id="packages_section">
+  let string = `<section id="packages_section">
               <h2>Accepted package(s)</h2>
                 ${packagesString}
             </section>`;
@@ -217,14 +395,13 @@ function generatePackagesSection(packagesObjectArray) {
 }
 
 function generateProgrammersSection(programmersObjectArray) {
-  let string;
-  let aTagString;
+  let aTagString = "";
 
   for (const programmerObject of programmersObjectArray) {
     aTagString += `<div><a href="${programmerObject.link}">${programmerObject.name}</a></div>`;
   }
 
-  string = `<section id="programmers_section">
+  let string = `<section id="programmers_section">
               <h2>Useable for programmers</h2>
               <div id="programmer_list">
                 ${aTagString}
