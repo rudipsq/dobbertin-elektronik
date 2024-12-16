@@ -202,17 +202,7 @@ function downloadFileFromString(htmlString, jsonObject) {
 }
 
 function getTableLink(jsonObject) {
-  // TODO: remove if tr link works without it
-  // let link;
-  // if (jsonObject.type == "ap1") {
-  //   link = `/products/ap1-programming-modules/${jsonObject.id}.html`;
-  // } else if (jsonObject.type == "ap3") {
-  //   link = `/products/ap3-programming-modules/${jsonObject.id}.html`;
-  // } else {
-  //   link = `/products/programming-adapters/${jsonObject.id}.html`;
-  // }
-
-  let string = `<tr data-href="/${jsonObject.id}.html">
+  let string = `<tr data-href="${jsonObject.id}.html">
                   <td>${jsonObject.name}</td>
                   <td>${jsonObject.class}</td>
                   <td>${jsonObject.subclass}</td>
@@ -536,4 +526,9 @@ function generateProgrammersSection(programmersObjectArray) {
             </section>`;
 
   return string;
+}
+
+// test
+async function test() {
+  console.log(await fetch("https://www.elnec.com/get_devices.php?id=beep2"));
 }
