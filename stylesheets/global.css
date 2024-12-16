@@ -11,6 +11,7 @@
   /* elements */
   --e-header-height: 80px;
   --e-big-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  --e-small-shadow: 0px 1px 15px rgba(0, 0, 0, 0.1);
 }
 
 /* @font-face {

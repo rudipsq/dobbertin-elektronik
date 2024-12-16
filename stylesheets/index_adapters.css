@@ -23,7 +23,7 @@ section {
   width: calc(100% - 20px);
 
   padding: 5px;
-  padding-top: calc(var(--e-table-offset) + 42px);
+  padding-top: calc(var(--e-table-offset) + 38px);
 }
 
 #cover_div {
@@ -46,15 +46,17 @@ table {
 thead {
   position: fixed;
   top: var(--e-table-offset);
-  translate: -7px;
+  translate: -6px;
 
   width: calc(100% - 80px);
   max-width: 1050px;
 
   background-color: var(--c-background-2);
   border-radius: 20px;
-  border: solid var(--c-background-3) 2px;
-  box-shadow: 0px 3px 0px var(--c-background-3);
+  /* border: solid var(--c-background-3) 2px;
+  box-shadow: 0px 3px 0px var(--c-background-3); */
+  border: solid var(--c-background-3) 1px;
+  box-shadow: var(--e-small-shadow);
 
   padding: 4px 15px;
 }
@@ -132,8 +134,10 @@ td:nth-child(4) {
 
   background-color: var(--c-background-2);
   border-radius: 20px;
-  border: solid var(--c-background-3) 2px;
-  box-shadow: 0px 3px 0px var(--c-background-3);
+  /* border: solid var(--c-background-3) 2px;
+  box-shadow: 0px 3px 0px var(--c-background-3); */
+  border: solid var(--c-background-3) 1px;
+  box-shadow: var(--e-small-shadow);
 
   padding: 4px 15px;
 
@@ -158,9 +162,9 @@ td:nth-child(4) {
   top: 0;
   right: 0;
 
-  width: 30px;
-  height: 30px;
+  width: 28px;
+  height: 28px;
 
   padding: 6px;
-  padding-right: 10px;
+  padding-right: 12px;
 }
