@@ -11,7 +11,7 @@
 
 
 ### Programmer Template
-- [ ] description section abaendern (css und html von adapter template)
+- [x] description section abaendern (css und html von adapter template)
 - [ ] text sections hinzufuegen (basierend auf adapter manual)
 - [ ] iframe dynamische daten, falls dsgvo konform
 

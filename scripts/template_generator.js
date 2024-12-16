@@ -1,59 +1,143 @@
 function main() {
   // TEST:
   let jsonObject = generateNewJsonObject(
-    "ap1",
-    "AP1 SSOP42 ZIF 330mil",
-    "71-1866",
-    "280.00 € excl. VAT",
-    "ZIF SSOP42, OpenTop type",
-    "2 female connectors by 32 pins, DIN41612 B/2",
+    "adapter",
+    "DIL8/BGA8-3 ZIF-CS",
+    "70-2863",
+    "Ask for Price",
+    "ZIF BGA8, ClamShell type",
+    "2x13 pins, square, 0.6x0.6mm, rows spacing 600mil",
     "Universal",
-    "(T)SSOP",
+    "DIL/BGA",
     [
       {
-        text: "universal programming module for devices in SSOP package, body 300mil, 0.4mm pitch",
-        isBold: true,
+        text: "universal programming adapter for STMicroelectronics M24M01-DFCS, M95M01-DFCS devices in WLCSP8 package",
+      },
+      {
+        text: "used ZIF socket may accept one or more variants of supported package, different in ball diameter, ball high and/or body thickness, see section Accepted package(s)",
       },
       {
         text: "operating (mechanical) warranty of ZIF socket - 10,000 actuations",
       },
+      {
+        text: "supported from PG4UW software version 3.97k",
+      },
+      {
+        text: "made in Slovakia",
+      },
     ],
-    "../../../img/pic/mod4676b.jpg",
-    "",
+    "../../../img/pic/con2863b.jpg",
+    "../../../img/pic/con2863b1.jpg",
     [
       {
-        text: "Programmer don`t need to be switched off and SW can be running during inserting/removing programming module",
+        text: "Protect the contacts of adapter connectors and ZIF socket from contamination. Any dirt and/or fat on contacts may cause errors during programming.",
         isBold: true,
       },
       {
-        text: "Protect the contacts of module connectors and ZIF socket from contamination. Any dirt and/or fat on contacts may cause errors during programming.",
+        text: "Usage of vacuum pick-up tool is expected for device handling.",
+        isBold: true,
+      },
+      {
+        text: "Proceed with care! Incorrect insertion of adapter in programmer ZIF socket or device in adapter ZIF socket may lead to programmed device damage.",
         isBold: true,
       },
       {
         text: "",
       },
       {
-        text: "Unscrew 2 knurled thumb screws. Insert programming module into Programming Module Interface connectors, until it clicks. Due to connectors shape, only one orientation and position of programming module in Programming Module",
+        text: "Insert adapter into programmer ZIF socket. If you are in doubts about orientation of the adapter in programmer ZIF socket, there is a rule of thumb - orientation of adapter name text is the same as orientation of the text on the top of programmer.",
+      },
+      {
+        text: "Visually check the placement of adapter in programmer ZIF socket.",
+      },
+      {
+        text: "Release the pawl on adapter ZIF socket to open it. The socket cap will open by spring force. Insert the device into adapter ZIF socket. The correct position of the programmed device is shown on PCB of the adapter. The reference corner (e.g. position of pin A1) of the device is indicated by dot, by number 1, by bevelled corner or by any combination of mentioned.",
+      },
+      {
+        text: "Visually check the placement of programmed device in adapter ZIF socket. If it looks OK, close adapter ZIF socket cap by hand and secure the pawl.",
+      },
+      {
+        text: "To take out the device from adapter, release the pawl on adapter ZIF socket and remove the device.",
+      },
+      {
+        text: "When you finish the work with adapter, remove it from programmer ZIF socket.",
+      },
+      {
+        text: "",
+      },
+      {
+        text: "Operating conditions: temperature 5°C ÷ 40°C (41°F ÷ 104°F), humidity 20% ÷ 80% non-condensing.",
       },
     ],
     [
       {
-        name: "SSOP42",
-        image1: "../../../img/pic/bga1p.gif",
-        image2: "../../../img/pic/bgauni1m.gif",
-      },
-      {
-        name: "SSOP43",
+        name: "BGA package",
         image1: "../../../img/pic/bga1p.gif",
         image2: "../../../img/pic/bgauni1m.gif",
       },
     ],
     [
-      { link: "D", name: "BeeHive240AP" },
-      { link: "E", name: "BeeHive240AP-AU" },
-      { link: "F", name: "BeeProg2AP" },
+      { link: "D", name: "BeeHive208S" },
+      { link: "E", name: "BeeHive240" },
+      { link: "F", name: "BeeProg2" },
+      { link: "F", name: "BeeProg2C" },
     ]
   );
+  // let jsonObject = generateNewJsonObject(
+  //   "ap1",
+  //   "AP1 SSOP42 ZIF 330mil",
+  //   "71-1866",
+  //   "280.00 € excl. VAT",
+  //   "ZIF SSOP42, OpenTop type",
+  //   "2 female connectors by 32 pins, DIN41612 B/2",
+  //   "Universal",
+  //   "(T)SSOP",
+  //   [
+  //     {
+  //       text: "universal programming module for devices in SSOP package, body 300mil, 0.4mm pitch",
+  //       isBold: true,
+  //     },
+  //     {
+  //       text: "operating (mechanical) warranty of ZIF socket - 10,000 actuations",
+  //     },
+  //   ],
+  //   "../../../img/pic/mod4676b.jpg",
+  //   "",
+  //   [
+  //     {
+  //       text: "Programmer don`t need to be switched off and SW can be running during inserting/removing programming module",
+  //       isBold: true,
+  //     },
+  //     {
+  //       text: "Protect the contacts of module connectors and ZIF socket from contamination. Any dirt and/or fat on contacts may cause errors during programming.",
+  //       isBold: true,
+  //     },
+  //     {
+  //       text: "",
+  //     },
+  //     {
+  //       text: "Unscrew 2 knurled thumb screws. Insert programming module into Programming Module Interface connectors, until it clicks. Due to connectors shape, only one orientation and position of programming module in Programming Module",
+  //     },
+  //   ],
+  //   [
+  //     {
+  //       name: "SSOP42",
+  //       image1: "../../../img/pic/bga1p.gif",
+  //       image2: "../../../img/pic/bgauni1m.gif",
+  //     },
+  //     {
+  //       name: "SSOP43",
+  //       image1: "../../../img/pic/bga1p.gif",
+  //       image2: "../../../img/pic/bgauni1m.gif",
+  //     },
+  //   ],
+  //   [
+  //     { link: "D", name: "BeeHive240AP" },
+  //     { link: "E", name: "BeeHive240AP-AU" },
+  //     { link: "F", name: "BeeProg2AP" },
+  //   ]
+  // );
+
   // let jsonObject = generateNewJsonObject(
   //   "TESTID",
   //   "AP1 SSOP42 ZIF 330mil",
@@ -450,7 +534,7 @@ function generateProgrammersSection(programmersObjectArray) {
               <div id="programmer_list">
                 ${aTagString}
               </div>
-              <p>Note: This programming adapter / module may not support all devices in the package(s) mentioned above on your programmer. Please, verify situation for particular device(s) you are going to work with using actual Device list of your programmer.</p>
+              <p class="italic">Note: This programming adapter / module may not support all devices in the package(s) mentioned above on your programmer. Please, verify situation for particular device(s) you are going to work with using actual Device list of your programmer.</p>
             </section>`;
 
   return string;
