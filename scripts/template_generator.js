@@ -1,6 +1,6 @@
 function main() {
   // TEST:
-  let jsonObject = generateNewJsonObject(
+  let jsonObject = createNewTemplateJson(
     "adapter",
     "DIL8/BGA8-3 ZIF-CS",
     "70-2863",
@@ -81,9 +81,10 @@ function main() {
       { link: "E", name: "BeeHive240" },
       { link: "F", name: "BeeProg2" },
       { link: "F", name: "BeeProg2C" },
-    ]
+    ],
+    "default_en"
   );
-  // let jsonObject = generateNewJsonObject(
+  // let jsonObject = createNewTemplateJson(
   //   "ap1",
   //   "AP1 SSOP42 ZIF 330mil",
   //   "71-1866",
@@ -138,7 +139,7 @@ function main() {
   //   ]
   // );
 
-  // let jsonObject = generateNewJsonObject(
+  // let jsonObject = createNewTemplateJson(
   //   "TESTID",
   //   "AP1 SSOP42 ZIF 330mil",
   //   "71-1866",
@@ -212,7 +213,7 @@ function getTableLink(jsonObject) {
   return string;
 }
 
-function generateNewJsonObject(
+function createNewTemplateJson(
   _type,
   _name,
   _orderNumber,
@@ -226,26 +227,28 @@ function generateNewJsonObject(
   _image2,
   _manualObjectArray,
   _packagesObjectArray,
-  _programmersObjectArray
+  _programmersObjectArray,
+  _programmersNote
 ) {
   const _id = nameToId(_name);
 
   let jsonObject = {
-    id: _id, // can be adapter, ap1 or ap3
-    type: _type,
-    name: _name,
-    orderNumber: _orderNumber,
-    price: _price,
-    socket: _socket,
-    bottom: _bottom,
-    class: _class,
-    subclass: _subclass,
+    id: _id, // can be "adapter", "ap1", "ap3"
+    type: _type, // string
+    name: _name, // string
+    orderNumber: _orderNumber, // string
+    price: _price, // string
+    socket: _socket, // string
+    bottom: _bottom, // string
+    class: _class, // string
+    subclass: _subclass, // string
     descriptionObjectArray: _descriptionObjectArray,
-    image1: _image1,
-    image2: _image2,
+    image1: _image1, // filename with file ending
+    image2: _image2, // filename with file ending
     manualObjectArray: _manualObjectArray,
     packagesObjectArray: _packagesObjectArray,
     programmersObjectArray: _programmersObjectArray,
+    programmersNote: _programmersNote, // can be "none", "default_en", "default_de", a custom text
   };
 
   return jsonObject;
@@ -290,7 +293,8 @@ function generateTemplateString(jsonObject) {
   let programmers_section = "";
   if (data.programmersObjectArray) {
     programmers_section = generateProgrammersSection(
-      data.programmersObjectArray
+      data.programmersObjectArray,
+      data.programmersNote
     );
   }
 
@@ -526,20 +530,40 @@ function generatePackagesSection(packagesObjectArray) {
   return string;
 }
 
-function generateProgrammersSection(programmersObjectArray) {
+function generateProgrammersSection(programmersObjectArray, programmersNote) {
   let aTagString = "";
 
   for (const programmerObject of programmersObjectArray) {
     aTagString += `<div><a href="${programmerObject.link}">${programmerObject.name}</a></div>`;
   }
 
+  let note = "";
+
+  switch (programmersNote) {
+    case "default_en":
+      note += `<p class="italic">Note: This programming adapter / module may not support all devices in the package(s) mentioned above on your programmer. Please, verify situation for particular device(s) you are going to work with using actual Device list of your programmer.</p>`;
+
+      break;
+    case "default_de":
+      note += `<p class="italic">Note: This programming adapter / module may not support all devices in the package(s) mentioned above on your programmer. Please, verify situation for particular device(s) you are going to work with using actual Device list of your programmer.</p>`;
+
+      break;
+    case "none":
+      note += "";
+      break;
+
+    default:
+      note += `<p class="italic">${programmersNote}</p>`;
+      break;
+  }
+
   let string = `<section id="programmers_section">
-              <h2>Useable for programmers</h2>
-              <div id="programmer_list">
-                ${aTagString}
-              </div>
-              <p class="italic">Note: This programming adapter / module may not support all devices in the package(s) mentioned above on your programmer. Please, verify situation for particular device(s) you are going to work with using actual Device list of your programmer.</p>
-            </section>`;
+                  <h2>Useable for programmers</h2>
+                  <div id="programmer_list">
+                    ${aTagString}
+                  </div>
+                  ${note}
+                </section>`;
 
   return string;
 }

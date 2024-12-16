@@ -65,8 +65,9 @@ section .product_container .product_item > div:nth-child(1) > img {
 }
 
 section .product_container .product_item div:nth-child(1) > img {
-  width: 100%;
-  max-width: 220px;
+  /* width: 100%;
+  max-width: 220px; */
+  width: 220px;
 
   mix-blend-mode: darken;
 }
