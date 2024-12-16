@@ -2,7 +2,7 @@
  
 ## TODO
 
-- [ ] links: remove country code (if possible)
+- [x] links: remove country code (if possible)
 
 ### Default Seite erstellen
 - [x] navbar: logo, links zu produkt seiten

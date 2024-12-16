@@ -315,6 +315,8 @@ function generateTemplateString(jsonObject) {
                 <link rel="stylesheet" href="../../../stylesheets/details_adapters.css" />
               </head>
               <body>
+                
+
                 <header>
                   <div>
                     <div>
@@ -322,20 +324,16 @@ function generateTemplateString(jsonObject) {
                     </div>
 
                     <nav>
-                      <a href="/de/index.html">Home</a>
-                      <a href="/de/products/universal-programmers/"
-                        >Universal Programmers</a
-                      >
-                      <a href="/de/products/production-programmers/"
-                        >Production Programmers</a
-                      >
-                      <a href="/de/products/programming-adapters/" ${
+                      <a href="../../index.html">Home</a>
+                      <a href="../universal-programmers/">Universal Programmers</a>
+                      <a href="../production-programmers/">Production Programmers</a>
+                      <a href="../programming-adapters/" ${
                         data.type === "adapter" ? 'class="active"' : ""
                       }>Adapters</a>
-                      <a href="/de/products/ap1-programming-modules/" ${
+                      <a href="../ap1-programming-modules/" ${
                         data.type === "ap1" ? 'class="active"' : ""
                       }>AP1 Modules</a>
-                      <a href="/de/products/ap3-programming-modules/" ${
+                      <a href="../ap3-programming-modules/" ${
                         data.type === "ap3" ? 'class="active"' : ""
                       }>AP3 Modules</a>
                     </nav>
@@ -356,16 +354,16 @@ function generateTemplateString(jsonObject) {
 
                 <footer>
                   <div>
-                    <div id="footer_left">
-                      <img src="../../../img/logo/dobbertin.gif" alt="" />
-                      <img src="../../../img/logo/industrie-elektronik.gif" alt="" />
-                    </div>
+                    <!-- <div id="footer_left">
+                      <img src="../img/logo/dobbertin.gif" alt="" />
+                      <img src="../img/logo/industrie-elektronik.gif" alt="" />
+                    </div> -->
 
                     <div id="footer_right">
-                      <a href="/de/impressum.html">Impressum</a>
-                      <a href="/de/agb.html">AGB</a>
-                      <a href="/de/datenschutz.html">Datenschutz</a>
-                      <a href="quicksite.me">by Quicksite</a>
+                      <a href="../../impressum.html">Impressum</a>
+                      <a href="../../agb.html">AGB</a>
+                      <a href="../../datenschutz.html">Datenschutz</a>
+                      <a href="https://quicksite.me">by Quicksite</a>
                     </div>
                   </div>
                 </footer>
