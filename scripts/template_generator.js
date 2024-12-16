@@ -26,8 +26,8 @@ function main() {
         text: "made in Slovakia",
       },
     ],
-    "../../../img/pic/con2863b.jpg",
-    "../../../img/pic/con2863b1.jpg",
+    "con2863b.jpg",
+    "con2863b1.jpg",
     [
       {
         text: "Protect the contacts of adapter connectors and ZIF socket from contamination. Any dirt and/or fat on contacts may cause errors during programming.",
@@ -72,8 +72,8 @@ function main() {
     [
       {
         name: "BGA package",
-        image1: "../../../img/pic/bga1p.gif",
-        image2: "../../../img/pic/bgauni1m.gif",
+        image1: "bga1p.gif",
+        image2: "bgauni1m.gif",
       },
     ],
     [
@@ -272,7 +272,7 @@ function generateTemplateString(jsonObject) {
   );
 
   // image
-  let image_section = generateImageSection(data.image1, data.image2);
+  let image_section = generateImageSection(data.image1, data.image2, data.type);
 
   // manual
   let manual_section = "";
@@ -310,7 +310,7 @@ function generateTemplateString(jsonObject) {
                 <header>
                   <div>
                     <div>
-                      <img src="../../../img/logo/banner_no_lines.gif" alt="" />
+                      <img src="../../../img/logo/banner.gif" alt="" />
                     </div>
 
                     <nav>
@@ -392,11 +392,27 @@ function generateTitleSection(name, orderNumber, price) {
   return string;
 }
 
-function generateImageSection(image1, image2) {
-  let imageString = `<img src="${image1}" alt="" />`;
+function generateImageSection(image1, image2, type) {
+  let source;
+  switch (type) {
+    case "ap1":
+      source = "ap1-programming-modules";
+      break;
+    case "ap3":
+      source = "ap3-programming-modules";
+      break;
+    case "adapter":
+      source = "programming-adapters";
+      break;
+
+    default:
+      break;
+  }
+
+  let imageString = `<img src="../../../img/products/${source}/${image1}" alt="product image 1" />`;
 
   if (image2) {
-    imageString += `<img src="${image2}" alt="" />`;
+    imageString += `<img src="../../../img/products/${source}/${image2}" alt="product image 2" />`;
   }
 
   let string = `<section id="image_section">
@@ -493,11 +509,11 @@ function generatePackagesSection(packagesObjectArray) {
                         <div>
                           <h3>${packageObject.name}</h3>
                           <div>
-                            <img src="${packageObject.image1}" alt="${packageObject.name} package small" />
+                            <img src="../../../img/packages/${packageObject.image1}" alt="${packageObject.name} package small" />
                           </div>
                         </div>
                         <div>
-                          <img src="${packageObject.image2}" alt="${packageObject.name} package big" />
+                          <img src="../../../img/packages/${packageObject.image2}" alt="${packageObject.name} package big" />
                         </div>
                       </div>`;
   }
@@ -526,9 +542,4 @@ function generateProgrammersSection(programmersObjectArray) {
             </section>`;
 
   return string;
-}
-
-// test
-async function test() {
-  console.log(await fetch("https://www.elnec.com/get_devices.php?id=beep2"));
 }
