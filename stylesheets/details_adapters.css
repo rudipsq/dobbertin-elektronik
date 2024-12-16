@@ -88,8 +88,6 @@ section h2 {
 #image_section {
   grid-column: span 1;
 
-  /* background-color: red; */
-  /* padding: 0; */
   padding: 15px 15px 15px 0;
 }
 
@@ -101,13 +99,29 @@ section h2 {
 #image_section > div img {
   position: absolute;
 
+  width: 300px;
+  height: auto;
+
   border-radius: 10px;
 
-  transition: all 0.08s ease-out;
+  transition: all 0.04s ease-out;
 }
 
-#image_section > div:hover img:first-child:nth-child(1):has(~ :nth-child(2)) {
+/* image hover animation */
+#image_section > div img:first-child {
+  z-index: 1;
+}
+
+#image_section > div img:nth-child(2) {
   opacity: 0;
+}
+
+#image_section > div:hover img:nth-child(1):has(~ :nth-child(2)) {
+  opacity: 0;
+}
+
+#image_section > div:hover img:nth-child(2) {
+  opacity: 1;
 }
 
 /* - - - manual section - - - */

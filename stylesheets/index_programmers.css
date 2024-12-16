@@ -11,7 +11,7 @@ section h1 {
 }
 
 #product_list > li {
-  height: 200px;
+  min-height: 200px;
 
   display: flex;
   flex-direction: row;
@@ -45,7 +45,7 @@ section h1 {
 }
 
 #product_list div:nth-child(1) img {
-  width: 100%;
+  width: 200px;
   height: auto;
 
   mix-blend-mode: darken;
@@ -59,8 +59,7 @@ section h1 {
   flex-direction: column;
   justify-content: start;
 
-  padding-top: 20px;
-  padding-left: 20px;
+  padding: 20px 0 20px 20px;
 }
 
 #product_list div:nth-child(2) h2 {
