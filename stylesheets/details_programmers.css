@@ -5,7 +5,8 @@ main {
 }
 
 main > div {
-  width: calc(100% - 80px);
+  /* width: calc(100% - 80px); */
+  width: calc(100% - 10px);
   max-width: 1030px;
 
   display: grid;
@@ -17,7 +18,8 @@ main > div {
   box-shadow: var(--e-big-shadow);
   background-color: var(--c-background-2);
 
-  padding: 20px;
+  /* padding: 20px; */
+  padding: 0;
 }
 
 section {
@@ -62,7 +64,7 @@ section h2 {
   border-radius: 10px;
   background-color: var(--c-background-1);
 
-  padding: 20px;
+  padding: 15px;
 }
 
 #description_section img {
