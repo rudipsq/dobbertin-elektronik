@@ -1,6 +1,7 @@
 function main() {
   // TEST:
   let jsonObject = createNewTemplateJson(
+    "en",
     "adapter",
     "DIL8/BGA8-3 ZIF-CS",
     "70-2863",
@@ -82,7 +83,7 @@ function main() {
       { link: "F", name: "BeeProg2" },
       { link: "F", name: "BeeProg2C" },
     ],
-    "default_en"
+    "default"
   );
   // let jsonObject = createNewTemplateJson(
   //   "ap1",
@@ -214,6 +215,7 @@ function getTableLink(jsonObject) {
 }
 
 function createNewTemplateJson(
+  _language,
   _type,
   _name,
   _orderNumber,
@@ -233,6 +235,7 @@ function createNewTemplateJson(
   const _id = nameToId(_name);
 
   let jsonObject = {
+    language: _language, // can be "en" or "de"
     id: _id, // can be "adapter", "ap1", "ap3"
     type: _type, // string
     name: _name, // string
@@ -248,7 +251,7 @@ function createNewTemplateJson(
     manualObjectArray: _manualObjectArray,
     packagesObjectArray: _packagesObjectArray,
     programmersObjectArray: _programmersObjectArray,
-    programmersNote: _programmersNote, // can be "none", "default_en", "default_de", a custom text
+    programmersNote: _programmersNote, // can be "none", "default" or a custom text
   };
 
   return jsonObject;
@@ -294,12 +297,36 @@ function generateTemplateString(jsonObject) {
   if (data.programmersObjectArray) {
     programmers_section = generateProgrammersSection(
       data.programmersObjectArray,
-      data.programmersNote
+      data.programmersNote,
+      data.language
     );
   }
 
+  // language switcher
+  let languageString;
+  let languageSwitch;
+
+  console.log(data.language);
+  if (data.language != "de") {
+    languageString = `
+    <img src="../../../img/icon/english.png" alt="british flag" />
+    <img src="../../../img/icon/german.png" alt="german flag" />`;
+
+    console.log(1);
+
+    languageSwitch = "de";
+  } else {
+    languageString = `
+    <img src="../../../img/icon/german.png" alt="german flag" />
+    <img src="../../../img/icon/english.png" alt="british flag" />`;
+
+    console.log(1);
+
+    languageSwitch = "en";
+  }
+
   let string = `<!DOCTYPE html>
-            <html lang="de">
+            <html lang="${data.language}">
               <head>
                 <meta charset="UTF-8" />
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -331,6 +358,12 @@ function generateTemplateString(jsonObject) {
                         data.type === "ap3" ? 'class="active"' : ""
                       }>AP3 Modules</a>
                     </nav>
+
+                     <div id="language_switcher">
+                      <button onclick="switchLanguage('${languageSwitch}')">
+                        ${languageString}
+                      </button>
+                    </div>
                   </div>
                 </header>
 
@@ -535,7 +568,11 @@ function generatePackagesSection(packagesObjectArray) {
   return string;
 }
 
-function generateProgrammersSection(programmersObjectArray, programmersNote) {
+function generateProgrammersSection(
+  programmersObjectArray,
+  programmersNote,
+  language
+) {
   let aTagString = "";
 
   for (const programmerObject of programmersObjectArray) {
@@ -545,12 +582,12 @@ function generateProgrammersSection(programmersObjectArray, programmersNote) {
   let note = "";
 
   switch (programmersNote) {
-    case "default_en":
-      note += `<p class="italic">Note: This programming adapter / module may not support all devices in the package(s) mentioned above on your programmer. Please, verify situation for particular device(s) you are going to work with using actual Device list of your programmer.</p>`;
-
-      break;
-    case "default_de":
-      note += `<p class="italic">Note: This programming adapter / module may not support all devices in the package(s) mentioned above on your programmer. Please, verify situation for particular device(s) you are going to work with using actual Device list of your programmer.</p>`;
+    case "default":
+      if (language == "de") {
+        note += `<p class="italic">Note: This programming adapter / module may not support all devices in the package(s) mentioned above on your programmer. Please, verify situation for particular device(s) you are going to work with using actual Device list of your programmer.</p>`;
+      } else {
+        note += `<p class="italic">Note: This programming adapter / module may not support all devices in the package(s) mentioned above on your programmer. Please, verify situation for particular device(s) you are going to work with using actual Device list of your programmer.</p>`;
+      }
 
       break;
     case "none":
