@@ -210,30 +210,31 @@ section ul {
 
 /* - - - FOOTER - - - */
 footer {
-  width: 100%;
+  width: calc(100% - 40px);
   /* padding-top: 80px; */
+
+  /* width: 100%; */
+
+  padding: 20px;
+
+  display: flex;
 }
 
 footer > div {
-  height: 108px;
-
-  display: flex;
-
-  margin: 20px;
-  padding: 5px;
-  padding-right: 20px;
-  /* border-radius: 15px; */
+  width: 100%;
 
   background-color: var(--c-background-2);
 
   border-radius: 20px;
   border: solid var(--c-background-3) 1px;
-  /* box-shadow: 0px 6px 0px var(--c-background-3); */
+  box-shadow: 0px 6px 0px var(--c-background-3);
+
+  padding: 15px;
 
   box-shadow: var(--e-big-shadow);
 }
 
-#footer_left {
+/* #footer_left {
   width: 260px;
 
   display: flex;
@@ -243,9 +244,9 @@ footer > div {
   border-radius: 10px;
 
   padding: 10px;
-}
+} */
 
-#footer_right {
+/* #footer_right {
   height: 100%;
 
   display: flex;
@@ -256,5 +257,57 @@ footer > div {
   text-align: end;
 
   margin-left: auto;
-  /* padding: 10px; */
+} */
+
+footer > div > div {
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* justify-content: end; */
+  gap: 4px;
+}
+
+footer div:nth-child(1) {
+  float: left;
+}
+
+footer div:nth-child(2) {
+  float: right;
+
+  margin-left: 20px;
+  text-align: end;
+}
+
+@media screen and (max-width: 529px) {
+  /* Your CSS rules here */
+  footer > div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  footer > div > div {
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    /* justify-content: end; */
+    gap: 6px;
+  }
+
+  footer div:nth-child(1) {
+    float: none;
+    text-align: center;
+
+    margin-bottom: 6px;
+  }
+
+  footer div:nth-child(2) {
+    float: none;
+    margin: 0;
+
+    text-align: center;
+  }
 }
