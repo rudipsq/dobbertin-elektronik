@@ -6,13 +6,13 @@
 
 ### Default Seite erstellen
 - [x] navbar: logo, links zu produkt seiten
-- [ ] navbar: language switcher
-- [ ] footer
+- [x] navbar: language switcher
+- [x] footer
 
 
 ### Programmer Template
 - [x] description section abaendern (css und html von adapter template)
-- [ ] text sections hinzufuegen (basierend auf adapter manual)
+- [x] text sections hinzufuegen (basierend auf adapter manual)
 - [ ] iframe dynamische daten, falls dsgvo konform
 
 

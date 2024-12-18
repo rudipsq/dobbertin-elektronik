@@ -1,0 +1,46 @@
+main {
+  min-height: auto;
+
+  display: flex;
+}
+
+main > div {
+  width: calc(100% - 10px);
+  max-width: 1030px;
+
+  display: grid;
+  grid-template-columns: 1fr 315px;
+  gap: 0;
+
+  border-radius: 20px;
+  border: solid var(--c-background-3) 1px;
+  box-shadow: var(--e-big-shadow);
+  background-color: var(--c-background-2);
+
+  /* padding: 20px; */
+  padding: 0px;
+}
+
+@media screen and (max-width: 680px) {
+  main > div {
+    padding: 0px;
+  }
+}
+
+section {
+  width: auto;
+
+  grid-column: span 2;
+
+  box-shadow: none;
+  border: none;
+  border-radius: 0;
+
+  background-color: transparent;
+}
+
+section h2 {
+  margin-top: 36px;
+}
+
+/* - - - SECTIONS - - - */

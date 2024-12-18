@@ -4,8 +4,141 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+
+    <link rel="stylesheet" href="../stylesheets/template_generator.css" />
   </head>
   <body>
+    <main>
+      <div>
+        <section id="basic_information_section">
+          <h2>Basic Information</h2>
+          <div>
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" />
+          </div>
+
+          <div>
+            <label for="type">Type</label>
+            <select id="type" name="type">
+              <option value="adapter">Adapter</option>
+              <option value="ap1">AP1 Modul</option>
+              <option value="ap3">AP3 Modul</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="order_number">Order Number</label>
+            <input type="text" name="order_number" id="order_number" />
+          </div>
+
+          <div>
+            <label for="price">Price</label>
+            <input type="text" name="price" id="price" />
+          </div>
+
+          <div>
+            <label for="socket">Socket</label>
+            <input type="text" name="socket" id="socket" />
+          </div>
+
+          <div>
+            <label for="bottom">Bottom</label>
+            <input type="text" name="bottom" id="bottom" />
+          </div>
+
+          <div>
+            <label for="class">Class</label>
+            <input type="text" name="class" id="class" />
+          </div>
+
+          <div>
+            <label for="subclass">Subclass</label>
+            <input type="text" name="subclass" id="subclass" />
+          </div>
+
+          <div>
+            <label for="image1">Image 1 file name</label>
+            <input type="text" name="image1" id="image1" />
+          </div>
+
+          <div>
+            <label for="image2">Image 2 file name</label>
+            <input type="text" name="image2" id="image2" />
+          </div>
+        </section>
+
+        <section id="description_section">
+          <h2>short description</h2>
+
+          <div id="description">
+            <div>
+              <button onclick="removeElement(this)">Remove Line</button>
+              <input type="text" />
+              <label>is Bold?</label>
+              <input type="checkbox" />
+            </div>
+          </div>
+
+          <button onclick="addMultiValueToPage('description')">
+            Add Text Field
+          </button>
+        </section>
+
+        <section id="manual_section">
+          <h2>manual</h2>
+
+          <div id="manual">
+            <div>
+              <button onclick="removeElement(this)">Remove Line</button>
+              <input type="text" />
+              <label>is Bold?</label>
+              <input type="checkbox" />
+            </div>
+          </div>
+
+          <button onclick="addMultiValueToPage('manual')">
+            Add Text Field
+          </button>
+        </section>
+
+        <section id="package_section">
+          <h2>package</h2>
+
+          <div id="package">
+            <div>
+              <button onclick="removeElement(this)">Remove Package</button>
+              <div><label>name</label><input type="text" /></div>
+              <div><label>image small</label><input type="text" /></div>
+              <div><label>image big</label><input type="text" /></div>
+            </div>
+          </div>
+
+          <button onclick="addPackageInputToPage()">Add Package</button>
+        </section>
+
+        <section id="programmers_section">
+          <h2>programmers</h2>
+
+          <div id="programmers">
+            <div>
+              <button onclick="removeElement(this)">Remove Package</button>
+              <div><label>name</label><input type="text" /></div>
+              <div><label>link</label><input type="text" /></div>
+            </div>
+          </div>
+
+          <button onclick="addProgrammersInputToPage()">Add Package</button>
+
+          <div>
+            <label for="programmers_note">Note</label>
+            <input type="text" name="programmers_note" id="programmers_note" />
+          </div>
+        </section>
+
+        <button id="generate_button" onclick="main()">Generate Template</button>
+      </div>
+    </main>
+
     <script src="../scripts/template_generator.js"></script>
   </body>
 </html>

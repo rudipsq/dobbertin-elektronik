@@ -1,191 +1,113 @@
-function main() {
+function main(language = "en", debug = false) {
   // TEST:
-  let jsonObject = createNewTemplateJson(
-    "en",
-    "adapter",
-    "DIL8/BGA8-3 ZIF-CS",
-    "70-2863",
-    "Ask for Price",
-    "ZIF BGA8, ClamShell type",
-    "2x13 pins, square, 0.6x0.6mm, rows spacing 600mil",
-    "Universal",
-    "DIL/BGA",
-    [
-      {
-        text: "universal programming adapter for STMicroelectronics M24M01-DFCS, M95M01-DFCS devices in WLCSP8 package",
-      },
-      {
-        text: "used ZIF socket may accept one or more variants of supported package, different in ball diameter, ball high and/or body thickness, see section Accepted package(s)",
-      },
-      {
-        text: "operating (mechanical) warranty of ZIF socket - 10,000 actuations",
-      },
-      {
-        text: "supported from PG4UW software version 3.97k",
-      },
-      {
-        text: "made in Slovakia",
-      },
-    ],
-    "con2863b.jpg",
-    "con2863b1.jpg",
-    [
-      {
-        text: "Protect the contacts of adapter connectors and ZIF socket from contamination. Any dirt and/or fat on contacts may cause errors during programming.",
-        isBold: true,
-      },
-      {
-        text: "Usage of vacuum pick-up tool is expected for device handling.",
-        isBold: true,
-      },
-      {
-        text: "Proceed with care! Incorrect insertion of adapter in programmer ZIF socket or device in adapter ZIF socket may lead to programmed device damage.",
-        isBold: true,
-      },
-      {
-        text: "",
-      },
-      {
-        text: "Insert adapter into programmer ZIF socket. If you are in doubts about orientation of the adapter in programmer ZIF socket, there is a rule of thumb - orientation of adapter name text is the same as orientation of the text on the top of programmer.",
-      },
-      {
-        text: "Visually check the placement of adapter in programmer ZIF socket.",
-      },
-      {
-        text: "Release the pawl on adapter ZIF socket to open it. The socket cap will open by spring force. Insert the device into adapter ZIF socket. The correct position of the programmed device is shown on PCB of the adapter. The reference corner (e.g. position of pin A1) of the device is indicated by dot, by number 1, by bevelled corner or by any combination of mentioned.",
-      },
-      {
-        text: "Visually check the placement of programmed device in adapter ZIF socket. If it looks OK, close adapter ZIF socket cap by hand and secure the pawl.",
-      },
-      {
-        text: "To take out the device from adapter, release the pawl on adapter ZIF socket and remove the device.",
-      },
-      {
-        text: "When you finish the work with adapter, remove it from programmer ZIF socket.",
-      },
-      {
-        text: "",
-      },
-      {
-        text: "Operating conditions: temperature 5°C ÷ 40°C (41°F ÷ 104°F), humidity 20% ÷ 80% non-condensing.",
-      },
-    ],
-    [
-      {
-        name: "BGA package",
-        image1: "bga1p.gif",
-        image2: "bgauni1m.gif",
-      },
-    ],
-    [
-      { link: "D", name: "BeeHive208S" },
-      { link: "E", name: "BeeHive240" },
-      { link: "F", name: "BeeProg2" },
-      { link: "F", name: "BeeProg2C" },
-    ],
-    "default"
-  );
-  // let jsonObject = createNewTemplateJson(
-  //   "ap1",
-  //   "AP1 SSOP42 ZIF 330mil",
-  //   "71-1866",
-  //   "280.00 € excl. VAT",
-  //   "ZIF SSOP42, OpenTop type",
-  //   "2 female connectors by 32 pins, DIN41612 B/2",
-  //   "Universal",
-  //   "(T)SSOP",
-  //   [
-  //     {
-  //       text: "universal programming module for devices in SSOP package, body 300mil, 0.4mm pitch",
-  //       isBold: true,
-  //     },
-  //     {
-  //       text: "operating (mechanical) warranty of ZIF socket - 10,000 actuations",
-  //     },
-  //   ],
-  //   "../../../img/pic/mod4676b.jpg",
-  //   "",
-  //   [
-  //     {
-  //       text: "Programmer don`t need to be switched off and SW can be running during inserting/removing programming module",
-  //       isBold: true,
-  //     },
-  //     {
-  //       text: "Protect the contacts of module connectors and ZIF socket from contamination. Any dirt and/or fat on contacts may cause errors during programming.",
-  //       isBold: true,
-  //     },
-  //     {
-  //       text: "",
-  //     },
-  //     {
-  //       text: "Unscrew 2 knurled thumb screws. Insert programming module into Programming Module Interface connectors, until it clicks. Due to connectors shape, only one orientation and position of programming module in Programming Module",
-  //     },
-  //   ],
-  //   [
-  //     {
-  //       name: "SSOP42",
-  //       image1: "../../../img/pic/bga1p.gif",
-  //       image2: "../../../img/pic/bgauni1m.gif",
-  //     },
-  //     {
-  //       name: "SSOP43",
-  //       image1: "../../../img/pic/bga1p.gif",
-  //       image2: "../../../img/pic/bgauni1m.gif",
-  //     },
-  //   ],
-  //   [
-  //     { link: "D", name: "BeeHive240AP" },
-  //     { link: "E", name: "BeeHive240AP-AU" },
-  //     { link: "F", name: "BeeProg2AP" },
-  //   ]
-  // );
+  let jsonObject;
 
-  // let jsonObject = createNewTemplateJson(
-  //   "TESTID",
-  //   "AP1 SSOP42 ZIF 330mil",
-  //   "71-1866",
-  //   "280.00 € excl. VAT",
-  //   "ZIF SSOP42, OpenTop type",
-  //   "2 female connectors by 32 pins, DIN41612 B/2",
-  //   "Universal",
-  //   "(T)SSOP",
-  //   [
-  //     {
-  //       text: "universal programming module for devices in SSOP package, body 300mil, 0.4mm pitch",
-  //       bold: true,
-  //     },
-  //     {
-  //       text: "operating (mechanical) warranty of ZIF socket - 10,000 actuations",
-  //     },
-  //   ],
-  //   "X",
-  //   "Y",
-  //   [
-  //     {
-  //       text: "Programmer don`t need to be switched off and SW can be running during inserting/removing programming module",
-  //       bold: true,
-  //     },
-  //     {
-  //       text: "Protect the contacts of module connectors and ZIF socket from contamination. Any dirt and/or fat on contacts may cause errors during programming.",
-  //       bold: true,
-  //     },
-  //     {
-  //       text: "",
-  //     },
-  //     {
-  //       text: "Unscrew 2 knurled thumb screws. Insert programming module into Programming Module Interface connectors, until it clicks. Due to connectors shape, only one orientation and position of programming module in Programming Module",
-  //     },
-  //   ],
-  //   [
-  //     { name: "SSOP42", image1: "Z", image2: "A" },
-  //     { name: "SSOP43", image1: "B", image2: "C" },
-  //   ],
-  //   [
-  //     { link: "D", name: "BeeHive240AP" },
-  //     { link: "E", name: "BeeHive240AP-AU" },
-  //     { link: "F", name: "BeeProg2AP" },
-  //   ]
-  // );
+  if (debug) {
+    jsonObject = createNewTemplateJson(
+      "en",
+      "adapter",
+      "DIL8/BGA8-3 ZIF-CS",
+      "70-2863",
+      "Ask for Price",
+      "ZIF BGA8, ClamShell type",
+      "2x13 pins, square, 0.6x0.6mm, rows spacing 600mil",
+      "Universal",
+      "DIL/BGA",
+      [
+        {
+          text: "universal programming adapter for STMicroelectronics M24M01-DFCS, M95M01-DFCS devices in WLCSP8 package",
+        },
+        {
+          text: "used ZIF socket may accept one or more variants of supported package, different in ball diameter, ball high and/or body thickness, see section Accepted package(s)",
+        },
+        {
+          text: "operating (mechanical) warranty of ZIF socket - 10,000 actuations",
+        },
+        {
+          text: "supported from PG4UW software version 3.97k",
+        },
+        {
+          text: "made in Slovakia",
+        },
+      ],
+      "con2863b.jpg",
+      "con2863b1.jpg",
+      [
+        {
+          text: "Protect the contacts of adapter connectors and ZIF socket from contamination. Any dirt and/or fat on contacts may cause errors during programming.",
+          isBold: true,
+        },
+        {
+          text: "Usage of vacuum pick-up tool is expected for device handling.",
+          isBold: true,
+        },
+        {
+          text: "Proceed with care! Incorrect insertion of adapter in programmer ZIF socket or device in adapter ZIF socket may lead to programmed device damage.",
+          isBold: true,
+        },
+        {
+          text: "",
+        },
+        {
+          text: "Insert adapter into programmer ZIF socket. If you are in doubts about orientation of the adapter in programmer ZIF socket, there is a rule of thumb - orientation of adapter name text is the same as orientation of the text on the top of programmer.",
+        },
+        {
+          text: "Visually check the placement of adapter in programmer ZIF socket.",
+        },
+        {
+          text: "Release the pawl on adapter ZIF socket to open it. The socket cap will open by spring force. Insert the device into adapter ZIF socket. The correct position of the programmed device is shown on PCB of the adapter. The reference corner (e.g. position of pin A1) of the device is indicated by dot, by number 1, by bevelled corner or by any combination of mentioned.",
+        },
+        {
+          text: "Visually check the placement of programmed device in adapter ZIF socket. If it looks OK, close adapter ZIF socket cap by hand and secure the pawl.",
+        },
+        {
+          text: "To take out the device from adapter, release the pawl on adapter ZIF socket and remove the device.",
+        },
+        {
+          text: "When you finish the work with adapter, remove it from programmer ZIF socket.",
+        },
+        {
+          text: "",
+        },
+        {
+          text: "Operating conditions: temperature 5°C ÷ 40°C (41°F ÷ 104°F), humidity 20% ÷ 80% non-condensing.",
+        },
+      ],
+      [
+        {
+          name: "BGA package",
+          image1: "bga1p.gif",
+          image2: "bgauni1m.gif",
+        },
+      ],
+      [
+        { link: "D", name: "BeeHive208S" },
+        { link: "E", name: "BeeHive240" },
+        { link: "F", name: "BeeProg2" },
+        { link: "F", name: "BeeProg2C" },
+      ],
+      "default"
+    );
+  } else {
+    jsonObject = createNewTemplateJson(
+      language,
+      getInputValue("type"),
+      getInputValue("name"),
+      getInputValue("order_number"),
+      getInputValue("price"),
+      getInputValue("socket"),
+      getInputValue("bottom"),
+      getInputValue("class"),
+      getInputValue("subclass"),
+      getMultiValue("description"),
+      getInputValue("image1"),
+      getInputValue("image2"),
+      getMultiValue("manual"),
+      getPackageValue(),
+      getProgrammersValue(),
+      getInputValue("programmers_note")
+    );
+  }
 
   let string = generateTemplateString(jsonObject);
 
@@ -193,6 +115,9 @@ function main() {
   downloadFileFromString(string, jsonObject);
 }
 
+//*
+//* - - - Back-End
+//*
 function downloadFileFromString(htmlString, jsonObject) {
   const content = htmlString;
   const blob = new Blob([content], { type: "text/html" });
@@ -412,7 +337,7 @@ function nameToId(string) {
 }
 
 //*
-//* - - - Section generation functions
+//* - - - Back-End: Section generation functions
 //*
 function generateTitleSection(name, orderNumber, price) {
   let priceString;
@@ -608,4 +533,152 @@ function generateProgrammersSection(
                 </section>`;
 
   return string;
+}
+
+//*
+//* - - - Front-End
+//*
+function getInputValue(elementId) {
+  return document.getElementById(elementId).value;
+}
+
+function getMultiValue(containerId) {
+  const parent = document.getElementById(containerId);
+
+  const objectArray = [];
+
+  for (const child of parent.children) {
+    const inputValue = child.children[1].value;
+    const checkboxValue = child.children[3].checked;
+
+    objectArray.push({
+      text: inputValue,
+      isBold: checkboxValue,
+    });
+  }
+
+  return objectArray;
+}
+
+function addMultiValueToPage(containerId) {
+  const div = document.createElement("div");
+  const button = document.createElement("button");
+  const input = document.createElement("input");
+  const lable = document.createElement("lable");
+  const checkbox = document.createElement("input");
+
+  button.onclick = function () {
+    removeElement(this);
+  };
+  button.innerHTML = "Remove Line";
+  lable.innerHTML = "is Bold?";
+  checkbox.type = "checkbox";
+
+  div.appendChild(button);
+  div.appendChild(input);
+  div.appendChild(lable);
+  div.appendChild(checkbox);
+
+  document.getElementById(containerId).appendChild(div);
+}
+
+function getPackageValue() {
+  const parent = document.getElementById("package");
+
+  const objectArray = [];
+
+  for (const child of parent.children) {
+    const inputValue1 = child.children[1].children[1].value;
+    const inputValue2 = child.children[2].children[1].value;
+    const inputValue3 = child.children[3].children[1].value;
+
+    objectArray.push({
+      name: inputValue1,
+      image1: inputValue2,
+      image2: inputValue3,
+    });
+  }
+
+  return objectArray;
+}
+
+function addPackageInputToPage() {
+  const container = document.createElement("div");
+
+  const removeButton = document.createElement("button");
+  removeButton.textContent = "Remove Package";
+  removeButton.onclick = function () {
+    removeElement(this);
+  };
+  container.appendChild(removeButton);
+
+  const fields = [
+    { label: "name", type: "text" },
+    { label: "image small", type: "text" },
+    { label: "image big", type: "text" },
+  ];
+
+  fields.forEach((field) => {
+    const fieldDiv = document.createElement("div");
+    const label = document.createElement("label");
+    label.textContent = field.label;
+    const input = document.createElement("input");
+    input.type = field.type;
+    fieldDiv.appendChild(label);
+    fieldDiv.appendChild(input);
+    container.appendChild(fieldDiv);
+  });
+
+  document.getElementById("package").appendChild(container);
+}
+
+function getProgrammersValue() {
+  const parent = document.getElementById("programmers");
+
+  const objectArray = [];
+
+  for (const child of parent.children) {
+    const inputValue1 = child.children[1].children[1].value;
+    const inputValue2 = child.children[2].children[1].value;
+
+    objectArray.push({
+      name: inputValue1,
+      link: inputValue2,
+    });
+  }
+
+  return objectArray;
+}
+
+function addProgrammersInputToPage() {
+  const container = document.createElement("div");
+
+  const removeButton = document.createElement("button");
+  removeButton.textContent = "Remove Package";
+  removeButton.onclick = function () {
+    removeElement(this);
+  };
+  container.appendChild(removeButton);
+
+  const fields = [
+    { label: "name", type: "text" },
+    { label: "link", type: "text" },
+  ];
+
+  fields.forEach((field) => {
+    const fieldDiv = document.createElement("div");
+    const label = document.createElement("label");
+    label.textContent = field.label;
+    const input = document.createElement("input");
+    input.type = field.type;
+    fieldDiv.appendChild(label);
+    fieldDiv.appendChild(input);
+    container.appendChild(fieldDiv);
+  });
+
+  document.getElementById("programmers").appendChild(container);
+}
+
+function removeElement(element) {
+  console.log(element.parentNode.remove());
 }
