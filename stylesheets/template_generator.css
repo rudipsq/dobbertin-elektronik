@@ -76,6 +76,10 @@ section > div {
 
 section input:not([type="checkbox"]) {
   flex: 1;
+
+  border: none;
+  border-radius: 5px;
+  border: solid rgba(0, 0, 0, 0.2) 1px;
 }
 
 section textarea {
@@ -83,9 +87,47 @@ section textarea {
   resize: vertical;
 }
 
-label {
+section:not(#description_section, #manual_section) label {
   width: 100px;
   display: block;
+}
+
+#basic_information_section {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+#basic_information_section div:focus-within,
+#description_section div div:focus-within,
+#manual_section div div:focus-within,
+#package_section div div:focus-within,
+#optional_section div:focus-within,
+#programmers_section div div:focus-within,
+#programmers_section > div:nth-child(5):focus-within {
+  border-radius: 5px;
+  background-color: var(--c-background-3);
+}
+
+#programmers,
+#package {
+  padding-top: 16px;
+}
+
+/* - - - buttons - - - */
+button {
+  border: none;
+  border-radius: 5px;
+  border: solid rgba(0, 0, 0, 0.2) 1px;
+
+  cursor: pointer;
+
+  padding: 4px;
+  margin-top: 4px;
+}
+
+.add_button {
+  background-color: rgb(0, 199, 0);
 }
 
 #generate_button {

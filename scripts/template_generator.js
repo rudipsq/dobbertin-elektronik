@@ -113,9 +113,10 @@ function main(language = "en", debug = false) {
       getMultiValue("description"),
       getInputValue("image1"),
       getInputValue("image2"),
+      getTableValue("wiring"),
       getMultiValue("manual"),
       getPackageValue(),
-      getTableValue(),
+      getTableValue("table"),
       getProgrammersValue(),
       getInputValue("programmers_note")
     );
@@ -167,6 +168,7 @@ function createNewTemplateJson(
   _descriptionObjectArray,
   _image1,
   _image2,
+  _wiringHtmlString,
   _manualObjectArray,
   _packagesObjectArray,
   _tableHtmlString,
@@ -189,6 +191,7 @@ function createNewTemplateJson(
     descriptionObjectArray: _descriptionObjectArray,
     image1: _image1, // filename with file ending
     image2: _image2, // filename with file ending
+    wiringHtmlString: _wiringHtmlString,
     manualObjectArray: _manualObjectArray,
     packagesObjectArray: _packagesObjectArray,
     tableHtmlString: _tableHtmlString,
@@ -222,6 +225,12 @@ function generateTemplateString(jsonObject) {
   // image
   let image_section = generateImageSection(data.image1, data.image2, data.type);
 
+  let wiring_section = "";
+
+  if (data.wiringHtmlString) {
+    wiring_section = `<section id="wiring_section">${data.wiringHtmlString}</section>`;
+  }
+
   // manual
   let manual_section = "";
   if (data.manualObjectArray) {
@@ -235,9 +244,7 @@ function generateTemplateString(jsonObject) {
   let table_section = "";
 
   if (data.tableHtmlString) {
-    table_section = `<section id="table_section">
-                        ${data.tableHtmlString}
-                    </section>`;
+    table_section = `<section id="table_section">${data.tableHtmlString}</section>`;
   }
 
   // programmers
@@ -315,6 +322,7 @@ function generateTemplateString(jsonObject) {
                     ${title_section}
                     ${description_section}
                     ${image_section}
+                    ${wiring_section}
                     ${manual_section}
                     ${packages_section}
                     ${table_section}
@@ -697,8 +705,8 @@ function addProgrammersInputToPage() {
   document.getElementById("programmers").appendChild(container);
 }
 
-function getTableValue() {
-  let htmlString = getInputValue("table");
+function getTableValue(elementId) {
+  let htmlString = getInputValue(elementId);
 
   htmlString = htmlString.replace(/class="[^"]*"/g, "");
   htmlString = htmlString.replace(/\s+class="[^"]*"/g, "");

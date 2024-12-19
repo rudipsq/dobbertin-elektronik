@@ -1,5 +1,5 @@
 :root {
-  --e-table-offset: 200px;
+  --e-table-offset: calc(var(--e-header-height) + 120px);
 }
 
 /* overrides */
@@ -127,7 +127,7 @@ td:nth-child(4) {
 /* - - - SEARCH - - - */
 #search {
   position: fixed;
-  top: 144px;
+  top: calc(var(--e-table-offset) - 55px);
 
   width: calc(100% - 46px);
   max-width: 1084px;
