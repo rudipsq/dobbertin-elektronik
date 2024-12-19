@@ -80,6 +80,17 @@ function main(language = "en", debug = false) {
           image2: "bgauni1m.gif",
         },
       ],
+      `<table class="table tien bgatable">
+        <tbody><tr><td class="table_caption">NAME</td><td class="table_caption">SYMBOL</td><td class="table_caption">MIN</td><td class="table_caption">NOM</td><td class="table_caption">MAX</td></tr>
+        <tr><td class="table_caption">Profile</td><td class="table_body">A</td><td class="table_body">0.5</td><td class="table_body">0.54</td><td class="table_body">0.58</td></tr>
+        <tr><td class="table_caption">Ball Height</td><td class="table_body">A1</td><td class="table_body">-</td><td class="table_body">0.19</td><td class="table_body">-</td></tr>
+        <tr><td class="table_caption">Body Thickness</td><td class="table_body">A2</td><td class="table_body">-</td><td class="table_body">0.35</td><td class="table_body">-</td></tr>
+        <tr><td class="table_caption">Ball Diameter</td><td class="table_body">b</td><td class="table_body">-</td><td class="table_body">0.27</td><td class="table_body">-</td></tr>
+        <tr><td class="table_caption">Body Size</td><td class="table_body">D</td><td class="table_body">-</td><td class="table_body">2.578</td><td class="table_body">2.598</td></tr>
+        <tr><td class="table_caption">Body Size</td><td class="table_body">E</td><td class="table_body">-</td><td class="table_body">1.716</td><td class="table_body">1.736</td></tr>
+        <tr><td class="table_caption">Ball Pitch</td><td class="table_body">e</td><td class="table_body">-</td><td class="table_body">0.5</td><td class="table_body">-</td></tr>
+        <tr><td class="table_caption">Ball Array D</td><td class="table_body">GD</td><td class="table_body">-</td><td class="table_body">5</td><td class="table_body">-</td></tr>
+        <tr><td class="table_caption">Ball Array E</td><td class="table_body">GE</td><td class="table_body">-</td><td class="table_body">3</td><td class="table_body">-</td></tr></tbody></table>`,
       [
         { link: "D", name: "BeeHive208S" },
         { link: "E", name: "BeeHive240" },
@@ -104,15 +115,19 @@ function main(language = "en", debug = false) {
       getInputValue("image2"),
       getMultiValue("manual"),
       getPackageValue(),
+      getTableValue(),
       getProgrammersValue(),
       getInputValue("programmers_note")
     );
   }
 
-  let string = generateTemplateString(jsonObject);
+  document.getElementById("table_link_output").innerText =
+    getTableLink(jsonObject);
 
-  console.log(getTableLink(jsonObject));
+  let string = generateTemplateString(jsonObject);
   downloadFileFromString(string, jsonObject);
+
+  console.log(jsonObject);
 }
 
 //*
@@ -154,6 +169,7 @@ function createNewTemplateJson(
   _image2,
   _manualObjectArray,
   _packagesObjectArray,
+  _tableHtmlString,
   _programmersObjectArray,
   _programmersNote
 ) {
@@ -175,6 +191,7 @@ function createNewTemplateJson(
     image2: _image2, // filename with file ending
     manualObjectArray: _manualObjectArray,
     packagesObjectArray: _packagesObjectArray,
+    tableHtmlString: _tableHtmlString,
     programmersObjectArray: _programmersObjectArray,
     programmersNote: _programmersNote, // can be "none", "default" or a custom text
   };
@@ -217,6 +234,12 @@ function generateTemplateString(jsonObject) {
   // table
   let table_section = "";
 
+  if (data.tableHtmlString) {
+    table_section = `<section id="table_section">
+                        ${data.tableHtmlString}
+                    </section>`;
+  }
+
   // programmers
   let programmers_section = "";
   if (data.programmersObjectArray) {
@@ -231,21 +254,16 @@ function generateTemplateString(jsonObject) {
   let languageString;
   let languageSwitch;
 
-  console.log(data.language);
   if (data.language != "de") {
     languageString = `
     <img src="../../../img/icon/english.png" alt="british flag" />
     <img src="../../../img/icon/german.png" alt="german flag" />`;
-
-    console.log(1);
 
     languageSwitch = "de";
   } else {
     languageString = `
     <img src="../../../img/icon/german.png" alt="german flag" />
     <img src="../../../img/icon/english.png" alt="british flag" />`;
-
-    console.log(1);
 
     languageSwitch = "en";
   }
@@ -486,9 +504,9 @@ function generatePackagesSection(packagesObjectArray) {
   }
 
   let string = `<section id="packages_section">
-              <h2>Accepted package(s)</h2>
-                ${packagesString}
-            </section>`;
+                  <h2>Accepted package(s)</h2>
+                    ${packagesString}
+                </section>`;
 
   return string;
 }
@@ -679,6 +697,15 @@ function addProgrammersInputToPage() {
   document.getElementById("programmers").appendChild(container);
 }
 
+function getTableValue() {
+  let htmlString = getInputValue("table");
+
+  htmlString = htmlString.replace(/class="[^"]*"/g, "");
+  htmlString = htmlString.replace(/\s+class="[^"]*"/g, "");
+
+  return htmlString;
+}
+
 function removeElement(element) {
-  console.log(element.parentNode.remove());
+  element.parentNode.remove();
 }

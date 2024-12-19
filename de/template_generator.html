@@ -3,8 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Document</title>
 
+    <link rel="stylesheet" href="../stylesheets/global.css" />
     <link rel="stylesheet" href="../stylesheets/template_generator.css" />
   </head>
   <body>
@@ -68,7 +70,7 @@
         </section>
 
         <section id="description_section">
-          <h2>short description</h2>
+          <h2>Short description</h2>
 
           <div id="description">
             <div>
@@ -85,7 +87,7 @@
         </section>
 
         <section id="manual_section">
-          <h2>manual</h2>
+          <h2>Manual</h2>
 
           <div id="manual">
             <div>
@@ -102,7 +104,7 @@
         </section>
 
         <section id="package_section">
-          <h2>package</h2>
+          <h2>Package(s)</h2>
 
           <div id="package">
             <div>
@@ -116,26 +118,55 @@
           <button onclick="addPackageInputToPage()">Add Package</button>
         </section>
 
+        <section id="table_section">
+          <h2>Optional table</h2>
+
+          <div>
+            <label for="table">Table HTML</label>
+            <!-- <input
+              type="text"
+              name="table"
+              id="table"
+              placeholder="<table class='...</table>"
+            /> -->
+
+            <textarea
+              name="table"
+              id="table"
+              placeholder="<table class='...</table>"
+            ></textarea>
+          </div>
+        </section>
+
         <section id="programmers_section">
-          <h2>programmers</h2>
+          <h2>Programmers</h2>
 
           <div id="programmers">
             <div>
-              <button onclick="removeElement(this)">Remove Package</button>
+              <button onclick="removeElement(this)">Remove Programmer</button>
               <div><label>name</label><input type="text" /></div>
               <div><label>link</label><input type="text" /></div>
             </div>
           </div>
 
-          <button onclick="addProgrammersInputToPage()">Add Package</button>
+          <button onclick="addProgrammersInputToPage()">Add Programmer</button>
 
+          <br /><br />
           <div>
             <label for="programmers_note">Note</label>
             <input type="text" name="programmers_note" id="programmers_note" />
           </div>
         </section>
 
-        <button id="generate_button" onclick="main()">Generate Template</button>
+        <section>
+          <div>
+            <button id="generate_button" onclick="main()">
+              Generate Template
+            </button>
+
+            <p id="table_link_output"></p>
+          </div>
+        </section>
       </div>
     </main>
 

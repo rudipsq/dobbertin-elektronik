@@ -217,6 +217,22 @@ section h2 {
   grid-column: span 2;
 }
 
+#table_section table {
+  border-collapse: collapse;
+}
+
+#table_section tbody :first-child {
+  font-weight: 700;
+}
+
+#table_section td {
+  border-bottom: solid rgb(199, 199, 199) 1px;
+}
+
+#table_section td:not(:first-child) {
+  padding-left: 18px;
+}
+
 /* - - - programmers section - - - */
 #programmers_section {
   grid-column: span 2;

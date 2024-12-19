@@ -2,6 +2,8 @@ main {
   min-height: auto;
 
   display: flex;
+
+  padding: 20px;
 }
 
 main > div {
@@ -37,10 +39,59 @@ section {
   border-radius: 0;
 
   background-color: transparent;
+
+  overflow: auto;
 }
 
 section h2 {
   margin-top: 36px;
 }
 
-/* - - - SECTIONS - - - */
+section > div {
+  display: flex;
+  gap: 8px;
+}
+
+#description_section > div,
+#manual_section > div {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  /* width: 100%; */
+}
+
+#description_section > div > div,
+#manual_section > div > div {
+  display: flex;
+  gap: 8px;
+
+  /* width: 100%; */
+}
+
+#description_section button,
+#manual_section button {
+  width: 100px;
+}
+
+section input:not([type="checkbox"]) {
+  flex: 1;
+}
+
+section textarea {
+  flex: 1;
+  resize: vertical;
+}
+
+label {
+  width: 100px;
+  display: block;
+}
+
+#generate_button {
+  height: 40px;
+
+  grid-column: span 2;
+
+  margin: 15px;
+}
