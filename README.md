@@ -7,6 +7,7 @@
 ### Default Seite erstellen
 - [x] navbar: logo, links zu produkt seiten
 - [x] navbar: language switcher
+- [ ] navbar: Language switch kleiner + eckig
 - [x] footer
 
 

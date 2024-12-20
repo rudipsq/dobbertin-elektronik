@@ -680,7 +680,7 @@ function addProgrammersInputToPage() {
   const container = document.createElement("div");
 
   const removeButton = document.createElement("button");
-  removeButton.textContent = "Remove Package";
+  removeButton.textContent = "Remove Programmer";
   removeButton.onclick = function () {
     removeElement(this);
   };
