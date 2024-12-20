@@ -162,14 +162,14 @@ header nav a:active {
 /* header language switcher */
 header #language_switcher button {
   position: absolute;
-  top: 13px;
-  right: 13px;
+  top: 3px;
+  right: 7px;
 
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
 
   border: none;
-  border-radius: 50px;
+  /* border-radius: 50px; */
 
   overflow: hidden;
   cursor: pointer;
@@ -218,8 +218,37 @@ header #language_switcher button img:nth-child(2):hover {
 
   header #language_switcher button {
     top: auto;
-    bottom: 8px;
+    bottom: 4px;
     right: 8px;
+  }
+
+  header nav :first-child {
+    position: absolute;
+    translate: -40px 22px;
+
+    width: 32px;
+    height: 32px;
+
+    font-size: 0;
+
+    background-image: url(../img/icon/home.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    border-radius: 0;
+
+    padding: 0;
+  }
+
+  header nav :first-child.active {
+    background-color: transparent;
+    outline: none;
+  }
+
+  header nav :last-child {
+    grid-column-start: 1;
+    grid-row-start: 3;
   }
 }
 

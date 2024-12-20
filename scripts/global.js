@@ -42,6 +42,4 @@ function updateHeaderHeight() {
     "--e-header-height",
     `${headerHeight - 19}px`
   );
-
-  console.log(headerHeight);
 }

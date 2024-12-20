@@ -48,6 +48,8 @@ section h1 {
   width: 200px;
   height: auto;
 
+  border-radius: 15px;
+
   mix-blend-mode: darken;
 }
 
@@ -70,6 +72,10 @@ section h1 {
 #product_list div:nth-child(2) ul {
   list-style: disc;
   font-size: 0.95em;
+}
+
+#product_list div:nth-child(2) li ul li {
+  list-style: circle;
 }
 
 @media screen and (max-width: 600px) {

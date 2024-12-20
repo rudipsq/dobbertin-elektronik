@@ -307,6 +307,7 @@ function generateTemplateString(jsonObject) {
                       <a href="../ap3-programming-modules/" ${
                         data.type === "ap3" ? 'class="active"' : ""
                       }>AP3 Modules</a>
+                      <a href="../accessories/">Accessories</a>
                     </nav>
 
                      <div id="language_switcher">
