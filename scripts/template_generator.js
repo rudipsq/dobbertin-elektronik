@@ -1,125 +1,59 @@
-function main(language = "en", debug = false) {
-  // TEST:
+function main(language = "en", _jsonObject = null) {
   let jsonObject;
 
-  if (debug) {
-    jsonObject = createNewTemplateJson(
-      "en",
-      "adapter",
-      "DIL8/BGA8-3 ZIF-CS",
-      "70-2863",
-      "Ask for Price",
-      "ZIF BGA8, ClamShell type",
-      "2x13 pins, square, 0.6x0.6mm, rows spacing 600mil",
-      "Universal",
-      "DIL/BGA",
-      [
-        {
-          text: "universal programming adapter for STMicroelectronics M24M01-DFCS, M95M01-DFCS devices in WLCSP8 package",
-        },
-        {
-          text: "used ZIF socket may accept one or more variants of supported package, different in ball diameter, ball high and/or body thickness, see section Accepted package(s)",
-        },
-        {
-          text: "operating (mechanical) warranty of ZIF socket - 10,000 actuations",
-        },
-        {
-          text: "supported from PG4UW software version 3.97k",
-        },
-        {
-          text: "made in Slovakia",
-        },
-      ],
-      "con2863b.jpg",
-      "con2863b1.jpg",
-      [
-        {
-          text: "Protect the contacts of adapter connectors and ZIF socket from contamination. Any dirt and/or fat on contacts may cause errors during programming.",
-          isBold: true,
-        },
-        {
-          text: "Usage of vacuum pick-up tool is expected for device handling.",
-          isBold: true,
-        },
-        {
-          text: "Proceed with care! Incorrect insertion of adapter in programmer ZIF socket or device in adapter ZIF socket may lead to programmed device damage.",
-          isBold: true,
-        },
-        {
-          text: "",
-        },
-        {
-          text: "Insert adapter into programmer ZIF socket. If you are in doubts about orientation of the adapter in programmer ZIF socket, there is a rule of thumb - orientation of adapter name text is the same as orientation of the text on the top of programmer.",
-        },
-        {
-          text: "Visually check the placement of adapter in programmer ZIF socket.",
-        },
-        {
-          text: "Release the pawl on adapter ZIF socket to open it. The socket cap will open by spring force. Insert the device into adapter ZIF socket. The correct position of the programmed device is shown on PCB of the adapter. The reference corner (e.g. position of pin A1) of the device is indicated by dot, by number 1, by bevelled corner or by any combination of mentioned.",
-        },
-        {
-          text: "Visually check the placement of programmed device in adapter ZIF socket. If it looks OK, close adapter ZIF socket cap by hand and secure the pawl.",
-        },
-        {
-          text: "To take out the device from adapter, release the pawl on adapter ZIF socket and remove the device.",
-        },
-        {
-          text: "When you finish the work with adapter, remove it from programmer ZIF socket.",
-        },
-        {
-          text: "",
-        },
-        {
-          text: "Operating conditions: temperature 5°C ÷ 40°C (41°F ÷ 104°F), humidity 20% ÷ 80% non-condensing.",
-        },
-      ],
-      [
-        {
-          name: "BGA package",
-          image1: "bga1p.gif",
-          image2: "bgauni1m.gif",
-        },
-      ],
-      `<table class="table tien bgatable">
-        <tbody><tr><td class="table_caption">NAME</td><td class="table_caption">SYMBOL</td><td class="table_caption">MIN</td><td class="table_caption">NOM</td><td class="table_caption">MAX</td></tr>
-        <tr><td class="table_caption">Profile</td><td class="table_body">A</td><td class="table_body">0.5</td><td class="table_body">0.54</td><td class="table_body">0.58</td></tr>
-        <tr><td class="table_caption">Ball Height</td><td class="table_body">A1</td><td class="table_body">-</td><td class="table_body">0.19</td><td class="table_body">-</td></tr>
-        <tr><td class="table_caption">Body Thickness</td><td class="table_body">A2</td><td class="table_body">-</td><td class="table_body">0.35</td><td class="table_body">-</td></tr>
-        <tr><td class="table_caption">Ball Diameter</td><td class="table_body">b</td><td class="table_body">-</td><td class="table_body">0.27</td><td class="table_body">-</td></tr>
-        <tr><td class="table_caption">Body Size</td><td class="table_body">D</td><td class="table_body">-</td><td class="table_body">2.578</td><td class="table_body">2.598</td></tr>
-        <tr><td class="table_caption">Body Size</td><td class="table_body">E</td><td class="table_body">-</td><td class="table_body">1.716</td><td class="table_body">1.736</td></tr>
-        <tr><td class="table_caption">Ball Pitch</td><td class="table_body">e</td><td class="table_body">-</td><td class="table_body">0.5</td><td class="table_body">-</td></tr>
-        <tr><td class="table_caption">Ball Array D</td><td class="table_body">GD</td><td class="table_body">-</td><td class="table_body">5</td><td class="table_body">-</td></tr>
-        <tr><td class="table_caption">Ball Array E</td><td class="table_body">GE</td><td class="table_body">-</td><td class="table_body">3</td><td class="table_body">-</td></tr></tbody></table>`,
-      [
-        { link: "D", name: "BeeHive208S" },
-        { link: "E", name: "BeeHive240" },
-        { link: "F", name: "BeeProg2" },
-        { link: "F", name: "BeeProg2C" },
-      ],
-      "default"
-    );
+  if (_jsonObject) {
+    jsonObject = _jsonObject;
   } else {
-    jsonObject = createNewTemplateJson(
-      language,
+    const jsonObjectEn = createNewTemplateJson(
+      "en",
       getInputValue("type"),
       getInputValue("name"),
       getInputValue("order_number"),
-      getInputValue("price", language),
-      getInputValue("socket", language),
-      getInputValue("bottom", language),
-      getInputValue("class", language),
-      getInputValue("subclass", language),
-      getMultiValue("description", language),
+      getInputValue("price", "en"),
+      getInputValue("socket", "en"),
+      getInputValue("bottom", "en"),
+      getInputValue("class", "en"),
+      getInputValue("subclass", "en"),
+      getMultiValue("description", "en"),
       getInputValue("image1"),
       getInputValue("image2"),
       getTableValue("wiring"),
-      getMultiValue("manual", language),
+      getMultiValue("manual", "en"),
       getPackageValue(),
       getTableValue("table"),
       getProgrammersValue(),
-      getInputValue("programmers_note", language)
+      getInputValue("programmers_note", "en")
     );
+
+    const jsonObjectDe = createNewTemplateJson(
+      "de",
+      getInputValue("type"),
+      getInputValue("name"),
+      getInputValue("order_number"),
+      getInputValue("price", "de"),
+      getInputValue("socket", "de"),
+      getInputValue("bottom", "de"),
+      getInputValue("class", "de"),
+      getInputValue("subclass", "de"),
+      getMultiValue("description", "de"),
+      getInputValue("image1"),
+      getInputValue("image2"),
+      getTableValue("wiring"),
+      getMultiValue("manual", "de"),
+      getPackageValue(),
+      getTableValue("table"),
+      getProgrammersValue(),
+      getInputValue("programmers_note", "de")
+    );
+
+    localStorage.setItem("last_template_en", JSON.stringify(jsonObjectEn));
+    localStorage.setItem("last_template_de", JSON.stringify(jsonObjectDe));
+
+    if (language == "en") {
+      jsonObject = jsonObjectEn;
+    } else {
+      jsonObject = jsonObjectDe;
+    }
   }
 
   document.getElementById("table_link_output").innerText =
@@ -131,29 +65,13 @@ function main(language = "en", debug = false) {
   console.log(jsonObject);
 }
 
+function regenerateLastTemplate(language = "en") {
+  main(language, JSON.parse(localStorage.getItem("last_template_" + language)));
+}
+
 //*
 //* - - - Back-End
 //*
-function downloadFileFromString(htmlString, jsonObject) {
-  const content = htmlString;
-  const blob = new Blob([content], { type: "text/html" });
-
-  const a = document.createElement("a");
-  a.href = URL.createObjectURL(blob);
-  a.download = jsonObject.orderNumber + ".html";
-  a.click();
-}
-
-function getTableLink(jsonObject) {
-  let string = `<tr data-href="${jsonObject.orderNumber}.html">
-                  <td>${jsonObject.name}</td>
-                  <td>${jsonObject.class}</td>
-                  <td>${jsonObject.subclass}</td>
-                  <td>${jsonObject.orderNumber}</td>
-                </tr>`;
-
-  return string;
-}
 
 function createNewTemplateJson(
   _language,
@@ -179,8 +97,8 @@ function createNewTemplateJson(
 
   let jsonObject = {
     language: _language, // can be "en" or "de"
-    id: _id, // can be "adapter", "ap1", "ap3"
-    type: _type, // string
+    id: _id,
+    type: _type, // can be "adapter", "ap1", "ap3"
     name: _name, // string
     orderNumber: _orderNumber, // string
     price: _price, // string
@@ -209,7 +127,8 @@ function generateTemplateString(jsonObject) {
   let title_section = generateTitleSection(
     data.name,
     data.orderNumber,
-    data.price
+    data.price,
+    data.language
   );
 
   // description
@@ -303,11 +222,17 @@ function generateTemplateString(jsonObject) {
                       }>Adapters</a>
                       <a href="../ap1-programming-modules/" ${
                         data.type === "ap1" ? 'class="active"' : ""
-                      }>AP1 Modules</a>
+                      }>${
+    data.language === "en" ? "AP1 Modules" : "AP1 Module"
+  }</a>
                       <a href="../ap3-programming-modules/" ${
                         data.type === "ap3" ? 'class="active"' : ""
-                      }>AP3 Modules</a>
-                      <a href="../accessories/">Accessories</a>
+                      }>${
+    data.language === "en" ? "AP3 Modules" : "AP3 Module"
+  }</a>
+                      <a href="../accessories/">${
+                        data.language === "en" ? "Accessories" : "Accessories"
+                      }</a>
                     </nav>
 
                      <div id="language_switcher">
@@ -359,20 +284,49 @@ function generateTemplateString(jsonObject) {
   return string;
 }
 
+function downloadFileFromString(htmlString, jsonObject) {
+  const content = htmlString;
+  const blob = new Blob([content], { type: "text/html" });
+
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = jsonObject.orderNumber + ".html";
+  a.click();
+}
+
+function getTableLink(jsonObject) {
+  let string = `<tr data-href="${jsonObject.orderNumber}.html">
+                  <td>${jsonObject.name}</td>
+                  <td>${jsonObject.class}</td>
+                  <td>${jsonObject.subclass}</td>
+                  <td>${jsonObject.orderNumber}</td>
+                </tr>`;
+
+  return string;
+}
+
 function nameToId(string) {
   return string.replace(/[/ ]/g, "_");
 }
 
 //*
-//* - - - Back-End: Section generation functions
+//* - - - Back-End: Section generation
 //*
-function generateTitleSection(name, orderNumber, price) {
+function generateTitleSection(name, orderNumber, price, language) {
   let priceString;
 
-  if (price) {
-    priceString = `Price: ${price}`;
+  if (language == "en") {
+    if (price) {
+      priceString = `Price: ${price}`;
+    } else {
+      priceString = `Ask for price`;
+    }
   } else {
-    priceString = `Ask for price`;
+    if (price) {
+      priceString = `Preis: ${price}`;
+    } else {
+      priceString = `Preis nachfragen`;
+    }
   }
 
   let string = `<section id="title_section">
@@ -565,6 +519,7 @@ function generateProgrammersSection(
 //*
 //* - - - Front-End
 //*
+// get the value of a single input with an id
 function getInputValue(elementId, language = null) {
   let newElementId = elementId;
   if (language) {
@@ -586,6 +541,7 @@ function getInputValue(elementId, language = null) {
   return value;
 }
 
+// multi line inputs like short description and adapter manual
 function getMultiValue(containerId, languageKey = "en") {
   const parent = document.getElementById(containerId);
 
@@ -595,8 +551,11 @@ function getMultiValue(containerId, languageKey = "en") {
   if (languageKey == "de") index = 2;
 
   for (const child of parent.children) {
-    const inputValue = child.children[index].value;
-    const checkboxValue = child.children[3].checked;
+    let inputValue = child.children[index].value;
+    if (inputValue == "") inputValue = child.children[1].value;
+
+    const checkboxValue = child.children[4].checked;
+    console.log(child.children[4]);
 
     objectArray.push({
       text: inputValue,
@@ -631,6 +590,7 @@ function addMultiValueToPage(containerId) {
   document.getElementById(containerId).appendChild(div);
 }
 
+// package section
 function getPackageValue() {
   const parent = document.getElementById("package");
 
@@ -681,53 +641,7 @@ function addPackageInputToPage() {
   document.getElementById("package").appendChild(container);
 }
 
-// function getProgrammersValue() {
-//   const parent = document.getElementById("programmers");
-
-//   const objectArray = [];
-
-//   for (const child of parent.children) {
-//     const inputValue1 = child.children[1].children[1].value;
-//     const inputValue2 = child.children[2].children[1].value;
-
-//     objectArray.push({
-//       name: inputValue1,
-//       link: inputValue2,
-//     });
-//   }
-
-//   return objectArray;
-// }
-
-// function addProgrammersInputToPage() {
-//   const container = document.createElement("div");
-
-//   const removeButton = document.createElement("button");
-//   removeButton.textContent = "Remove Programmer";
-//   removeButton.onclick = function () {
-//     removeElement(this);
-//   };
-//   container.appendChild(removeButton);
-
-//   const fields = [
-//     { label: "name", type: "text" },
-//     { label: "link", type: "text" },
-//   ];
-
-//   fields.forEach((field) => {
-//     const fieldDiv = document.createElement("div");
-//     const label = document.createElement("label");
-//     label.textContent = field.label;
-//     const input = document.createElement("input");
-//     input.type = field.type;
-//     fieldDiv.appendChild(label);
-//     fieldDiv.appendChild(input);
-//     container.appendChild(fieldDiv);
-//   });
-
-//   document.getElementById("programmers").appendChild(container);
-// }
-
+// programmers section
 function getProgrammersValue() {
   const parent = document.getElementById("programmers");
 
@@ -757,6 +671,7 @@ function getProgrammersValue() {
   return objectArray;
 }
 
+// table/ wiring is section
 function getTableValue(elementId) {
   let htmlString = getInputValue(elementId);
 
@@ -766,6 +681,7 @@ function getTableValue(elementId) {
   return htmlString;
 }
 
+// remove an element (called if a remove button is pressed)
 function removeElement(element) {
   element.parentNode.remove();
 }
