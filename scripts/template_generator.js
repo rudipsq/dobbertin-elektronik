@@ -105,20 +105,20 @@ function main(language = "en", debug = false) {
       getInputValue("type"),
       getInputValue("name"),
       getInputValue("order_number"),
-      getInputValue("price"),
-      getInputValue("socket"),
-      getInputValue("bottom"),
-      getInputValue("class"),
-      getInputValue("subclass"),
-      getMultiValue("description"),
+      getInputValue("price", language),
+      getInputValue("socket", language),
+      getInputValue("bottom", language),
+      getInputValue("class", language),
+      getInputValue("subclass", language),
+      getMultiValue("description", language),
       getInputValue("image1"),
       getInputValue("image2"),
       getTableValue("wiring"),
-      getMultiValue("manual"),
+      getMultiValue("manual", language),
       getPackageValue(),
       getTableValue("table"),
       getProgrammersValue(),
-      getInputValue("programmers_note")
+      getInputValue("programmers_note", language)
     );
   }
 
@@ -140,12 +140,12 @@ function downloadFileFromString(htmlString, jsonObject) {
 
   const a = document.createElement("a");
   a.href = URL.createObjectURL(blob);
-  a.download = jsonObject.id + ".html";
+  a.download = jsonObject.orderNumber + ".html";
   a.click();
 }
 
 function getTableLink(jsonObject) {
-  let string = `<tr data-href="${jsonObject.id}.html">
+  let string = `<tr data-href="${jsonObject.orderNumber}.html">
                   <td>${jsonObject.name}</td>
                   <td>${jsonObject.class}</td>
                   <td>${jsonObject.subclass}</td>
@@ -280,7 +280,7 @@ function generateTemplateString(jsonObject) {
               <head>
                 <meta charset="UTF-8" />
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-                <title>${data.name}</title>
+                <title>${data.name} (${data.orderNumber})</title>
 
                 <link rel="stylesheet" href="../../../stylesheets/global.css" />
                 <link rel="stylesheet" href="../../../stylesheets/details_adapters.css" />
@@ -565,17 +565,37 @@ function generateProgrammersSection(
 //*
 //* - - - Front-End
 //*
-function getInputValue(elementId) {
-  return document.getElementById(elementId).value;
+function getInputValue(elementId, language = null) {
+  let newElementId = elementId;
+  if (language) {
+    newElementId = elementId + "_" + language;
+    let element = document.getElementById(elementId + "_" + language);
+    if (element) {
+      value = element.value;
+    }
+
+    if (!element || value == "") {
+      let element = document.getElementById(elementId + "_" + "en");
+      if (element) value = element.value;
+    }
+  } else {
+    let element = document.getElementById(elementId);
+    if (element) value = element.value;
+  }
+
+  return value;
 }
 
-function getMultiValue(containerId) {
+function getMultiValue(containerId, languageKey = "en") {
   const parent = document.getElementById(containerId);
 
   const objectArray = [];
+  let index = 1;
+
+  if (languageKey == "de") index = 2;
 
   for (const child of parent.children) {
-    const inputValue = child.children[1].value;
+    const inputValue = child.children[index].value;
     const checkboxValue = child.children[3].checked;
 
     objectArray.push({
@@ -590,7 +610,8 @@ function getMultiValue(containerId) {
 function addMultiValueToPage(containerId) {
   const div = document.createElement("div");
   const button = document.createElement("button");
-  const input = document.createElement("input");
+  const input1 = document.createElement("input");
+  const input2 = document.createElement("input");
   const lable = document.createElement("lable");
   const checkbox = document.createElement("input");
 
@@ -602,7 +623,8 @@ function addMultiValueToPage(containerId) {
   checkbox.type = "checkbox";
 
   div.appendChild(button);
-  div.appendChild(input);
+  div.appendChild(input1);
+  div.appendChild(input2);
   div.appendChild(lable);
   div.appendChild(checkbox);
 
@@ -659,51 +681,80 @@ function addPackageInputToPage() {
   document.getElementById("package").appendChild(container);
 }
 
+// function getProgrammersValue() {
+//   const parent = document.getElementById("programmers");
+
+//   const objectArray = [];
+
+//   for (const child of parent.children) {
+//     const inputValue1 = child.children[1].children[1].value;
+//     const inputValue2 = child.children[2].children[1].value;
+
+//     objectArray.push({
+//       name: inputValue1,
+//       link: inputValue2,
+//     });
+//   }
+
+//   return objectArray;
+// }
+
+// function addProgrammersInputToPage() {
+//   const container = document.createElement("div");
+
+//   const removeButton = document.createElement("button");
+//   removeButton.textContent = "Remove Programmer";
+//   removeButton.onclick = function () {
+//     removeElement(this);
+//   };
+//   container.appendChild(removeButton);
+
+//   const fields = [
+//     { label: "name", type: "text" },
+//     { label: "link", type: "text" },
+//   ];
+
+//   fields.forEach((field) => {
+//     const fieldDiv = document.createElement("div");
+//     const label = document.createElement("label");
+//     label.textContent = field.label;
+//     const input = document.createElement("input");
+//     input.type = field.type;
+//     fieldDiv.appendChild(label);
+//     fieldDiv.appendChild(input);
+//     container.appendChild(fieldDiv);
+//   });
+
+//   document.getElementById("programmers").appendChild(container);
+// }
+
 function getProgrammersValue() {
   const parent = document.getElementById("programmers");
 
   const objectArray = [];
 
   for (const child of parent.children) {
-    const inputValue1 = child.children[1].children[1].value;
-    const inputValue2 = child.children[2].children[1].value;
+    const isChecked = child.children[0].checked;
+    const inputName = child.children[1].innerHTML;
 
-    objectArray.push({
-      name: inputValue1,
-      link: inputValue2,
-    });
+    let _link;
+    if (
+      ["BeeProg3", "BeeProg2", "BeeProg2C", "BeeProg2AP"].includes(inputName)
+    ) {
+      _link = `../universal-programmers/${inputName}`;
+    } else {
+      _link = `../production-programmers/${inputName}`;
+    }
+
+    if (isChecked) {
+      objectArray.push({
+        name: inputName,
+        link: _link,
+      });
+    }
   }
 
   return objectArray;
-}
-
-function addProgrammersInputToPage() {
-  const container = document.createElement("div");
-
-  const removeButton = document.createElement("button");
-  removeButton.textContent = "Remove Programmer";
-  removeButton.onclick = function () {
-    removeElement(this);
-  };
-  container.appendChild(removeButton);
-
-  const fields = [
-    { label: "name", type: "text" },
-    { label: "link", type: "text" },
-  ];
-
-  fields.forEach((field) => {
-    const fieldDiv = document.createElement("div");
-    const label = document.createElement("label");
-    label.textContent = field.label;
-    const input = document.createElement("input");
-    input.type = field.type;
-    fieldDiv.appendChild(label);
-    fieldDiv.appendChild(input);
-    container.appendChild(fieldDiv);
-  });
-
-  document.getElementById("programmers").appendChild(container);
 }
 
 function getTableValue(elementId) {
@@ -718,3 +769,36 @@ function getTableValue(elementId) {
 function removeElement(element) {
   element.parentNode.remove();
 }
+
+// pre select programmers based on type
+document.addEventListener("DOMContentLoaded", function () {
+  const selectElement = document.getElementById("type");
+
+  selectElement.addEventListener("change", function () {
+    for (const child of document.getElementById("programmers").children) {
+      child.children[0].checked = false;
+    }
+
+    switch (this.value) {
+      case "adapter":
+        document.getElementById("beehive208s").checked = true;
+        document.getElementById("beehive204").checked = true;
+        document.getElementById("beeprog2").checked = true;
+        document.getElementById("beeprog2c").checked = true;
+        break;
+
+      case "ap1":
+        document.getElementById("beehive204ap").checked = true;
+        document.getElementById("beeprog2ap").checked = true;
+        break;
+
+      case "ap3":
+        document.getElementById("beehive304").checked = true;
+        document.getElementById("beeprog3").checked = true;
+        break;
+
+      default:
+        break;
+    }
+  });
+});

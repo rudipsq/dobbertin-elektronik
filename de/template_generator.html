@@ -36,27 +36,32 @@
 
           <div>
             <label for="price">Price:</label>
-            <input type="text" name="price" id="price" />
+            <input type="text" name="price" id="price_en" />
+            <input type="text" name="price" id="price_de" />
           </div>
 
           <div>
             <label for="socket">Socket:</label>
-            <input type="text" name="socket" id="socket" />
+            <input type="text" name="socket" id="socket_en" />
+            <input type="text" name="socket" id="socket_de" />
           </div>
 
           <div>
             <label for="bottom">Bottom:</label>
-            <input type="text" name="bottom" id="bottom" />
+            <input type="text" name="bottom" id="bottom_en" />
+            <input type="text" name="bottom" id="bottom_de" />
           </div>
 
           <div>
             <label for="class">Class:</label>
-            <input type="text" name="class" id="class" />
+            <input type="text" name="class" id="class_en" />
+            <input type="text" name="class" id="class_de" />
           </div>
 
           <div>
             <label for="subclass">Subclass:</label>
-            <input type="text" name="subclass" id="subclass" />
+            <input type="text" name="subclass" id="subclass_en" />
+            <input type="text" name="subclass" id="subclass_de" />
           </div>
 
           <div>
@@ -77,6 +82,7 @@
             <div>
               <button onclick="removeElement(this)">Remove Line</button>
               <input type="text" />
+              <input type="text" />
               <label>is Bold?</label>
               <input type="checkbox" />
             </div>
@@ -96,6 +102,7 @@
           <div id="manual">
             <div>
               <button onclick="removeElement(this)">Remove Line</button>
+              <input type="text" />
               <input type="text" />
               <label>is Bold?</label>
               <input type="checkbox" />
@@ -152,29 +159,86 @@
         <section id="programmers_section">
           <h2>Programmers</h2>
 
-          <button class="add_button" onclick="addProgrammersInputToPage()">
+          <!-- <button class="add_button" onclick="addProgrammersInputToPage()">
             Add Programmer
-          </button>
+          </button> -->
 
-          <div id="programmers">
+          <!-- <div id="programmers">
             <div>
               <button onclick="removeElement(this)">Remove Programmer</button>
               <div><label>name:</label><input type="text" /></div>
               <div><label>link:</label><input type="text" /></div>
+            </div>
+          </div> -->
+
+          <div id="programmers">
+            <div>
+              <input type="checkbox" name="beeprog2" id="beeprog2" checked />
+              <label for="beeprog2">BeeProg2</label>
+            </div>
+            <div>
+              <input type="checkbox" name="beeprog2c" id="beeprog2c" checked />
+              <label for="beeprog2c">BeeProg2C</label>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                name="beehive208s"
+                id="beehive208s"
+                checked
+              />
+              <label for="beehive208s">BeeHive208S</label>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                name="beehive204"
+                id="beehive204"
+                checked
+              />
+              <label for="beehive204">BeeHive204</label>
+            </div>
+            <div>
+              <input type="checkbox" name="beehive204ap" id="beehive204ap" />
+              <label for="beehive204ap">BeeHive204AP</label>
+            </div>
+            <div>
+              <input type="checkbox" name="beeprog2ap" id="beeprog2ap" />
+              <label for="beeprog2ap">BeeProg2AP</label>
+            </div>
+            <div>
+              <input type="checkbox" name="beeprog3" id="beeprog3" />
+              <label for="beeprog3">BeeProg3</label>
+            </div>
+            <div>
+              <input type="checkbox" name="beehive304" id="beehive304" />
+              <label for="beehive304">BeeHive304</label>
             </div>
           </div>
 
           <br />
           <div>
             <label for="programmers_note">Note:</label>
-            <input type="text" name="programmers_note" id="programmers_note" />
+            <input
+              type="text"
+              name="programmers_note"
+              id="programmers_note_en"
+            />
+            <input
+              type="text"
+              name="programmers_note"
+              id="programmers_note_de"
+            />
           </div>
         </section>
 
         <section>
           <div>
-            <button id="generate_button" onclick="main()">
-              Generate Template
+            <button class="generate_button" onclick="main('en')">
+              Generate english Template
+            </button>
+            <button class="generate_button" onclick="main('de')">
+              Generate german Template
             </button>
 
             <p id="table_link_output"></p>
