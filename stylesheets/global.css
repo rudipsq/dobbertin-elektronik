@@ -206,7 +206,7 @@ header #language_switcher button img:nth-child(2):hover {
   opacity: 1;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 910px) {
   header nav {
     /* flex-direction: column; */
 
