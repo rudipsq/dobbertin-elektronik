@@ -1,5 +1,18 @@
 {
-  "beep1": "Bad:beep1",
-  "beep2": "134604",
-  "beep3": "71473"
+  "beep2_devices": "134604",
+  "beep2_manufacturers": "458",
+  "beep2c_devices": "133277",
+  "beep2c_manufacturers": "448",
+  "beep3_devices": "71473",
+  "beep3_manufacturers": "346",
+  "beeh304_devices": "71473",
+  "beeh304_manufacturers": "346",
+  "beeh204_devices": "134434",
+  "beeh204_manufacturers": "457",
+  "beeh204ap_devices": "93067",
+  "beeh204ap_manufacturers": "382",
+  "beeh208s_devices": "134434",
+  "beeh208s_manufacturers": "457",
+  "pg4uw_version": "3.98",
+  "pg4uw_date": "21. Nov. 2024"
 }

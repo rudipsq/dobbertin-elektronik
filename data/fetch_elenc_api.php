@@ -1,8 +1,21 @@
 <?php
     $api_endpoints = [
-        "beep1" => "https://www.elnec.com/get_devices.php?id=beep1",
-        "beep2" => "https://www.elnec.com/get_devices.php?id=beep2",
-        "beep3" => "https://www.elnec.com/get_devices.php?id=beep3"
+        "beep2_devices" => "https://www.elnec.com/get_devices.php?id=beep2",
+        "beep2_manufacturers" => "https://www.elnec.com/get_manufacturers.php?id=beep2",
+        "beep2c_devices" => "https://www.elnec.com/get_devices.php?id=beep2c",
+        "beep2c_manufacturers" => "https://www.elnec.com/get_manufacturers.php?id=beep2c",
+        "beep3_devices" => "https://www.elnec.com/get_devices.php?id=beep3", 
+        "beep3_manufacturers" => "https://www.elnec.com/get_manufacturers.php?id=beep3",
+        "beeh304_devices" => "https://www.elnec.com/get_devices.php?id=beeh304",
+        "beeh304_manufacturers" => "https://www.elnec.com/get_manufacturers.php?id=beeh304",
+        "beeh204_devices" => "https://www.elnec.com/get_devices.php?id=beeh204",
+        "beeh204_manufacturers" => "https://www.elnec.com/get_manufacturers.php?id=beeh204",
+        "beeh204ap_devices" => "https://www.elnec.com/get_devices.php?id=beeh204ap",
+        "beeh204ap_manufacturers" => "https://www.elnec.com/get_manufacturers.php?id=beeh204ap",
+        "beeh208s_devices" => "https://www.elnec.com/get_devices.php?id=beeh208s",
+        "beeh208s_manufacturers" => "https://www.elnec.com/get_manufacturers.php?id=beeh208s",
+        "pg4uw_version" => "https://www.elnec.com/get_pg4uw_info2.php?id=version",
+        "pg4uw_date" => "https://www.elnec.com/get_pg4uw_info2.php?id=sw_date",
     ];
 
     $results = [];
