@@ -46,7 +46,7 @@
 
 ## HTML Texte bearbeiten
 bold text: <span class="bold">TEXT</span>
-api text: <span data-api="beep3">TEXT</span>
+api text: <span data-api="beep2_devices">TEXT</span>
 
 
 ## Struktur
