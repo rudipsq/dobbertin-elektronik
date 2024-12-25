@@ -7,8 +7,9 @@
 ### Default Seite erstellen
 - [x] navbar: logo, links zu produkt seiten
 - [x] navbar: language switcher
-- [ ] navbar: Language switch kleiner + eckig
+- [x] navbar: Language switch kleiner + eckig
 - [x] footer
+- [ ] index product liste, arrow button switcher
 
 
 ### Programmer Template
@@ -22,7 +23,7 @@
 - [x] template generator: downloadable template file, kopierbare inhaltsverzeichnis zeile
 - [x] template generator: html template als string, placeholder fuer werte und texte
 - [ ] template generator: one page html, integrated js, css erstellen ()
-- [ ] template generator: 2 languages
+- [x] template generator: 2 languages
 
 
 ### Legal
