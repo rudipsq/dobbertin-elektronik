@@ -1,5 +1,8 @@
 section {
-  max-width: 1000px;
+  max-width: calc(100% - 30px);
+  width: 936px;
+
+  position: relative;
 }
 
 section h2 {
@@ -9,19 +12,23 @@ section h2 {
 }
 
 section .product_container {
-  overflow-x: auto;
+  /* overflow-x: auto; */
 
   display: flex;
   flex-direction: row;
   gap: 15px;
+
+  overflow: hidden;
 }
 
 section .product_container .product_item {
   height: 310px;
-  width: auto;
-  min-width: 220px;
+  /* width: auto;
+  min-width: 220px; */
+  width: 260px;
+  flex-shrink: 0;
 
-  flex: 1 1;
+  /* flex: 1 1; */
 
   display: flex;
   flex-direction: column;
@@ -30,12 +37,14 @@ section .product_container .product_item {
 
   border-radius: 10px;
   border: solid var(--c-background-3) 1px;
+  background-color: var(--c-background-2);
   text-decoration: none;
 
   margin-bottom: 2px;
   padding: 20px;
 
-  transition: background-color 0.25s ease, border 0.25s ease;
+  transition: background-color 0.25s ease, border 0.25s ease,
+    transform 0.3s ease-in-out;
 }
 
 section .product_container .product_item:hover {
@@ -93,4 +102,38 @@ section .product_container .product_item div:nth-child(2) {
 
 section .product_container .product_item div:nth-child(2) ul {
   padding-top: 0;
+}
+
+.nav-button {
+  position: absolute;
+  bottom: 172px;
+
+  width: 36px;
+  height: 36px;
+
+  background: #ccc;
+  border: none;
+  cursor: pointer;
+
+  border-radius: 50px;
+}
+
+.prev1,
+.prev2 {
+  left: 10px;
+}
+
+.next1,
+.next2 {
+  right: 10px;
+}
+
+@media screen and (max-width: 1020px) {
+  .nav-button {
+    visibility: hidden;
+  }
+
+  section .product_container {
+    overflow-x: auto;
+  }
 }
