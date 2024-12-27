@@ -1,14 +1,22 @@
 // redirects to a different language
-function switchLanguage(languageKey = "en") {
+const translations = {
+  "datenschutz.html": "privacy-policy.html",
+  "privacy-policy.html": "datenschutz.html",
+  "impressum.html": "imprint.html",
+  "imprint.html": "impressum.html",
+};
+
+function switchLanguage(targetLang = "en") {
   const currentPath = window.location.pathname;
   const pathParts = currentPath.split("/").filter(Boolean);
-  const currentLang = getLanguage();
 
-  if (currentLang) {
-    const langIndex = pathParts.indexOf(currentLang);
-    pathParts[langIndex] = languageKey;
-  } else {
-    pathParts.unshift(languageKey);
+  pathParts[0] = targetLang;
+
+  // Check and translate specific path segments
+  for (let i = 1; i < pathParts.length; i++) {
+    if (translations[pathParts[i]]) {
+      pathParts[i] = translations[pathParts[i]];
+    }
   }
 
   window.location.href = "/" + pathParts.join("/");
