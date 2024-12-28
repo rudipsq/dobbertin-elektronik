@@ -51,7 +51,7 @@
     $json_result = json_encode($results, JSON_PRETTY_PRINT);
 
     // store in file
-    if (file_put_contents('elnec_api_data.json', $json_result)) {
+    if (file_put_contents('results_elnec_api.json', $json_result)) {
         echo "Results saved to results_elnec_api.json\n";
     } else {
         echo "Error: Unable to save results to file results_elnec_api.json\n";
