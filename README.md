@@ -9,7 +9,7 @@
 - [x] navbar: language switcher
 - [x] navbar: Language switch kleiner + eckig
 - [x] footer
-- [ ] index product liste, arrow button switcher
+- [x] index product liste, arrow button switcher
 
 
 ### Programmer Template
