@@ -64,7 +64,7 @@ function moveCarousel2(direction) {
 
   for (const element of items2) {
     element.style.transform = `translateX(-${
-      currentIndex2 * itemWidth + currentIndex1 * 15
+      currentIndex2 * itemWidth + currentIndex2 * 15
     }px)`;
   }
 
