@@ -1,4 +1,4 @@
-//* link to programmer details page
+// link to programmer details page
 document.addEventListener("DOMContentLoaded", () => {
   const rows = document.querySelectorAll("#product_list > li");
 
