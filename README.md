@@ -2,52 +2,21 @@
  
 ## TODO
 
-- [x] links: remove country code (if possible)
-
-### Default Seite erstellen
-- [x] navbar: logo, links zu produkt seiten
-- [x] navbar: language switcher
-- [x] navbar: Language switch kleiner + eckig
-- [x] footer
-- [x] index product liste, arrow button switcher
-
-
-### Programmer Template
-- [x] description section abaendern (css und html von adapter template)
-- [x] text sections hinzufuegen (basierend auf adapter manual)
-- [x] api schnittstelle
-
-
-### Adapter Template
-- [x] templates erstellen
-- [x] template generator: downloadable template file, kopierbare inhaltsverzeichnis zeile
-- [x] template generator: html template als string, placeholder fuer werte und texte
 - [ ] template generator: one page html, integrated js, css erstellen ()
-- [x] template generator: 2 languages
-
-
-### Legal
-- [x] agb kopieren
-- [ ] impressum kontrollieren
-- [ ] datenschutz updaten
-
-
-### SEO
 - [ ] Meta Tags 
 - [ ] aria labels
+- [ ] impressum kontrollieren
+- [ ] datenschutz updaten
+- [ ] uebersetzung header
+- [ ] uebersetzung content
 
-
-### Structure
-- [ ] html datein in richtige struktur kopieren
-- [ ] links (stylesheet, script, ...) anpassen
-- [ ] englische version
 
 
 
 
 ## HTML Texte bearbeiten
 bold text: <span class="bold">TEXT</span>
-api text: <span data-api="beep2_devices">TEXT</span>
+api text: <span data-api="beep2_devices">PLACEHOLDER</span>
 
 
 ## Struktur

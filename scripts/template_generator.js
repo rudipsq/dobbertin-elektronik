@@ -194,6 +194,25 @@ function generateTemplateString(jsonObject) {
     languageSwitch = "en";
   }
 
+  // footer
+  if (data.language != "de") {
+    footerString = `
+     <div>
+        <a href="../../imprint.html">Imprint</a>
+        <a href="../../privacy-policy.html">Privacy policy</a>
+        <a href="../../agb.html">AGB</a>
+        <a href="https://quicksite.me">by Quicksite</a>
+      </div>`;
+  } else {
+    footerString = `
+    <div>
+      <a href="../../impressum.html">Impressum</a>
+      <a href="../../datenschutz.html">Datenschutz</a>
+      <a href="../../agb.html">AGB</a>
+      <a href="https://quicksite.me">by Quicksite</a>
+    </div>`;
+  }
+
   let string = `<!DOCTYPE html>
             <html lang="${data.language}">
               <head>
@@ -215,8 +234,16 @@ function generateTemplateString(jsonObject) {
 
                     <nav>
                       <a href="../../index.html">Home</a>
-                      <a href="../universal-programmers/">Universal Programmers</a>
-                      <a href="../production-programmers/">Production Programmers</a>
+                      <a href="../universal-programmers/">${
+                        data.language === "en"
+                          ? "Universal Programmers"
+                          : "Universal Programmer"
+                      }</a>
+                      <a href="../production-programmers/">${
+                        data.language === "en"
+                          ? "Production Programmers"
+                          : "Produktions-Programmer"
+                      }</a>
                       <a href="../programming-adapters/" ${
                         data.type === "adapter" ? 'class="active"' : ""
                       }>Adapters</a>
@@ -268,12 +295,7 @@ function generateTemplateString(jsonObject) {
                       <p>Fax: +49 (0)6202-75509</p>
                     </div>
 
-                    <div>
-                      <a href="../../impressum.html">Impressum</a>
-                      <a href="../../datenschutz.html">Datenschutz</a>
-                      <a href="../../agb.html">AGB</a>
-                      <a href="https://quicksite.me">by Quicksite</a>
-                    </div>
+                    ${footerString}
                   </div>
                 </footer>
 
