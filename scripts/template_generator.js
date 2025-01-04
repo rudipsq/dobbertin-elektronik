@@ -299,7 +299,7 @@ function generateTemplateString(jsonObject) {
                   </div>
                 </footer>
 
-                <script src="../../../scripts/language.js"></script>
+                <script src="../../../scripts/global.js"></script>
               </body>
             </html>`;
 
@@ -677,9 +677,9 @@ function getProgrammersValue() {
     if (
       ["BeeProg3", "BeeProg2", "BeeProg2C", "BeeProg2AP"].includes(inputName)
     ) {
-      _link = `../universal-programmers/${inputName}`;
+      _link = `../universal-programmers/${inputName}.html`;
     } else {
-      _link = `../production-programmers/${inputName}`;
+      _link = `../production-programmers/${inputName}.html`;
     }
 
     if (isChecked) {

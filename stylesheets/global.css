@@ -72,13 +72,18 @@ input {
   font-size: 14px;
 }
 
-/* - - - CLASSES - - - */
+/* - - - TEXT CLASSES - - - */
 .bold {
   font-weight: 900;
 }
 
 .italic {
   font-weight: 300;
+}
+
+/* api text */
+span[data-api] {
+  font-weight: 600;
 }
 
 /* - - - NAVIGATION - - - */
