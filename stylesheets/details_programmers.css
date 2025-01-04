@@ -114,3 +114,7 @@ section h2 {
 .text_section ul li:has(> ul) {
   list-style: none;
 }
+
+.text_section img {
+  max-width: 100%;
+}
