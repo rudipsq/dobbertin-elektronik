@@ -2,7 +2,7 @@
  
 ## TODO
 
-- [ ] template generator: one page html, integrated js, css erstellen ()
+- [ ] template generator: one page html, integrated js, css erstellen
 - [ ] Meta Tags 
 - [ ] aria labels
 - [ ] impressum kontrollieren
