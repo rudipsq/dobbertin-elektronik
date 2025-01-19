@@ -1,7 +1,8 @@
 let apiData;
 
 document.addEventListener("DOMContentLoaded", async () => {
-  const filePath = "../../../data/results_elnec_api.json";
+  const filePath = "../../../data/results_elnec_api.json"; // Change api path here
+  // const filePath = "https://www.dobbertin-elektronik.de/elnec_api/results.json";
   const response = await fetch(filePath);
   apiData = await response.json();
 
