@@ -59,6 +59,15 @@ function main(language = "en", _jsonObject = null) {
   document.getElementById("table_link_output").innerText =
     getTableLink(jsonObject);
 
+  document.getElementById("table_link_destination").innerText =
+    getTableLinkDestination(jsonObject.type);
+
+  document.getElementById("table_folder_destination").innerText =
+    getTableFolderDestination(jsonObject.type);
+
+  document.getElementById("image_folder_destination").innerText =
+    getImageFolderDestination(jsonObject.type);
+
   let string = generateTemplateString(jsonObject);
   downloadFileFromString(string, jsonObject);
 
@@ -153,11 +162,17 @@ function generateTemplateString(jsonObject) {
   // manual
   let manual_section = "";
   if (data.manualObjectArray) {
-    manual_section = generateManualSection(data.manualObjectArray);
+    manual_section = generateManualSection(
+      data.manualObjectArray,
+      data.language
+    );
   }
 
   // packages
-  let packages_section = generatePackagesSection(data.packagesObjectArray);
+  let packages_section = generatePackagesSection(
+    data.packagesObjectArray,
+    data.language
+  );
 
   // table
   let table_section = "";
@@ -258,7 +273,7 @@ function generateTemplateString(jsonObject) {
     data.language === "en" ? "AP3 Modules" : "AP3 Module"
   }</a>
                       <a href="../accessories/">${
-                        data.language === "en" ? "Accessories" : "Accessories"
+                        data.language === "en" ? "Accessories" : "Zubehör"
                       }</a>
                     </nav>
 
@@ -314,6 +329,54 @@ function downloadFileFromString(htmlString, jsonObject) {
   a.href = URL.createObjectURL(blob);
   a.download = jsonObject.orderNumber + ".html";
   a.click();
+}
+
+function getTableLinkDestination(type) {
+  let string;
+
+  if (type == "adapter") {
+    string = "programming-adapters";
+  } else if (type == "ap1") {
+    string = "ap1-programming-modules";
+  } else if (type == "ap3") {
+    string = "ap3-programming-modules";
+  } else {
+    console.error("type not found", type);
+  }
+
+  return `/en/products/${string}/index.html und /de/products/${string}/index.html`;
+}
+
+function getTableFolderDestination(type) {
+  let string;
+
+  if (type == "adapter") {
+    string = "programming-adapters";
+  } else if (type == "ap1") {
+    string = "ap1-programming-modules";
+  } else if (type == "ap3") {
+    string = "ap3-programming-modules";
+  } else {
+    console.error("type not found", type);
+  }
+
+  return `/en/products/${string}/ und /de/products/${string}/`;
+}
+
+function getImageFolderDestination(type) {
+  let string;
+
+  if (type == "adapter") {
+    string = "programming-adapters";
+  } else if (type == "ap1") {
+    string = "ap1-programming-modules";
+  } else if (type == "ap3") {
+    string = "ap3-programming-modules";
+  } else {
+    console.error("type not found", type);
+  }
+
+  return `/img/products/${string}/`;
 }
 
 function getTableLink(jsonObject) {
@@ -448,7 +511,7 @@ function generateDescriptionSection(
   return string;
 }
 
-function generateManualSection(manualObjectArray) {
+function generateManualSection(manualObjectArray, language) {
   let liTagString = "";
 
   for (const liString of manualObjectArray) {
@@ -462,7 +525,9 @@ function generateManualSection(manualObjectArray) {
   }
 
   let string = `<section id="manual_section">
-              <h2>Adapter manual</h2>
+              <h2>${
+                language === "en" ? "Adapter manual" : "Adapter-Handbuch"
+              }</h2>
               <ul>
                 ${liTagString}
               </ul>
@@ -471,7 +536,7 @@ function generateManualSection(manualObjectArray) {
   return string;
 }
 
-function generatePackagesSection(packagesObjectArray) {
+function generatePackagesSection(packagesObjectArray, language) {
   let packagesString = "";
 
   for (const packageObject of packagesObjectArray) {
@@ -489,7 +554,11 @@ function generatePackagesSection(packagesObjectArray) {
   }
 
   let string = `<section id="packages_section">
-                  <h2>Accepted package(s)</h2>
+                  <h2>${
+                    language === "en"
+                      ? "Accepted package(s)"
+                      : "Akzeptierte(s) Paket(e)"
+                  }</h2>
                     ${packagesString}
                 </section>`;
 
@@ -512,7 +581,7 @@ function generateProgrammersSection(
   switch (programmersNote) {
     case "default":
       if (language == "de") {
-        note += `<p class="italic">Note: This programming adapter / module may not support all devices in the package(s) mentioned above on your programmer. Please, verify situation for particular device(s) you are going to work with using actual Device list of your programmer.</p>`;
+        note += `<p class="italic">Hinweis: Dieser Programmieradapter / Modul unterstützt möglicherweise nicht alle Geräte in den oben genannten Paketen auf Ihrem Programmiergerät. Bitte überprüfen Sie die Situation für bestimmte Geräte, mit denen Sie arbeiten möchten, anhand der aktuellen Geräteliste Ihres Programmiergeräts.</p>`;
       } else {
         note += `<p class="italic">Note: This programming adapter / module may not support all devices in the package(s) mentioned above on your programmer. Please, verify situation for particular device(s) you are going to work with using actual Device list of your programmer.</p>`;
       }
@@ -528,7 +597,11 @@ function generateProgrammersSection(
   }
 
   let string = `<section id="programmers_section">
-                  <h2>Useable for programmers</h2>
+                  <h2>${
+                    language === "en"
+                      ? "Useable for programmers"
+                      : "Geeignet für Programmierer"
+                  }</h2>
                   <div id="programmer_list">
                     ${aTagString}
                   </div>

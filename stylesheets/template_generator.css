@@ -147,3 +147,27 @@ button {
   /* margin: 5px; */
   padding: 10px;
 }
+
+/* MANUAL */
+#manual {
+  margin-top: 35px;
+
+  display: block;
+}
+
+#manual p {
+  margin-top: 8px;
+}
+
+#manual > div {
+  display: flex;
+  gap: 5px;
+}
+
+#table_link_destination,
+#table_link_output,
+#table_folder_destination,
+#image_folder_destination,
+#package_folder_destination {
+  background-color: yellow;
+}
