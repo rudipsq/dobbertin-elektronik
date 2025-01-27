@@ -48,3 +48,7 @@ structure
 │       ├── ap1-programming-modules
 │       └── ap3-programming-modules
 └── en: same structure as "de" folder
+
+
+# TODO
+- use api data js path austauschen
