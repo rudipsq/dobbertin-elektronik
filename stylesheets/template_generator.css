@@ -56,7 +56,8 @@ section > div {
 #manual_section > div {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  /* gap: 8px; */
+  /* here */
 
   /* width: 100%; */
 }
@@ -150,7 +151,7 @@ button {
 
 /* MANUAL */
 #manual {
-  margin-top: 35px;
+  /* margin-top: 35px; */
 
   display: block;
 }
@@ -170,4 +171,8 @@ button {
 #image_folder_destination,
 #package_folder_destination {
   background-color: yellow;
+}
+
+.copypaste {
+  gap: 0;
 }

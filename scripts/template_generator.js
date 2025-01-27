@@ -78,6 +78,190 @@ function regenerateLastTemplate(language = "en") {
   main(language, JSON.parse(localStorage.getItem("last_template_" + language)));
 }
 
+function test(htmlString) {
+  const parser = new DOMParser();
+  const htmlDoc = parser.parseFromString(htmlString, "text/html");
+
+  // name
+  let nameValue = htmlDoc.querySelector("h1")
+    ? htmlDoc.querySelector("h1").childNodes[0].textContent.trim()
+    : null;
+  setInputValue("name", nameValue);
+
+  // type
+  let typeValue = htmlDoc.querySelector("#breadcrumbs")
+    ? htmlDoc.querySelector("#breadcrumbs").childNodes[4].textContent.trim()
+    : null;
+
+  switch (typeValue) {
+    case "Programming adapters":
+      typeValue = "adapter";
+      break;
+
+    case "AP1 programming modules":
+      typeValue = "ap1";
+      break;
+
+    case "AP3 programming modules":
+      typeValue = "ap3";
+      break;
+
+    default:
+      break;
+  }
+
+  setInputValue("type", typeValue);
+
+  // order_number
+  let order_numberValue = htmlDoc.querySelector("h1")
+    ? htmlDoc.querySelector("h1").childNodes[1].textContent.trim()
+    : null;
+
+  const order_numberRegex = /\d+-\d+/;
+  const order_numberMatch = order_numberValue.match(order_numberRegex);
+
+  order_numberValue = order_numberMatch ? order_numberMatch[0] : null;
+  setInputValue("order_number", order_numberValue);
+
+  // price
+  let priceValue = htmlDoc.querySelector("#adapteractions h2")
+    ? htmlDoc.querySelector("#adapteractions h2").innerText.trim()
+    : null;
+
+  if (!priceValue) {
+    setInputValue("price", "Ask for price", "en");
+    setInputValue("price", "Preis auf Anfrage", "de");
+  } else {
+    // priceValue = priceValue.slice(7);
+
+    const match = priceValue.match(/\d+(?:-\d+)?/);
+    priceValue = match ? match[0] : null;
+
+    setInputValue("price", priceValue + ".00 € excl. VAT", "en");
+    setInputValue("price", priceValue + ",00 € zzgl. MwSt.", "de");
+  }
+
+  // socket
+  let socketValue = htmlDoc.querySelector("tbody tr:nth-child(3) td")
+    ? htmlDoc.querySelector("tbody tr:nth-child(3) td").innerText.trim()
+    : null;
+
+  setInputValue("socket", socketValue, "en");
+
+  // bottom
+  let bottomValue = htmlDoc.querySelector("tbody tr:nth-child(4) td")
+    ? htmlDoc.querySelector("tbody tr:nth-child(4) td").innerText.trim()
+    : null;
+
+  setInputValue("bottom", bottomValue, "en");
+
+  // class
+  let classValue = htmlDoc.querySelector("tbody tr:nth-child(5) td")
+    ? htmlDoc.querySelector("tbody tr:nth-child(5) td").innerText.trim()
+    : null;
+
+  setInputValue("class", classValue, "en");
+
+  // subclass
+  let subclassValue = htmlDoc.querySelector("tbody tr:nth-child(6) td")
+    ? htmlDoc.querySelector("tbody tr:nth-child(6) td").innerText.trim()
+    : null;
+
+  setInputValue("subclass", subclassValue, "en");
+
+  // image1
+  let image1Value = htmlDoc.querySelector("#adapteractions img")
+    ? htmlDoc.querySelector("#adapteractions img")
+    : null;
+
+  if (image1Value) {
+    const srcUrl = new URL(image1Value.src);
+    image1Value = srcUrl.pathname.split("/").pop();
+  }
+
+  setInputValue("image1", image1Value);
+
+  // image2 // TODO do not do this if image 2 does not exist
+  let image2Value = image1Value;
+
+  const parts = image2Value.split(".");
+  if (parts.length > 1) {
+    const firstPart = parts[0] + "1";
+    image2Value = firstPart + "." + parts.slice(1).join(".");
+  }
+
+  setInputValue("image2", image2Value);
+
+  // description
+  const descriptionElement = htmlDoc.querySelector("#adapterdetail ul");
+  let descriptionValueArray = [];
+
+  for (const child of descriptionElement.children) {
+    let isBold = false;
+    if (child.children[0] && child.children[0].tagName == "B") isBold = true;
+    descriptionValueArray.push({ text: child.innerText, isBold: isBold });
+  }
+  setMultiValue("description", descriptionValueArray);
+
+  // manual
+  const manualElement = htmlDoc.querySelector(".manual");
+  let manualValueArray = [];
+
+  for (const child of manualElement.children) {
+    let isBold = false;
+    if (child.children[0] && child.children[0].tagName == "B") isBold = true;
+    manualValueArray.push({ text: child.innerText, isBold: isBold });
+  }
+  setMultiValue("manual", manualValueArray);
+
+  // packages
+  let packagesNameValue = htmlDoc.querySelector(".scheme td")
+    ? htmlDoc.querySelector(".scheme td").innerText.trim()
+    : null;
+
+  let packagesImage1Value = htmlDoc.querySelector(
+    ".scheme tr:nth-child(2) td img"
+  )
+    ? htmlDoc.querySelector(".scheme tr:nth-child(2) td img")
+    : null;
+
+  if (packagesImage1Value) {
+    const srcUrl = new URL(packagesImage1Value.src);
+    packagesImage1Value = srcUrl.pathname.split("/").pop();
+  }
+
+  let packagesImage2Value = htmlDoc.querySelector(
+    ".scheme tr:nth-child(1) td img"
+  )
+    ? htmlDoc.querySelector(".scheme tr:nth-child(1) td img")
+    : null;
+
+  if (packagesImage2Value) {
+    const srcUrl = new URL(packagesImage2Value.src);
+    packagesImage2Value = srcUrl.pathname.split("/").pop();
+  }
+
+  setPackageValue(packagesNameValue, packagesImage1Value, packagesImage2Value);
+
+  // table
+  let tableValue = htmlDoc.querySelector(".table.tien.bgatable")
+    ? htmlDoc.querySelector(".table.tien.bgatable").innerHTML
+    : null;
+
+  setInputValue("table", tableValue);
+
+  // wiring
+  let wiringValue = htmlDoc.querySelector(".converter_info")
+    ? htmlDoc.querySelector(".converter_info").innerHTML
+    : null;
+
+  setInputValue("wiring", wiringValue);
+}
+
+function getHtmlData(htmlDoc, querySelector) {
+  return htmlDoc.querySelector(querySelector).innerText;
+}
+
 //*
 //* - - - Back-End
 //*
@@ -410,7 +594,7 @@ function generateTitleSection(name, orderNumber, price, language) {
     if (price) {
       priceString = `Preis: ${price}`;
     } else {
-      priceString = `Preis nachfragen`;
+      priceString = `Preis auf Anfrage`;
     }
   }
 
@@ -555,9 +739,7 @@ function generatePackagesSection(packagesObjectArray, language) {
 
   let string = `<section id="packages_section">
                   <h2>${
-                    language === "en"
-                      ? "Accepted package(s)"
-                      : "Akzeptierte(s) Paket(e)"
+                    language === "en" ? "Accepted package(s)" : "Gehäuse"
                   }</h2>
                     ${packagesString}
                 </section>`;
@@ -600,7 +782,7 @@ function generateProgrammersSection(
                   <h2>${
                     language === "en"
                       ? "Useable for programmers"
-                      : "Geeignet für Programmierer"
+                      : "Geeignet für Programmer"
                   }</h2>
                   <div id="programmer_list">
                     ${aTagString}
@@ -616,9 +798,9 @@ function generateProgrammersSection(
 //*
 // get the value of a single input with an id
 function getInputValue(elementId, language = null) {
-  let newElementId = elementId;
+  // let newElementId = elementId;
   if (language) {
-    newElementId = elementId + "_" + language;
+    // newElementId = elementId + "_" + language;
     let element = document.getElementById(elementId + "_" + language);
     if (element) {
       value = element.value;
@@ -636,13 +818,23 @@ function getInputValue(elementId, language = null) {
   return value;
 }
 
+function setInputValue(elementId, value, language) {
+  if (language) {
+    document.getElementById(elementId + "_" + language).value = value;
+  } else {
+    document.getElementById(elementId).value = value;
+  }
+
+  if (elementId == "type") programmersDefaultSelection(value);
+}
+
 // multi line inputs like short description and adapter manual
 function getMultiValue(containerId, languageKey = "en") {
   const parent = document.getElementById(containerId);
 
   const objectArray = [];
-  let index = 1;
 
+  let index = 1;
   if (languageKey == "de") index = 2;
 
   for (const child of parent.children) {
@@ -650,7 +842,7 @@ function getMultiValue(containerId, languageKey = "en") {
     if (inputValue == "") inputValue = child.children[1].value;
 
     const checkboxValue = child.children[4].checked;
-    console.log(child.children[4]);
+    // console.log(child.children[4]);
 
     objectArray.push({
       text: inputValue,
@@ -659,6 +851,37 @@ function getMultiValue(containerId, languageKey = "en") {
   }
 
   return objectArray;
+}
+
+function setMultiValue(containerId, valueArray, languageKey = "en") {
+  const parent = document.getElementById(containerId);
+
+  if (languageKey == "en") {
+    parent.innerHTML = "";
+
+    let string = "";
+
+    for (let i = 0; i < valueArray.length; i++) {
+      if (parent.children[i]) {
+        parent.children[i].children[1].value = valueArray[i].text;
+        parent.children[i].children[4].checked = valueArray[i].isBold;
+      } else {
+        addMultiValueToPage(containerId);
+        parent.children[i].children[1].value = valueArray[i].text;
+        parent.children[i].children[4].checked = valueArray[i].isBold;
+      }
+
+      string += valueArray[i].text + "\n";
+    }
+
+    parent.setAttribute("data-copy", string);
+  } else {
+    for (let i = 0; i < valueArray.length; i++) {
+      if (parent.children[i]) {
+        parent.children[i].children[2].value = valueArray[i];
+      }
+    }
+  }
 }
 
 function addMultiValueToPage(containerId) {
@@ -704,6 +927,16 @@ function getPackageValue() {
   }
 
   return objectArray;
+}
+
+function setPackageValue(name, image1, image2) {
+  const parent = document.getElementById("package");
+
+  if (!parent.children[0]) addPackageInputToPage();
+
+  parent.children[0].children[1].children[1].value = name;
+  parent.children[0].children[2].children[1].value = image1;
+  parent.children[0].children[3].children[1].value = image2;
 }
 
 function addPackageInputToPage() {
@@ -783,33 +1016,78 @@ function removeElement(element) {
 
 // pre select programmers based on type
 document.addEventListener("DOMContentLoaded", function () {
-  const selectElement = document.getElementById("type");
+  document.getElementById("type").addEventListener("change", function () {
+    programmersDefaultSelection(this.value);
+  });
 
-  selectElement.addEventListener("change", function () {
-    for (const child of document.getElementById("programmers").children) {
-      child.children[0].checked = false;
-    }
+  document.getElementById("html").addEventListener("paste", (event) => {
+    const pastedText = event.clipboardData.getData("text");
 
-    switch (this.value) {
-      case "adapter":
-        document.getElementById("beehive208s").checked = true;
-        document.getElementById("beehive204").checked = true;
-        document.getElementById("beeprog2").checked = true;
-        document.getElementById("beeprog2c").checked = true;
-        break;
+    test(pastedText);
+  });
 
-      case "ap1":
-        document.getElementById("beehive204ap").checked = true;
-        document.getElementById("beeprog2ap").checked = true;
-        break;
+  const pasteButton = document.getElementById("pasteButton");
+  const pasteTarget = document.getElementById("html");
 
-      case "ap3":
-        document.getElementById("beehive304").checked = true;
-        document.getElementById("beeprog3").checked = true;
-        break;
+  pasteButton.addEventListener("click", async () => {
+    try {
+      const text = await navigator.clipboard.readText();
+      pasteTarget.value = text;
 
-      default:
-        break;
+      test(text);
+    } catch (error) {
+      console.error("Failed to read clipboard contents:", error);
     }
   });
 });
+
+// changes the selected programmers based on the "Type" at the top of the html page
+function programmersDefaultSelection(value) {
+  for (const child of document.getElementById("programmers").children) {
+    child.children[0].checked = false;
+  }
+
+  switch (value) {
+    case "adapter":
+      document.getElementById("beehive208s").checked = true;
+      document.getElementById("beehive204").checked = true;
+      document.getElementById("beeprog2").checked = true;
+      document.getElementById("beeprog2c").checked = true;
+      break;
+
+    case "ap1":
+      document.getElementById("beehive204ap").checked = true;
+      document.getElementById("beeprog2ap").checked = true;
+      break;
+
+    case "ap3":
+      document.getElementById("beehive304").checked = true;
+      document.getElementById("beeprog3").checked = true;
+      break;
+
+    default:
+      break;
+  }
+}
+
+async function copyString(containerId) {
+  try {
+    await navigator.clipboard.writeText(
+      document.getElementById(containerId).getAttribute("data-copy")
+    );
+  } catch (err) {
+    console.error("Failed to copy text: ", err);
+  }
+}
+
+async function pasteString(containerId) {
+  let lines;
+  try {
+    const text = await navigator.clipboard.readText();
+
+    lines = text.split("\n").filter((line) => line.trim() !== "");
+  } catch (error) {
+    console.error("Failed to read clipboard contents:", error);
+  }
+  setMultiValue(containerId, lines, "de");
+}

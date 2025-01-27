@@ -1,0 +1,1277 @@
+test(`
+<!DOCTYPE html>
+    <html lang="en">    
+        <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="format-detection" content="telephone=no">
+        
+        
+                <!--[if lt IE 9]>
+            <script src="/js/html5shiv.min.js" cache="1"></script>
+            <script src="/js/html5shiv-printshiv.min.js" cache="1"></script>
+            <script src="/js/selectivizr.min.js" cache="1"></script>
+            <script src="/js/modernizr.min.js" cache="1"></script>
+        <![endif]-->
+        
+        
+                            <link rel="stylesheet" href="/css/cssmin.css?v=250124" cache="1">
+                            
+        
+                <link rel="manifest" href="/site.webmanifest">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-touch-fullscreen" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Universal & Production Device Programmers, Adapters | Elnec">
+<meta name="application-name" content="Universal & Production Device Programmers, Adapters | Elnec">
+<meta name="msapplication-TileColor" content="#FEF900">
+<meta name="apple-mobile-web-app-status-bar" content="#000">
+<meta name="theme-color" content="#000">
+<meta name="format-detection" content="telephone=yes">
+
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/touch-icon-ipad.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/touch-icon-iphone-retina.png">
+<link rel="apple-touch-icon" sizes="167x167" href="/touch-icon-ipad-retina.png">
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/apple-touch-icon-114-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/apple-touch-icon-72-precomposed.png">
+<link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-57-precomposed.png">
+
+
+        
+        
+                            <link rel="preload" fetchpriority="high" as="image" href="/img/elnec-logo.avif" type="image/avif">
+        <link rel="preload" fetchpriority="low" as="image" href="/img/elnec-logo.webp" type="image/webp">
+        <link rel="preload" as="image" href="/img/elnec-logo.png" type="image/png">
+                        <link rel="preload" fetchpriority="high" as="image" href="/img/home_315.avif" type="image/png">
+        <link rel="preload" fetchpriority="low" as="image" href="/img/home_315.webp" type="image/webp">
+        <link rel="preload" as="image" href="/img/home_315.png" type="image/png">
+        <link rel="preload" fetchpriority="high" as="image" href="/img/header.avif" type="image/avif">
+        <link rel="preload" fetchpriority="low" as="image" href="/img/header.webp" type="image/webp">
+        <link rel="preload" as="image" href="/img/header.png" type="image/png">
+        <link rel="preload" fetchpriority="high" as="image" href="/img/tohome.avif" type="image/avif">
+        <link rel="preload" fetchpriority="low" as="image" href="/img/tohome.webp" type="image/webp">
+        <link rel="preload" as="image" href="/img/tohome.png" type="image/png">
+        <link rel="preload" fetchpriority="high" as="image" href="/img/elnec-on-exhibition.avif" type="image/avif">
+        <link rel="preload" fetchpriority="low" as="image" href="/img/elnec-on-exhibition.webp" type="image/webp">
+        <link rel="preload" as="image" href="/img/elnec-on-exhibition.png" type="image/png">
+        <link rel="preload" fetchpriority="high" as="image" href="/img/elnec-device-search.avif" type="image/avif">
+        <link rel="preload" fetchpriority="low" as="image" href="/img/elnec-device-search.webp" type="image/webp">
+        <link rel="preload" as="image" href="/img/elnec-device-search.png" type="image/png">
+        <link rel="preload" fetchpriority="high" as="image" href="/img/elnec-board.avif" type="image/avif">
+        <link rel="preload" fetchpriority="low" as="image" href="/img/elnec-board.webp" type="image/webp">
+        <link rel="preload" as="image" href="/img/elnec-board.jpg" type="image/jpeg">
+                    
+        <link rel="preload" fetchpriority="high" as="image" href="/img/elnec-square-logo.avif" type="image/avif">
+        <link rel="preload" fetchpriority="low" as="image" href="/img/elnec-square-logo.webp" type="image/webp">
+        <link rel="preload" as="image" href="/img/elnec-square-logo.png" type="image/jpeg">
+        
+        
+                
+        <title>DIL48/QFN20-4 ZIF-CS programming programmer adapter, socket converter - package QFN20 | Elnec</title>
+    
+    
+    
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="snippet, archive">
+    
+    
+    
+        <meta name="description" content="Universal adapter, assigned for SiLabs C8051F990 devices in QFN20 package, operating (mechanical) warranty of ZIF socket - 5,000 actuations, made in Slovakia.">
+            <meta name="keywords" content="programming adapter, moudule, socket converter, universal programmer, production programmer, devices, device programmers, gang programmer, chip programmer, NAND flash programmer, device support, programming adapters, socket adapters, programming modules, ISP programming, device programmer manufacturer, Beeprog, Beehive, Elnec">
+            <meta name="title" content="DIL48/QFN20-4 ZIF-CS programming programmer adapter, socket converter - package QFN20 | Elnec">
+    
+   
+                                        <link rel="canonical" href="https://www.elnec.com/en/products/programming-adapters/DIL48_QFN20-4_ZIF-CS/"> 
+                    
+             
+            
+    
+    
+    <meta http-equiv="content-language" content="en">
+                                                            <link rel="alternate" hreflang="sk" href="https://www.elnec.com/sk/products/programming-adapters/DIL48_QFN20-4_ZIF-CS/">
+    <link rel="alternate" hreflang="en" href="https://www.elnec.com/en/products/programming-adapters/DIL48_QFN20-4_ZIF-CS/">
+                                                            
+    
+    
+                                        <meta property="og:url" content="https://www.elnec.com/en/products/programming-adapters/DIL48_QFN20-4_ZIF-CS/"> 
+                             
+            <meta property="og:type" content="website">
+    <meta name="og:locale" content="en_EN">
+    <meta property="og:locale" content="en_EN">
+    <meta property="og:locale:alternate" content="sk_SK">
+    <meta name="og:type" content="website">
+    <meta property="og:type" content="website">
+        <meta name="og:title" content="DIL48/QFN20-4 ZIF-CS programming programmer adapter, socket converter - package QFN20 | Elnec">
+    <meta property="og:title" content="DIL48/QFN20-4 ZIF-CS programming programmer adapter, socket converter - package QFN20 | Elnec">
+        
+        <meta name="og:description" content="Universal adapter, assigned for SiLabs C8051F990 devices in QFN20 package, operating (mechanical) warranty of ZIF socket - 5,000 actuations, made in Slovakia.">
+    <meta property="og:description" content="Universal adapter, assigned for SiLabs C8051F990 devices in QFN20 package, operating (mechanical) warranty of ZIF socket - 5,000 actuations, made in Slovakia.">
+        <meta property="og:image" content="https://www.elnec.com/img/og.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+
+    
+    <meta property="twitter:domain" content="www.elnec.com">
+                                        <meta property="twitter:url" content="https://www.elnec.com/en/products/programming-adapters/DIL48_QFN20-4_ZIF-CS/"> 
+                                    <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="DIL48/QFN20-4 ZIF-CS programming programmer adapter, socket converter - package QFN20 | Elnec">
+            <meta name="twitter:description" content="Universal adapter, assigned for SiLabs C8051F990 devices in QFN20 package, operating (mechanical) warranty of ZIF socket - 5,000 actuations, made in Slovakia.">
+        <meta property="twitter:image" content="https://www.elnec.com/img/og.jpg">  
+          
+    
+    
+    
+    
+    
+    <meta name="author" content="Elnec s.r.o.">
+    <meta name="copyright" content="Elnec s.r.o.">
+
+        
+        
+                                                                        
+
+                    
+
+        
+                
+            </head>
+    <body itemscope itemtype="http://schema.org/WebPage" id="top" class="cookieconsent">
+        
+                <!--[if lte IE 9]>
+<div id="browserupgrade-wrap">
+    <nav id="browserupgrade">
+        <p>You are using an <strong>outdated</strong> web browser. Please <a href="https://browsehappy.com" title="" target="_blank">upgrade your browser</a> to improve your user experience and security.</p>
+    </nav>
+</div>
+<![endif]-->
+        
+
+                            <div id="header-wrap">
+                        <header>
+                    <a href="/en/" title="">
+    <picture>
+            <source srcset='https://www.elnec.com/img/tohome.avif 1x, /img/tohome@2x.avif 2x' type='image/avif' class='has-retina'>
+    <source srcset='https://www.elnec.com/img/tohome.webp 1x, /img/tohome@2x.webp 2x' type='image/webp' class='has-retina'>
+    <source srcset='https://www.elnec.com/img/tohome.jxr 1x, /img/tohome@2x.jxr 2x' type='image/vnd.ms-photo' class='has-retina'>
+    <source srcset='https://www.elnec.com/img/tohome.jp2 1x, /img/tohome.jp2 2x' type='image/jp2' class='has-retina'>
+    <img src="https://www.elnec.com/img/tohome.png" alt="Universal &amp; Production Device Programmers, Adapters | Elnec" title="" height="180" width="245" id="home" class="has-retina" srcset="https://www.elnec.com/img/tohome@2x.png 2x">        </picture></a>
+        
+       
+    
+<nav id="languages">
+                                                                                    <a href="/en/products/programming-adapters/DIL48_QFN20-4_ZIF-CS/" title="Cookies required. If cookies aren't enabled, language settings will not be possible.">
+                                
+                                                        <picture>
+                                    <source srcset='https://www.elnec.com/img/ukd.avif' type='image/avif' class='has-retina'>
+        <source srcset='https://www.elnec.com/img/ukd.webp' type='image/webp' class='has-retina'>
+        <source srcset='https://www.elnec.com/img/ukd.jxr' type='image/vnd.ms-photo' class='has-retina'>
+        <source srcset='https://www.elnec.com/img/ukd.jp2' type='image/jp2' class='has-retina'>
+        <img src="https://www.elnec.com/img/ukd.png" alt="English" title="Cookies required. If cookies aren&#039;t enabled, language settings will not be possible." height="20" width="29" class="has-retina" srcset="https://www.elnec.com/img/ukd@2x.png 2x">                                </picture></a>    
+        
+        
+
+                                                                                    <a href="/sk/products/programming-adapters/DIL48_QFN20-4_ZIF-CS/" title="Cookies required. If cookies aren't enabled, language settings will not be possible.">
+                        
+                                                        <picture>
+                                    <source srcset='https://www.elnec.com/img/sk.avif' type='image/avif' class='has-retina'>
+        <source srcset='https://www.elnec.com/img/sk.webp' type='image/webp' class='has-retina'>
+        <source srcset='https://www.elnec.com/img/sk.jxr' type='image/vnd.ms-photo' class='has-retina'>
+        <source srcset='https://www.elnec.com/img/sk.jp2' type='image/jp2' class='has-retina'>
+        <img src="https://www.elnec.com/img/sk.png" alt="Slovensky" title="Cookies required. If cookies aren&#039;t enabled, language settings will not be possible." height="20" width="30" class="has-retina" srcset="https://www.elnec.com/img/sk@2x.png 2x">                                </picture></a>  
+</nav>
+
+
+    
+    
+
+
+    <form method="post" accept-charset="utf-8" autocomplete="off" spellcheck="false" id="search-form" class="search" action="/en/search"><div style="display:none;"><input type="hidden" name="_csrfToken" autocomplete="off" value="eMMWjCOJ7nzBMWvPKQuPnT/6NgUKX4Nhp/NzV0IzgtWkG12JiOQXsKyRX260aCeEUdCN/6CQhjK/aoCCTCmMXKgN/2Xu3sHVD88AY2lq5lTCl0Rgdgfk5JAsP7y41nXWnKVsW9FYFucy4rTIxam1UA=="></div>    
+    <input type="hidden" name="continued" id="continued" minlength="3" maxlength="3" autocomplete="off" value="on">    <input type="hidden" name="support" id="support" minlength="3" maxlength="3" autocomplete="off" value="on">            
+
+    <div id="helpwrap">
+        <span class="help">?</span>
+        <div class="tip">
+    <strong>Device Search tip</strong><br>
+    The names of the programmable devices in our database <strong>don't contain all characters</strong>, shown at the top of the chip or mentioned in a datasheet section part numbering. The names of the chips in our database contain all characters necessary for identification of the device, but don't contain such codes, that have no influence to the programming, for example <em>temperature code</em>, <em>speed code</em>, <em>packing type code</em>, etc. . If such code letter is at the end of the name, it should be omitted <!--(Ex. 1). If such code letter is in the middle of the name, it should be replaced by character '<strong>x</strong>' (Ex. 2). --><br><br> <strong>Examples</strong>:    <ol>
+        <li> devices Am27C512-150, Am27C512-200 and Am27C512-250 should be searched as Am27C512 </li>
+            </ol>
+</div>
+    </div>
+                    <input type="search" name="search" accesskey="s" id="search" minlength="3" required="required" placeholder="Elnec device search, fulltext search" autocomplete="off" aria-label="Elnec device search, fulltext search">        
+                <button type="submit" id="searchsubmit">Search</button>        <div style="display:none;"><input type="hidden" name="_Token[fields]" autocomplete="off" value="fc76ab498fed933f5bbaae158f901abe1d039c96%3Acontinued%7Csupport"><input type="hidden" name="_Token[unlocked]" autocomplete="off" value=""></div></form>
+
+<nav id="ajaxret"></nav>
+<script>
+    if(document.getElementById("search-form") && document.getElementById("search") && document.getElementById("ajaxret")) {
+        //
+//        document.getElementById("search").addEventListener("input", function (evt) {
+//            if(document.getElementById("search").value.length > 3) {
+//                //                //
+//                var urlPath = "/ajaxsearch.php?"
+//                + new URLSearchParams({ 
+//                    h: "zPuyujxFQuNmmDuebwx8zzcADbejE4e7X6D3DjqaqAPJpHptLx8Ckh2qGu5Zu5vmLCgXNMQEEEyBxAmVXDF2a2a3JZSLcURu7svnc7nGHSDztBW7P69f7aYrfw47wpfU",
+//                    s: "57800c4da2c43a2a0c71f6afdf262dfbb2fbce3f",
+//                    a: "5a48e66fca425b09e7a6c826d6caec044ce0ab4ead437441e8416af5dcbfa7a1"
+//                });
+//                var searchParams = new URLSearchParams({ 
+//                    e: document.getElementById("search").value,
+//                    es: "a35cbb61fee086e5c574053126539f09"
+//                });
+//                var xhttp = new XMLHttpRequest();
+//                xhttp.open("POST", urlPath, true);          
+//                  
+//                //
+//                xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded;charset=UTF-8');
+//                xhttp.setRequestHeader('X-Requested-With','XMLHttpRequest');
+//                //
+//                xhttp.onreadystatechange = function() {
+//                    if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+//                        document.getElementById("ajaxret").innerHTML = this.responseText;
+//                        if(document.getElementById("ajaxret").getElementsByTagName("a").length > 0){
+//                            document.getElementById("ajaxret").style.display = "block";
+//                            document.getElementById("ajaxret").style.visibility = "visible";
+//                        } else {
+//                            document.getElementById("ajaxret").style.display = "none";
+//                            document.getElementById("ajaxret").style.visibility = "hidden";
+//                        }
+//                        var ajaxretas = document.getElementById("ajaxret").getElementsByTagName("a");
+//                        for (var i=0; i<ajaxretas.length; i++) {
+//                            ajaxretas[i].addEventListener('click', function() {
+//                                document.getElementById("search").value = this.innerText;                            
+//                                document.getElementById("search-form").submit();
+//                                document.getElementById("search-form").insertAdjacentHTML("afterend", "<div id='s_progress'><div id='loaders'></div><div id='searchingtext'>SEARCHING... <b>"+ document.getElementById("search").value +"</b></div></div>");
+//                            });
+//                        }
+//                    }            
+//                };
+//                //
+//                xhttp.send(searchParams.toString()); //                //                //
+//                if(!document.getElementById("search").value) {
+//                    document.getElementById("ajaxret").style.display = "none";
+//                    document.getElementById("ajaxret").style.visibility = "hidden";
+//                }
+//            }
+//        });
+        //
+        document.getElementById("search-form").addEventListener("submit", (e) => {
+            document.getElementById("search-form").insertAdjacentHTML("afterend", "<div id='s_progress'><div id='loaders'></div><div id='searchingtext'>SEARCHING... <b>"+ document.getElementById("search").value +"</b></div></div>");
+        });
+    }
+</script>
+<div class="cleaner"></div>
+
+        
+<a href="#showmenu" title="" id="show-menu">
+    <img src="https://www.elnec.com/img/show-menu.svg" alt="show-menu" title="" height="14" width="26"></a>
+        
+
+<nav id="menu">
+    <div class="item">
+                                    <a href="/en/" title="" class="link first">Home</a>
+                                </div>
+    
+        
+    <div class="item">
+                                    <a href="/en/products/" title="" class="link active">Products</a>
+                                    
+        
+        <div class="subitems">
+            <div class="subitem">
+                                                            <a href="/en/products/universal-programmers/" title="" class="sublink">Universal programmers »</a>
+                                                            
+                
+                <div class="treitems toright">
+                                                                        <a href="/en/products/universal-programmers/beeprog3/" title="" class="trelink">BeeProg3</a>
+                                                    
+
+                                                                        <a href="/en/products/universal-programmers/beeprog2/" title="" class="trelink">BeeProg2</a>
+                                                    
+
+                                                                        <a href="/en/products/production-programmers/beeprog2ap/" title="" class="trelink">BeeProg2AP</a>
+                                                    
+
+                                                                        <a href="/en/products/universal-programmers/beeprog2c/" title="" class="trelink">BeeProg2C</a>
+                                                    
+
+                                        </div>
+            </div>
+            
+                
+            <div class="subitem">
+                                                            <a href="/en/products/production-programmers/" title="" class="sublink">Production programmers »</a>
+                                                            
+                
+                <div class="treitems toright">
+                        
+                    
+                                                                        <a href="/en/products/production-programmers/beehive208s/" title="" class="trelink">BeeHive208S</a>
+                                                                        
+                    
+                                                                        <a href="/en/products/production-programmers/beehive304/" title="" class="trelink">BeeHive304</a>
+                                                                        
+
+                                                                        <a href="/en/products/production-programmers/beehive204/" title="" class="trelink">BeeHive204</a>
+                                                    
+
+                                                                        <a href="/en/products/production-programmers/beehive204ap/" title="" class="trelink">BeeHive204AP</a>
+                                                    
+
+                                                                        <a href="/en/products/universal-programmers/beeprog3/" title="" class="trelink">BeeProg3</a>
+                                                    
+
+                                                                        <a href="/en/products/production-programmers/beeprog2ap/" title="" class="trelink">BeeProg2AP</a>
+                                                    
+
+                                                                        <a href="/en/products/production-programmers/beeprog-multiprogramming/" title="" class="trelink compr">BeeProg3 and BeeProg2/BeeProg2C multiprogramming</a>
+                                                                        
+                    
+                                        </div>
+            </div>
+            
+            
+                                                <a href="/en/products/programming-adapters/" title="" class="sublink mbord active">Programming adapters</a>
+                                                
+            
+                                                <a href="/en/products/ap1-programming-modules/" title="" class="sublink">AP1 programming modules</a>
+                                                
+            
+                                                <a href="/en/products/ap3-programming-modules/" title="" class="sublink">AP3 programming modules</a>
+                                                
+            
+            <div class="subitem last">
+                                                            <a href="/en/products/software/" title="" class="sublink">Software »</a>
+                                                            
+                
+                <div class="treitems toright">
+                                                                        <a href="/en/products/software/pg4uw/" title="" class="trelink">PG4UW</a>
+                                                    
+                    
+                                                                        <a href="/en/products/software/pg4uwmc/" title="" class="trelink mbord">PG4UWMC</a>
+                                                                    </div>
+            </div>
+            
+                
+                                                <a href="/en/products/accessories/" title="" class="sublink">Accessories</a>
+                                                
+            
+                                                <a href="/en/products/discontinued-products/" title="" class="sublink">Discontinued products</a>
+                                            </div>
+    </div>
+    
+
+    <div class="item">
+                                    <a href="/en/support/algor-service/" title="" class="link">Support</a>
+                                    
+        <div class="subitems">
+                                                <a href="/en/support/algor-service/" title="" class="sublink">AlgOR (New device support)</a>
+                                                
+            
+                                                <a href="/en/support/download/" title="" class="sublink">Download (SW, documentation)</a>
+                                                
+            
+                                                <a href="/en/support/application-notes/" title="" class="sublink">Application notes</a>
+                                                
+            
+                                                <a href="/en/support/problem-report/" title="" class="sublink">Problem report</a>
+                                                
+            
+                                                <a href="/en/support/technical-support/" title="" class="sublink">Technical support</a>
+                                                
+            
+                                                <a href="/en/support/registration-form/" title="" class="sublink">Product registration</a>
+                                                
+            
+                                            <a href="/sw/top_dev.htm?v=3-99f" title="" class="sublink">List of supported devices</a>
+                            
+            
+            <div class="subitem">
+                                                            <a href="/en/support/services/calibration/" title="" class="sublink">« Services</a>
+                                                            
+                
+                <div class="treitems toleft">
+                                                                        <a href="/en/support/services/calibration/" title="" class="trelink compr">Programmer calibration</a>
+                                                                        
+                    
+                                                                        <a href="/en/support/services/warranty-repairs/" title="" class="trelink compr">Warranty &amp; After-warranty repairs</a>
+                                                                        
+                    
+                                                                        <a href="/en/support/services/keep-current-service/" title="" class="trelink compr">Keep-Current service</a>
+                                                                    </div>
+            </div>
+            
+            
+            <div class="subitem">
+                                                            <a href="/en/support/other/ic-logos/" title="" class="sublink">« Other</a>
+                                                            
+                
+                <div class="treitems toleft">
+                                                                        <a href="/en/support/other/ic-logos/" title="" class="trelink">IC logos</a>
+                                                                        
+                    
+                                                                        <a href="/en/support/other/links/" title="" class="trelink">Links</a>
+                                                                        
+                    
+                                                                        <a href="/en/news/software-news/" title="" class="trelink">Software news</a>
+                                                                        
+                    
+                                                                        <a href="/en/support/other/undeliverable-responses/" title="" class="trelink compr mbord">Undeliverable responses</a>
+                                                                        
+                    
+                                                                        <a href="/en/support/cookie-consent/" title="" class="trelink">Cookies</a>
+                                                                    </div>
+            </div>
+        </div>
+    </div>    
+    
+    
+    <div class="item">
+                                    <a href="/en/about-elnec/contacts/" title="" class="link">About Elnec</a>
+                                    
+        <div class="subitems">
+                                                <a href="/en/about-elnec/contacts/" title="" class="sublink">Contacts</a>
+                                                
+            
+                                                <a href="/en/about-elnec/company-info/" title="" class="sublink">Company info</a>
+                                                
+            
+                                                <a href="/en/news/elnec-news/" title="" class="sublink">News</a>
+                                                
+            
+                                                <a href="/en/news/about-elnec/exhibitions/" title="" class="sublink">Exhibitions</a>
+                                                
+            
+                                                <a href="/en/news/about-elnec/careers/" title="" class="sublink">Careers</a>
+                                                
+                    
+                                    
+            
+                                                <a href="/en/about-elnec/privacy-statement/" title="" class="sublink">Privacy</a>
+                                                
+            
+                                                                        <a href="/files/terms-and-conditions-eu-elnec_JUL_2024.pdf" title="" target="_blank" class="sublink">Terms and conditions</a>
+                                    
+                                            </div>
+    </div> 
+    
+    
+    <div class="item">
+                                    <a href="/en/distributors/" title="" class="link last">Distributors</a>
+                                </div> 
+</nav>
+<div class="cleaner"></div>        
+
+          
+
+            </header>
+        </div>
+        
+        
+                <div id="main-wrap">
+                                                                        <main>
+                                                    
+                                                            <a href="/en/store/" title="" id="cartmobile">
+                                                            <strong>0 items | view cart</strong>
+                                            <picture>                    <source srcset='https://www.elnec.com/img/elnec-eshop.webp' type='image/webp' class='has-retina'>
+                    <source srcset='https://www.elnec.com/img/elnec-eshop.jxr' type='image/vnd.ms-photo' class='has-retina'>
+                    <source srcset='https://www.elnec.com/img/elnec-eshop.jp2' type='image/jp2' class='has-retina'>
+                    <img src="https://www.elnec.com/img/elnec-eshop.gif" alt="Elnec online orders" title="" height="24" width="23" class="has-retina">                        </picture></a>
+                <div class="cleaner"></div>
+                
+                    
+                                                                        <div id="products-exhibitions-wrap">
+                
+
+            <nav class="left">
+                    <h2>Universal</h2>
+            
+                    
+        
+                                                                                                                    <a href="/en/products/programming-adapters/#ssop" title="">DIL/(T)SSOP</a>
+                                                                                                                                                                                        <a href="/en/products/programming-adapters/#dil_bga" title="">DIL/BGA</a>
+                                                                                                                                                                                        <a href="/en/products/programming-adapters/#plcc" title="">DIL/PLCC</a>
+                                                                                                                                                                                        <a href="/en/products/programming-adapters/#psop" title="">DIL/PSOP</a>
+                                                                                                                                                                                        <a href="/en/products/programming-adapters/#qfn_mlf" title="">DIL/QFN (MLF)</a>
+                                                                                                                                                                                        <a href="/en/products/programming-adapters/#qfp" title="">DIL/QFP</a>
+                                                                                                                                                                                        <a href="/en/products/programming-adapters/#sdip" title="">DIL/SDIP</a>
+                                                                                                                                                                                        <a href="/en/products/programming-adapters/#soic" title="">DIL/SOIC</a>
+                                                                                                                                                                                        <a href="/en/products/programming-adapters/#tsoc" title="">DIL/TSOC</a>
+                                                                                                                                                                                        <a href="/en/products/programming-adapters/#tsop" title="">DIL/TSOP</a>
+                                                                                                                </nav>
+            
+    
+            <nav class="left">
+                    <h2>Specialized for</h2>
+                    
+                    
+                                                                                <a href="/en/products/programming-adapters/#ARM" title="">ARM</a>
+                                
+                                                                                        <a href="/en/products/programming-adapters/#atmel" title="">Atmel/Microchip AVR</a>
+                                
+                                                                                        <a href="/en/products/programming-adapters/#cypress" title="">Cypress MCU</a>
+                                
+                                                                                        <a href="/en/products/programming-adapters/#energymicro" title="">ENERGY Micro MCU</a>
+                                
+                                                                                        <a href="/en/products/programming-adapters/#epson" title="">EPSON MCU</a>
+                                
+                                                                                        <a href="/en/products/programming-adapters/#espressif" title="">Espressif</a>
+                                
+                                                                                        <a href="/en/products/programming-adapters/#motorola" title="">Freescale/Motorola/NXP</a>
+                                
+                                                                                        <a href="/en/products/programming-adapters/#fujitsu_mcu" title="">Fujitsu MCU</a>
+                                
+                                                                                        <a href="/en/products/programming-adapters/#infineon" title="">Infineon MCU</a>
+                                
+                                                                                        <a href="/en/products/programming-adapters/#isp_icp" title="">ISP/ICP</a>
+                                
+                                                                                        <a href="/en/products/programming-adapters/#mcs196" title="">MCS-196</a>
+                                
+                                                                                        <a href="/en/products/programming-adapters/#mcs51" title="">MCS-51</a>
+                                
+                                                                                        <a href="/en/products/programming-adapters/#eprom" title="">Memory (NOR/NAND/eMMC)</a>
+                                
+                                                                                        <a href="/en/products/programming-adapters/#renesas" title="">Mitsubishi/Renesas MCU</a>
+                                
+                                                                                        <a href="/en/products/programming-adapters/#nec_mcu" title="">NEC MCU</a>
+                                
+                                                                                        <a href="/en/products/programming-adapters/#other" title="">other</a>
+                                
+                                                                                        <a href="/en/products/programming-adapters/#pic" title="">PICmicro</a>
+                                
+                                                                                        <a href="/en/products/programming-adapters/#pld" title="">PLD</a>
+                                
+                                                                                        <a href="/en/products/programming-adapters/#psd" title="">PSD</a>
+                                
+                                                                                        <a href="/en/products/programming-adapters/#st_mcu" title="">ST MCU</a>
+                                
+                                                                                        <a href="/en/products/programming-adapters/#ti_tms" title="">TI (TMS) MCU</a>
+                                
+                                                                                        <a href="/en/products/programming-adapters/#toshiba" title="">Toshiba MCU</a>
+                                
+                                                                                        <a href="/en/products/programming-adapters/#ubicom" title="">Ubicom MCU</a>
+                                
+                                                                                        <a href="/en/products/programming-adapters/#uoc_iii" title="">UOC</a>
+                                
+                                                                                        <a href="/en/products/programming-adapters/#zilog" title="">Zilog MCU</a>
+                                
+                                                    </nav>
+            
+        
+            <nav class="left">
+                    <h2>BGA/LGA</h2>
+                    
+                                                        <a href="/en/products/programming-adapters/#BGA-intro" title="">BGA-intro</a>
+                            
+                                    
+                                                                                <a href="/en/products/programming-adapters/#BGA-adapters" title="">BGA adapters</a>
+                                                                                                                <a href="/en/products/programming-adapters/#BGA-Bottom" title="">BGA-Bottom</a>
+                                                                                                                <a href="/en/products/programming-adapters/#BGA-Top" title="">BGA-Top</a>
+                                                                            </nav>
+            
+        
+            
+
+            
+    
+    
+    <nav id="exhibitions">
+        <h2>Exhibitions</h2>
+        
+             
+        <a href="/en/news/about-elnec/exhibitions/" title="">
+            <picture>        <source srcset='https://www.elnec.com/img/elnec-on-exhibition.avif' type='image/avif' class='has-retina'>
+        <source srcset='https://www.elnec.com/img/elnec-on-exhibition.webp' type='image/webp' class='has-retina'>
+        <source srcset='https://www.elnec.com/img/elnec-on-exhibition.jxr' type='image/vnd.ms-photo' class='has-retina'>
+        <source srcset='https://www.elnec.com/img/elnec-on-exhibition.jp2' type='image/jp2' class='has-retina'>
+        <img src="https://www.elnec.com/img/elnec-on-exhibition.png" alt="Elnec on exhibition" title="" height="86" width="126" class="has-retina" srcset="/img/elnec-on-exhibition@2x.png 2x">            </picture></a>
+
+
+            
+                            <div class="exh">
+            
+                                                        <h2>IFAM Ljubljana 2025</h2>
+                                            
+            
+                                                                                    <img src="https://www.elnec.com/images/exhibitions/2025_ifam_ljublana/ikona/2025_ifam_ljublana2.png" alt="IFAM Ljubljana 2025" title="" style="margin-top:-17px;">                                                                        
+
+                                <strong>11th - 13th Feb 2025</strong><br>
+                    
+
+                            Exhibition and Convention Center<br>
+                
+
+                            exhibitor: <strong>AX elektronika d.o.o.</strong><br>
+                            <br>--------------------------------
+            
+        </div>
+                            
+            
+        
+                                    <a href="/en/news/about-elnec/exhibitions?display=all/" title="" class="lft">All exhibitions »</a>
+                                   
+    </nav>
+</div>
+    
+<nav id="certification">
+    <h3>ISO 9001:2015</h3>
+    
+    <a href="/files/SK24_00000181e_QMS_v1.pdf" title="" target="_blank">
+        <picture>            <source srcset='https://www.elnec.com/img/SGS_ISO_LoFi.avif' type='image/avif' class='has-retina'>
+            <source srcset='https://www.elnec.com/img/SGS_ISO_LoFi.webp' type='image/webp' class='has-retina'>
+            <source srcset='https://www.elnec.com/img/SGS_ISO_LoFi.jxr' type='image/vnd.ms-photo' class='has-retina'>
+            <source srcset='https://www.elnec.com/img/SGS_ISO_LoFi.jp2' type='image/jp2' class='has-retina'>
+            <img src="https://www.elnec.com/img/SGS_ISO_LoFi.jpg" alt="Elnec ISO 9001:2015" title="" height="34" width="35" class="has-retina" srcset="/img/SGS_ISO 9001_TCL_HR@2x.jpg 2x">    </picture></a>
+</nav>
+                                                            
+
+                                                            <div id="content-wrap"><nav id="breadcrumbs"><a href="/en/">Home</a> &raquo; <a href="/en/products/">Products</a> &raquo; <a href="/en/products/programming-adapters/">Programming adapters</a> &raquo; <a href="/en/products/programming-adapters/DIL48_QFN20-4_ZIF-CS/">DIL48/QFN20-4 ZIF-CS</a>  </nav>
+
+
+<section id="content">    
+    <nav id="adapters" class="shadow">
+                                    <h1>DIL48/QFN20-4 ZIF-CS <small>(Ord. no. 70-2196)</small></h1>
+                            
+        <p>
+            See:
+            
+                                                                    <a href="/en/products/programming-adapters/DIL48_QFN20-4_ZIF-CS/#manual" title="">Adapter manual</a>                                
+                             | 
+                                 
+                                                                    <a href="/en/products/programming-adapters/DIL48_QFN20-4_ZIF-CS/#package" title="">Accepted package(s)</a>                    
+                             | 
+                                 
+                                                <a href="/en/products/programming-adapters/DIL48_QFN20-4_ZIF-CS/#programmers" title="">Usable for programmer(s)</a> 
+                                 
+                             
+                                 | 
+                            <a href="#ifrsd" title="" class="show" data-fslightbox="ifrsd">List of supported devices</a>
+                            </p>
+    </nav>
+    
+            
+                    <table id="adapterdetail">                
+                    <tr>
+            <td colspan="2">
+                                    <ul class='yellow'><li>universal adapter, assigned for SiLabs C8051F990 devices in QFN20 package</li><li>operating (mechanical) warranty of ZIF socket - 5,000 actuations</li><li><a href="/en/about-elnec/company-info/#quality">made in Slovakia</a></li></ul>                    
+                            </td>
+        </tr>
+                    
+                    <tr>
+            <th>Ord. no.</th>
+            <td>70-2196</td>
+        </tr>
+                    
+                    <tr>
+            <th>Socket</th>
+                            <td>ZIF QFN20, ClamShell type</td>
+                        </tr>
+                    
+                    <tr>
+            <th>Bottom</th>
+                            <td>2x24 pins, square, 0.6x0.6mm, rows spacing 600mil</td>
+                        </tr>
+                    
+                    <tr>
+            <th>Class</th>
+                                                <td><a href="/en/products/programming-adapters/#related_terms" title="">Universal</a></td>
+                                            </tr>
+                                
+        
+                                
+        <tr>
+            <th>Subclass</th>
+                            <td>DIL/QFN (MLF)</td>
+                        </tr>
+                    
+        
+                    <tr id="availability">
+            <th>Availability in stock</th>
+            <td>
+                                                                                                    
+                                                                                    <div id="stocked">2 pcs.</div>
+                
+                                    
+                                                                            
+                                        
+                
+                                                        [ <div id="inthreedays">other 6 pcs. <p>This number indicates quantity of items that could be produced from components in stock. Reasonable quantity of this product can be available within 3 working days.</p></div> within 3 working days ]
+                                    
+                
+                                
+
+            </td>
+        </tr>
+                </table>
+
+
+    <div id="adapteractions">
+        
+        
+                
+                                                                <img src="https://www.elnec.com/pics/convert/con2196b.jpg" alt="DIL48/QFN20-4 ZIF-CS, 70-2196" title="" width="300" onmouseover="this.src=&quot;/pics/convert/con2196b1.jpg&quot;" onmouseout="this.src=&quot;/pics/convert/con2196b.jpg&quot;" class="withoutfx">                                                        
+                        
+        
+                            <small>Move the cursor over the picture for additional view.</small>
+                    
+        
+            
+            
+                                    
+
+                    <h2>Price: 280.00 &euro; excl. VAT                        </h2>
+                        <h3>Price 2-3: 266.00 &euro; excl. VAT</h3>
+        <h3>Price 4-7: 252.00 &euro; excl. VAT</h3>
+                    <h3>
+            Price 8+ : <a href="/en/support/technical-support?send_to=elnec&amp;subject=Ask+for+price+8+pcs+of+DIL48%2FQFN20-4+ZIF-CS+%28Ord.+no.+70-2196%29/" title="">Ask for price</a>            [<a href="#" onClick="divwin=popupwindow.open('divbox', 'div', 'discount8', 'Quantity discounts', 'width=400px,height=175px,left=300px,top=150px,resize=0,scrolling=1'); return false;" style="font-size:14px;text-decoration:none;">?</a>]
+        </h3>
+                                                
+        <p id="discount8">
+            Elnec fully understand needs of customers programming high volumes for which cost of adapters is one of most important component of costs. Therefore Elnec policy is to offer:<br><br>
+            &nbsp;&nbsp;&nbsp; 1. fixed discount when buying <strong>4+</strong> adapters of particular type,<br><br>
+                &nbsp;&nbsp;&nbsp;             2. individual discount for quantities <strong>8+</strong> according to type of adapter and &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; demanded quantity. To get Quotation 8+ please click here: 
+                            
+                                                
+            <a href="/en/support/technical-support?send_to=elnec&amp;subject=Ask+for+price+8+pcs+of+DIL48%2FQFN20-4+ZIF-CS+%28Ord.+no.+70-2196%29/" title="">Ask for price</a>                                            </p>
+        
+            
+                    <form method="post" accept-charset="utf-8" autocomplete="off" action="/en/add-to-cart/1182"><div style="display:none;"><input type="hidden" name="_csrfToken" autocomplete="off" value="eMMWjCOJ7nzBMWvPKQuPnT/6NgUKX4Nhp/NzV0IzgtWkG12JiOQXsKyRX260aCeEUdCN/6CQhjK/aoCCTCmMXKgN/2Xu3sHVD88AY2lq5lTCl0Rgdgfk5JAsP7y41nXWnKVsW9FYFucy4rTIxam1UA=="></div>            
+            <input type="number" name="ccnt1182" min="1" id="ccnt1182" autocomplete="off" templates="{{content}} {{content}}" value="1">            
+            <div class="submit"><input type="submit" name="submit" value="Add to shopping cart"></div>
+                            <a href="/en/store/" title="" id="cart">View cart</a>
+                
+        <div style="display:none;"><input type="hidden" name="_Token[fields]" autocomplete="off" value="397c21df5435fc127747e6dccc22467b533c8552%3A"><input type="hidden" name="_Token[unlocked]" autocomplete="off" value="ccnt1182%7Csubmit"></div></form>                                         </div>
+    <div class="cleaner"></div>
+            
+    
+          
+    
+    
+            <h3 class="detail" id="manual">Adapter manual</h3>
+            <ul class='yellow manual'>
+  <li>Insert adapter to the device programmer ZIF socket according to the picture placed near of it. If you have some doubts about orientation of this adapter in device programmer ZIF socket, it is valid general rule, the orientation of the text of title is the same as the text on the top of the device programmer.</li>
+  <li>Open the adapter ClamShell ZIF socket. Insert the device into it (place device on contacts). The right position of the programmed device in adapter ZIF socket is show at picture near (mainly left above) the adapter ZIF socket. On this picture reference corner (e.g. position of pin 1) of device is indicated by dot, by number 1, by bevelled corner or by any combination of them.</li>
+  <li>Visually check interconnection between device and adapter ClamShell ZIF socket. If everything looks OK, close it and now, device is ready for programming.</li>
+  <li>Be careful, because the incorrect insertion of adapter to the device programmer ZIF socket or device to the adapter ClamShell ZIF socket can damage the programmed device.</li>
+  <li>To take out the device, open adapter ClamShell ZIF socket and remove device from it.</li>
+  <li>When you finish work with adapter, remove it from the device programmer ZIF socket.</li>
+  <li>Do not directly touch the pins of the adapter and adapter ZIF socket, because dirt may cause errors during programming of device.</li>
+  <li>For handling with the device we recommended to use a vacuum pick up tool.</li>
+  <li>Operation conditions: operating temperature 5°C ÷ 40°C (41°F ÷ 104°F), operating humidity 20%..80%, non condensing.</li>
+</ul>
+            
+                
+
+            
+    
+    <h3 class="detail onlyprint">Software note</h3>
+            <ul class="yellow onlyprint">
+        <li>If software version, you're using currently, doesn't contain support for this programming module, please download the latest version of software - Regular or OnDemand - from our web site.</li>
+    </ul>
+            <div class="pagebreak"></div>
+    <div>&nbsp;</div>
+    
+
+            <h3 class="detail" id="package">Accepted package(s)</h3>
+<table class="scheme">
+<tr>
+<td>QFN20</td>
+<td rowspan="2">
+<img src="/pics/qfn/qfn20-3x3p050m_3.gif" alt="Package"></td>
+</tr>
+<tr>
+<td>
+<img src="/pics/qfn/qfn20-3x3p050p_3.gif" alt="Design"></td>
+</tr>
+</table>
+                
+                    <h3 class="detail noprint" id="programmers">Usable for programmer(s):</h3>
+
+                                <a href="/en/products/production-programmers/beehive208s/" title="" class="prgm noprint" target="_blank">BeeHive208S</a>                                                <a href="/en/products/production-programmers/beehive204/" title="" class="prgm noprint" target="_blank">BeeHive204</a>                                                <a href="/en/products/universal-programmers/beeprog2/" title="" class="prgm noprint" target="_blank">BeeProg2</a>                                                <a href="/en/products/universal-programmers/beeprog2c/" title="" class="prgm noprint" target="_blank">BeeProg2C</a>                                        
+            
+        
+            <p class="noprint">
+        <strong>Note</strong>: <em>This programming adapter / module may not support all devices in the package(s) mentioned above on your programmer. Please, verify situation for particular device(s) you are going to work with using actual Device list of your programmer.</em>
+    </p>
+        
+</section>
+</div>
+                                                            
+                                    </main>
+        </div>
+        
+        
+                <div id="cookieconsent-wrap">
+    <nav id="cookieconsent">
+                            <p id="cookieenabled">Our website uses cookies 🍪 by default to provide services and anonymous visitor analysis without processing any personal data.</p>
+                    
+        <p id="cookiedisabled">For the proper functioning of this website, we recommend turning on cookies 🍪.</p>
+                            <button id="cookieconsent-close" type="button">Refuse</button>
+        <button id="cookieconsent-ok" type="button">Accept personalized cookies</button>
+                    <button id="cookieconsent-settings" type="button">Settings</button>
+        <button id="cookieconsent-info" type="button">More info</button>
+    </nav>
+    <script>
+        document.getElementById("cookieconsent-info").onclick = function() {
+                            location.href = "/en/support/cookie-consent/";
+                        };
+    </script>
+</div>
+
+<noscript>
+    <div id="cookieconsentnoscript-wrap">
+        <nav id="cookieconsentnoscript">
+            <p>For the proper functioning of this website, we recommend enabling JavaScript.</p>
+        </nav>
+    </div> 
+</noscript>
+
+<a href="#cookieconsentpanel-wrap" title="" id="cookieconsent-reopen">🍪</a>
+
+
+<div id="cookieconsentpanel-wrap">
+    <nav id="cookieconsentpanel">
+        
+        <h3>Cookies settings 🍪</h3>
+        
+                     <h4>Cookies and how we use them on <a href="/en/support/cookie-consent/" title="" target="_blank">elnec.com</a></h4>
+                     
+        <p>Below are the purposes and recipients of the cookies we use and how we use them. Most browsers support cookies but you can set your browser to decline them and delete them whenever you like. However, some functions of our website may not work as they should if cookies are not enabled.</p>
+                    <p class="last">When you click the <strong>"Accept personalized cookies"</strong> button,<br>your IP address will not be anonymized for Google Analytics otherwise your IP address will be anonymized for Google Analytics.</p><br>
+        <p class="last">When you click the <strong>"Refuse personalized cookies"</strong> button,<br>your IP address will be anonymized for Google Analytics.</p><br>
+                    <p class="last">When you click the <strong>"List of purposes"</strong> button, it will show you purposes for processing cookies.</p><br>
+        <p class="last">When you click the <strong>"List of recipients"</strong> button, it will show you recipients for cookies.</p>
+        <div class="cleaner"></div>
+        
+                    <button id="cookieconsentpanel-ok" type="button">Accept personalized cookies</button>
+        <button id="cookieconsentpanel-refuse" type="button">Refuse personalized cookies</button>
+                    <button id="cookieconsentpanel-purposes" type="button">List of purposes</button>
+        <button id="cookieconsentpanel-recipients" type="button">List of recipients</button>
+        <div class="cleaner"></div>
+        
+        
+                    <p class="last">You can find more about cookies here <strong><a href="/en/support/cookie-consent/" title="">&quot;Cookies and how we use them&quot;</a></strong>.</p>
+                    <div class="cleaner"></div>
+        
+
+        <div id="cookieconsent-purposes-list">
+            <h5>List of purposes</h5>
+            
+            <h6>Essential cookies</h6>
+                        <table>
+                <thead>
+                    <tr>
+                        <th>Cookie name</th>
+                                                    <th>Cookie use on <a href="/en/support/cookie-consent/" title="" target="_blank">elnec.com</a></th>
+                                                    <th>Cookie expiration</th>
+                        <th>&#10003;</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>_csrftoken</td>
+                                                    <td>protection against <a href="https://owasp.org/www-community/attacks/csrf" title="" target="_blank">csrf attack</a> [<a href="/en/support/cookie-consent/" title="" target="_blank">elnec.com</a>]</td>
+                                                    <td>at the end of session</td>
+                        <td><input type="checkbox" checked="checked" disabled="disabled" class="cookieconsent-csrftoken" id="_csrftoken" name="_csrftoken" autocomplete="off"></td>
+                    </tr>
+                    <tr>
+                        <td>_devicepixelratio</td>
+                                                    <td>retina display adaptation [<a href="/en/support/cookie-consent/" title="" target="_blank">elnec.com</a>]</td>
+                                                    <td>five years</td>
+                        <td><input type="checkbox" checked="checked" disabled="disabled" class="cookieconsent-devicepixelratio" id="_devicepixelratio" name="_devicepixelratio" autcomplete="off"></td>
+                    </tr>
+                    <tr>
+                        <td>_elnec</td>
+                                                    <td>essential cookie [<a href="/en/support/cookie-consent/" title="" target="_blank">elnec.com</a>]</td>
+                                                                            <td>seventy two hours</td>
+                        <td><input type="checkbox" checked="checked" disabled="disabled" class="cookieconsent-elnec" id="_elnec" name="_elnec" autocomplete="off"></td>
+                    </tr>
+                                            <tr>
+                        <td>_ga</td>
+                        <td>anonymized google analytics [<a href="https://support.google.com/analytics/answer/6004245" title="" target="_blank">google.com</a>]</td>
+                        <td>four hundred days</td>
+                        <td><input type="checkbox" checked="checked" disabled="disabled" class="cookieconsent-ga" id="_ga" name="_ga" autocomplete="off"></td>
+                    </tr>
+                                            <tr>
+                        <td>_ga_93YZ073JBB</td>
+                        <td>anonymized google analytics [<a href="https://support.google.com/analytics/answer/6004245" title="" target="_blank">google.com</a>]</td>
+                        <td>four hundred days</td>
+                        <td><input type="checkbox" checked="checked" disabled="disabled" class="cookieconsent-ga52G4BEP36N" id="_ga_" name="_ga_" autocomplete="off"></td>
+                    </tr>
+                                                                    <tr>
+                        <td>_gat_gtag_UA_253212317_1</td>
+                        <td>anonymized google analytics [<a href="https://support.google.com/analytics/answer/6004245" title="" target="_blank">google.com</a>]</td>
+                        <td>one minute</td>
+                        <td><input type="checkbox" checked="checked" disabled="disabled" class="cookieconsent-gat" id="_gat_gtag_UA_" name="_gat_gtag_UA_" autocomplete="off"></td>
+                    </tr>
+                                            <tr>
+                        <td>_gid</td>
+                        <td>anonymized google analytics [<a href="https://support.google.com/analytics/answer/6004245" title="" target="_blank">google.com</a>]</td>
+                        <td>one day</td>
+                        <td><input type="checkbox" checked="checked" disabled="disabled" class="cookieconsent-gid" id="_gid" name="_gid" autocomplete="off"></td>
+                    </tr>
+                                            <tr>
+                        <td>_lang</td>
+                                                    <td>language preference [<a href="/en/support/cookie-consent/" title="" target="_blank">elnec.com</a>]</td>
+                                                    <td>five years</td>
+                        <td><input type="checkbox" checked="checked" disabled="disabled" class="cookieconsent-lang" id="_lang" name="_lang" autocomplete="off"></td>
+                    </tr>
+                                            <tr>
+                        <td>_GRECAPTCHA</td>
+                        <td>google recaptcha v3 [<a href="https://developers.google.com/recaptcha/docs/faq" title="" target="_blank">google.com</a>]</td>
+                        <td>one hundred forty seven days</td>
+                        <td><input type="checkbox" checked="checked" disabled="disabled" class="cookieconsent-grecaptcha" id="_GRECAPTCHA" name="_GRECAPTCHA" autocomplete="off"></td>
+                    </tr>
+                                                            <tr>
+                        <td>NID</td>
+                        <td>google recaptcha v3 [<a href="https://developers.google.com/recaptcha/docs/faq" title="" target="_blank">google.com</a>]</td>
+                        <td>one hundred eighty four days</td>
+                        <td><input type="checkbox" checked="checked" disabled="disabled" class="cookieconsent-nid" id="NID" name="NID" autocomplete="off"></td>
+                    </tr>
+                                        </tbody>
+            </table>
+            
+                            <h6>Personalized cookies</h6>
+                        <table>
+                <thead>
+                    <tr>
+                        <th>Cookie name</th>
+                                                    <th>Cookie use on <a href="/en/support/cookie-consent/" title="" target="_blank">elnec.com</a></th>
+                                                    <th>Cookie expiration</th>
+                        <th>&#10003;</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>_cookieconsent</td>
+                                                    <td>cookie acceptance [<a href="/en/support/cookie-consent/" title="" target="_blank">elnec.com</a>]</td>
+                                                    <td>five years</td>
+                                                    <td><input type="checkbox" class="cookieconsent-cookieconsent" id="_cookieconsent" name="_cookieconsent" autocomplete="off"></td>
+                                                </tr>
+                    <tr>
+                        <td>_ga</td>
+                        <td>deanonymized google analytics [<a href="https://support.google.com/analytics/answer/6004245" title="" target="_blank">google.com</a>]</td>
+                        <td>four hundred days</td>
+                                                    <td><input type="checkbox" class="cookieconsent-dga" id="_ga1" name="_ga1" autocomplete="off"></td>
+                                                </tr>
+                                            <tr>
+                        <td>_ga_93YZ073JBB</td>
+                        <td>deanonymized google analytics [<a href="https://support.google.com/analytics/answer/6004245" title="" target="_blank">google.com</a>]</td>
+                        <td>four hundred days</td>
+                                                    <td><input type="checkbox" class="cookieconsent-dga52G4BEP36N" id="_ga_1" name="_ga_1" autocomplete="off"></td>
+                                                </tr>
+                                                                    <tr>
+                        <td>_gat_gtag_UA_253212317_1</td>
+                        <td>deanonymized google analytics [<a href="https://support.google.com/analytics/answer/6004245" title="" target="_blank">google.com</a>]</td>
+                        <td>one minute</td>
+                                                    <td><input type="checkbox" class="cookieconsent-dgat" id="_gat_gtag_UA_1" name="_gat_gtag_UA_1" autocomplete="off"></td>
+                                                </tr>
+                                            <tr>
+                        <td>_gid</td>
+                        <td>deanonymized google analytics [<a href="https://support.google.com/analytics/answer/6004245" title="" target="_blank">google.com</a>]</td>
+                        <td>one day</td>
+                                                    <td><input type="checkbox" class="cookieconsent-dgid" id="_gid1" name="_gid1" autocomplete="off"></td>
+                                                </tr>
+                </tbody>
+            </table>
+                
+            
+                    </div>
+        
+        
+        <div id="cookieconsent-recipients-list">
+            <h5>List of recipients</h5>
+           
+            <h6>Elnec s.r.o. - essential cookies</h6>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Cookie name</th>
+                                                    <th>Cookie use on <a href="/en/support/cookie-consent/" title="" target="_blank">elnec.com</a></th>
+                                                    <th>Cookie expiration</th>
+                        <th>&#10003;</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>_csrftoken</td>
+                                                    <td>protection against <a href="https://owasp.org/www-community/attacks/csrf" title="" target="_blank">csrf attack</a> [<a href="/en/support/cookie-consent/" title="" target="_blank">elnec.com</a>]</td>
+                                                    
+                        <td>at the end of session</td>
+                        <td><input type="checkbox" checked="checked" disabled="disabled" class="cookieconsent-csrftoken" id="_csrftoken2" name="_csrftoken2" autocomplete="off"></td>
+                    </tr>                    
+                    <tr>
+                        <td>_devicepixelratio</td>
+                                                    <td>retina display adaptation [<a href="/en/support/cookie-consent/" title="" target="_blank">elnec.com</a>]</td>
+                                                    <td>five years</td>
+                        <td><input type="checkbox" checked="checked" disabled="disabled" class="cookieconsent-devicepixelratio" id="_devicepixelratio2" name="_devicepixelratio2" autocomplete="off"></td>
+                    </tr>
+                    <tr>
+                        <td>_elnec</td>
+                                                    <td>essential cookie [<a href="/en/support/cookie-consent/" title="" target="_blank">elnec.com</a>]</td>
+                                                                            <td>seventy two hours</td>
+                        <td><input type="checkbox" checked="checked" disabled="disabled" class="cookieconsent-elnec" id="_elnec2" name="_elnec2" autocomplete="off"></td>
+                    </tr>
+                                            <tr>
+                        <td>_ga</td>
+                        <td>anonymized google analytics [<a href="https://support.google.com/analytics/answer/6004245" title="" target="_blank">google.com</a>]</td>
+                        <td>four hundred days</td>
+                        <td><input type="checkbox" checked="checked" disabled="disabled" class="cookieconsent-ga" id="_ga2" name="_ga2" autocomplete="off"></td>
+                    </tr>
+                                            <tr>
+                        <td>_ga_93YZ073JBB</td>
+                        <td>anonymized google analytics [<a href="https://support.google.com/analytics/answer/6004245" title="" target="_blank">google.com</a>]</td>
+                        <td>four hundred days</td>
+                        <td><input type="checkbox" checked="checked" disabled="disabled" class="cookieconsent-ga52G4BEP36N" id="_ga_2" name="_ga_2" autocomplete="off"></td>
+                    </tr>
+                                                                    <tr>
+                        <td>_gat_gtag_UA_253212317_1</td>
+                        <td>anonymized google analytics [<a href="https://support.google.com/analytics/answer/6004245" title="" target="_blank">google.com</a>]</td>
+                        <td>one minute</td>
+                        <td><input type="checkbox" checked="checked" disabled="disabled" class="cookieconsent-gat" id="_gat_gtag_UA_2" name="_gat_gtag_UA_2" autocomplete="off"></td>
+                    </tr>
+                                            <tr>
+                        <td>_gid</td>
+                        <td>anonymized google analytics [<a href="https://support.google.com/analytics/answer/6004245" title="" target="_blank">google.com</a>]</td>
+                        <td>one day</td>
+                        <td><input type="checkbox" checked="checked" disabled="disabled" class="cookieconsent-gid" id="_gid2" name="_gid2" autocomplete="off"></td>
+                    </tr>
+                                            <tr>
+                        <td>_lang</td>
+                                                    <td>language preference [<a href="/en/support/cookie-consent/" title="" target="_blank">elnec.com</a>]</td>
+                                                    <td>five years</td>
+                        <td><input type="checkbox" checked="checked" disabled="disabled" class="cookieconsent-lang" id="_lang2" name="_lang2" autocomplete="off"></td>
+                    </tr>
+                                            <tr>
+                        <td>_GRECAPTCHA</td>
+                        <td>google recaptcha v3 [<a href="https://developers.google.com/recaptcha/docs/faq" title="" target="_blank">google.com</a>]</td>
+                        <td>one hundred forty seven days</td>
+                        <td><input type="checkbox" checked="checked" disabled="disabled" class="cookieconsent-grecaptcha" id="_GRECAPTCHA2" name="_GRECAPTCHA2" autocomplete="off"></td>
+                    </tr>
+                                                            <tr>
+                        <td>NID</td>
+                        <td>google recaptcha v3 [<a href="https://developers.google.com/recaptcha/docs/faq" title="" target="_blank">google.com</a>]</td>
+                        <td>one hundred eighty four days</td>
+                        <td><input type="checkbox" checked="checked" disabled="disabled" class="cookieconsent-nid" id="NID2" name="NID2" autocomplete="off"></td>
+                    </tr>
+                                        </tbody>
+            </table>
+            
+            
+                            <h6>Elnec s.r.o. - personalized cookies</h6>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Cookie name</th>
+                                                    <th>Cookie use on <a href="/en/support/cookie-consent/" title="" target="_blank">elnec.com</a></th>
+                                                    <th>Cookie expiration</th>
+                        <th>&#10003;</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>_cookieconsent</td>
+                                                    <td>cookie acceptance [<a href="/en/support/cookie-consent/" title="" target="_blank">elnec.com</a>]</td>
+                                                    <td>five years</td>
+                                                    <td><input type="checkbox" class="cookieconsent-cookieconsent" id="_cookieconsent2" name="_cookieconsent2" autocomplete="off"></td>
+                                                </tr>
+                </tbody>
+            </table>
+                            
+            
+                            <h6>Google Analytics - personalized cookies</h6>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Cookie name</th>
+                                                    <th>Cookie use on <a href="/en/support/cookie-consent/" title="" target="_blank">elnec.com</a></th>
+                                                    <th>Cookie expiration</th>
+                        <th>&#10003;</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>_ga</td>
+                        <td>deanonymized google analytics [<a href="https://support.google.com/analytics/answer/6004245" title="" target="_blank">google.com</a>]</td>
+                        <td>four hundred days</td>
+                                                    <td><input type="checkbox" class="cookieconsent-dga" id="_ga3" name="_ga3" autocomplete="off"></td>
+                                                </tr>
+                                            <tr>
+                        <td>_ga_93YZ073JBB</td>
+                        <td>deanonymized google analytics [<a href="https://support.google.com/analytics/answer/6004245" title="" target="_blank">google.com</a>]</td>
+                        <td>four hundred days</td>
+                                                    <td><input type="checkbox" class="cookieconsent-dga52G4BEP36N" id="_ga_3" name="_ga_3" autocomplete="off"></td>
+                                                </tr>
+                                                                    <tr>
+                        <td>_gat_gtag_UA_253212317_1</td>
+                        <td>deanonymized google analytics [<a href="https://support.google.com/analytics/answer/6004245" title="" target="_blank">google.com</a>]</td>
+                        <td>one minute</td>
+                                                    <td><input type="checkbox" class="cookieconsent-dgat" id="_gat_gtag_UA_3" name="_gat_gtag_UA_3" autocomplete="off"></td>
+                                                </tr>
+                                            <tr>
+                        <td>_gid</td>
+                        <td>deanonymized google analytics [<a href="https://support.google.com/analytics/answer/6004245" title="" target="_blank">google.com</a>]</td>
+                        <td>one day</td>
+                                                    <td><input type="checkbox" class="cookieconsent-dgid" id="_gid3" name="_gid3" autocomplete="off"></td>
+                                                </tr>
+                </tbody>
+            </table>
+                            
+
+            
+            
+            
+            
+            
+                    </div>
+        
+        
+                    <p class="last">You can find more about personal data protection here <strong><a href="/en/about-elnec/privacy-statement/" title="">&quot;Privacy Statement&quot;</a></strong>.</p>
+                    <div class="cleaner"></div>
+            
+            
+        <button id="cookieconsentpanel-save" type="button">Save cookie settings</button>            
+        <button id="cookieconsentpanel-close" type="button">Close</button>
+        <div class="cleaner"></div>
+    </nav>
+</div>
+        
+
+                <footer>
+                        <a href="/en/" title="">Home</a>
+             | 
+    
+    
+            <a href="/en/about-elnec/contacts/" title="">Contacts</a>
+             | 
+    
+    
+<a href="https://maps.app.goo.gl/WbR3zZzLyEietiUn6/" title="" target="_blank">Find us</a>
+ | 
+
+<a href="https://g.page/r/CRGRCwQ1s4tqEBM/review/" title="" target="_blank">Write a review</a>
+ | 
+
+
+<a href="https://x.com/elnec" title="Elnec on X" target="_blank">X</a>
+ | 
+<a href="https://sk.linkedin.com/company/elnec" title="Elnec on LinkedIn" target="_blank">LinkedIn</a>
+ | 
+    <a href="https://en.wikipedia.org/wiki/Elnec" title="Elnec on Wikipedia" target="_blank">Wikipedia</a>
+ | 
+    
+    
+            <a href="/en/site-map/" title="">Site-map</a>
+             | 
+
+    
+        
+
+<strong>
+            &copy; <a href="/en/" title="">Elnec s.r.o.</a>
+ 
+        </strong> / 
+
+
+<em>
+            last update: 17.Dec.2010 00:00 
+        </em> | 
+    
+
+            <a href="/en/about-elnec/privacy-statement/" title="">Privacy</a>
+             | 
+
+    
+                        <a href="/files/terms-and-conditions-eu-elnec_JUL_2024.pdf" title="" target="_blank">Terms and conditions</a>
+    
+            
+             | 
+
+    
+            <a href="/en/support/cookie-consent/" title="">Cookies</a>
+             | 
+    
+    
+            <a href="/en/support/pwa-set-as-homepage/" title="">Set as homepage</a>
+             |
+    
+
+<a href="/rss.php" title="" target="_blank">RSS</a>
+    
+    
+    
+    
+        </footer>
+        
+        
+                            
+
+                                                                                                                
+
+            <iframe src="https://www.elnec.com/en/supported-devices?name=DIL48%2FQFN20-4+ZIF-CS/" id="ifrsd" loading="eager" rel="preload" class="lightbox" width="1920" height="1080" allow="fullscreen"></iframe>
+            
+
+    
+
+    
+
+    
+        
+        
+                <div id="totop-wrap">
+            <a href="#top" title=""><picture>
+                                    <source srcset='https://www.elnec.com/img/totop.webp 1x, https://www.elnec.com/img/totop@2x.webp 2x' type='image/webp' class='has-retina'>
+                                <source srcset='https://www.elnec.com/img/totop.jp2 1x, https://www.elnec.com/img/totop@2x.jp2 2x' type='image/jp2' class='has-retina'>
+                <img src="https://www.elnec.com/img/totop.png" alt="Back to TOP" title="" height="71" width="59" id="totop" class="has-retina" srcset="https://www.elnec.com/img/totop@2x.png 2x">                                    </picture></a>
+        </div>
+        
+        
+                                    <script src="/js/jsmin.js?v=250124" cache="1"></script>
+                                                                                                                                                                                
+                                                                                                                                                                                                                                
+            
+                    
+        
+                                    
+                    <script>
+    window.dataLayer=window.dataLayer||[];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+        'ad_storage': 'denied',
+        'ad_user_data': 'denied',
+        'ad_personalization': 'denied',
+        'analytics_storage': 'granted',
+        'functionality_storage': 'granted',
+        'personalization_storage': 'denied',
+        'security_storage': 'granted'
+    });
+</script>
+<script></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-93YZ073JBB"></script>
+<script>
+    window.dataLayer=window.dataLayer||[];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js",new Date);
+    gtag("config","G-93YZ073JBB",{anonymize_ip:!0});
+    gtag('consent', 'update', {
+        'ad_storage': 'denied',
+        'ad_user_data': 'denied',
+        'ad_personalization': 'denied',
+        'analytics_storage': 'granted',
+        'functionality_storage': 'granted',
+        'personalization_storage': 'denied',
+        'security_storage': 'granted'
+    });
+</script>
+<script></script>
+                            
+                </body>
+</html>`)

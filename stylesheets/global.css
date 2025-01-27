@@ -60,7 +60,6 @@ body {
 
 a {
   color: var(--c-text);
-  /* text-decoration: none; */
 }
 
 p,
@@ -105,19 +104,13 @@ header {
 }
 
 header > div {
-  /* max-width: 1000px; */
-  /* height: var(--e-header-height); */
-
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 5px;
 
-  /* margin: 10px; */
   padding: 10px 15px 5px 15px;
-
-  /* transition: all 0.2s ease; */
 }
 
 header > div img {
@@ -164,7 +157,6 @@ header #language_switcher button {
   height: 30px;
 
   border: none;
-  /* border-radius: 50px; */
 
   overflow: hidden;
   cursor: pointer;
@@ -203,8 +195,6 @@ header #language_switcher button img:nth-child(2):hover {
 
 @media screen and (max-width: 910px) {
   header nav {
-    /* flex-direction: column; */
-
     display: grid;
     grid-template-rows: repeat(3, 1fr);
     grid-auto-flow: column;
@@ -213,8 +203,9 @@ header #language_switcher button img:nth-child(2):hover {
 
   header #language_switcher button {
     top: auto;
-    bottom: 4px;
-    right: 8px;
+
+    bottom: 7px;
+    right: 12px;
   }
 
   header nav :first-child {
@@ -285,7 +276,6 @@ section {
 
 section h1 {
   font-size: 1.85em;
-  /* margin-bottom: 36px; */
   margin-bottom: 4px;
 }
 

@@ -14,6 +14,13 @@
       <div>
         <section id="basic_information_section">
           <h1>Template generator</h1>
+
+          <div>
+            <label for="html">HTML:</label>
+            <input type="text" name="html" id="html" />
+            <button id="pasteButton">Paste from Clipboard</button>
+          </div>
+
           <h2>Basic Information</h2>
           <div>
             <label for="name">Name:</label>
@@ -36,8 +43,18 @@
 
           <div>
             <label for="price">Price:</label>
-            <input type="text" name="price" id="price_en" />
-            <input type="text" name="price" id="price_de" />
+            <input
+              type="text"
+              name="price"
+              id="price_en"
+              placeholder="Ask for price"
+            />
+            <input
+              type="text"
+              name="price"
+              id="price_de"
+              placeholder="Preis auf Anfrage"
+            />
           </div>
 
           <div>
@@ -78,6 +95,11 @@
         <section id="description_section">
           <h2>Short description</h2>
 
+          <div class="copypaste">
+            <button onclick="copyString('description')">1. Copy EN</button>
+            <button onclick="pasteString('description')">2. Paste DE</button>
+          </div>
+
           <div id="description">
             <div>
               <button onclick="removeElement(this)">Remove Line</button>
@@ -98,6 +120,11 @@
 
         <section id="manual_section">
           <h2>Manual</h2>
+
+          <div class="copypaste">
+            <button onclick="copyString('manual')">1. Copy EN</button>
+            <button onclick="pasteString('manual')">2. Paste DE</button>
+          </div>
 
           <div id="manual">
             <div>
@@ -223,11 +250,13 @@
               type="text"
               name="programmers_note"
               id="programmers_note_en"
+              value="Note: This programming adapter / module may not support all devices in the package(s) mentioned above on your programmer. Please, verify situation for particular device(s) you are going to work with using actual Device list of your programmer."
             />
             <input
               type="text"
               name="programmers_note"
               id="programmers_note_de"
+              value="Hinweis: Dieser Programmieradapter / Modul unterstützt möglicherweise nicht alle Geräte in den oben genannten Paketen auf Ihrem Programmiergerät. Bitte überprüfen Sie die Situation für bestimmte Geräte, mit denen Sie arbeiten möchten, anhand der aktuellen Geräteliste Ihres Programmiergeräts."
             />
           </div>
         </section>

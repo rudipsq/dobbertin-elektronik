@@ -3,8 +3,7 @@
 ## TODO
 
 - [ ] template generator: one page html, integrated js, css erstellen
-- [ ] impressum kontrollieren
-- [ ] datenschutz updaten
+- [ ] use_api_data.js path austauschen
 
 
 
@@ -51,4 +50,4 @@ structure
 
 
 # TODO
-- use api data js path austauschen
+- testen ob API daten angezeigt werden (falls nicht: falscher pfad in /scripts/use_api_data.js)
