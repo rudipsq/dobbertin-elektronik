@@ -78,7 +78,7 @@ function regenerateLastTemplate(language = "en") {
   main(language, JSON.parse(localStorage.getItem("last_template_" + language)));
 }
 
-function test(htmlString) {
+function autoGenerate(htmlString) {
   const parser = new DOMParser();
   const htmlDoc = parser.parseFromString(htmlString, "text/html");
 
@@ -178,19 +178,17 @@ function test(htmlString) {
     const srcUrl = new URL(image1Value.src);
     image1Value = srcUrl.pathname.split("/").pop();
   }
-
   setInputValue("image1", image1Value);
 
   // image2 // TODO do not do this if image 2 does not exist
-  let image2Value = image1Value;
+  // let image2Value = image1Value;
 
-  const parts = image2Value.split(".");
-  if (parts.length > 1) {
-    const firstPart = parts[0] + "1";
-    image2Value = firstPart + "." + parts.slice(1).join(".");
-  }
-
-  setInputValue("image2", image2Value);
+  // const parts = image2Value.split(".");
+  // if (parts.length > 1) {
+  //   const firstPart = parts[0] + "1";
+  //   image2Value = firstPart + "." + parts.slice(1).join(".");
+  // }
+  // setInputValue("image2", image2Value);
 
   // description
   const descriptionElement = htmlDoc.querySelector("#adapterdetail ul");
@@ -245,14 +243,14 @@ function test(htmlString) {
 
   // table
   let tableValue = htmlDoc.querySelector(".table.tien.bgatable")
-    ? htmlDoc.querySelector(".table.tien.bgatable").innerHTML
+    ? htmlDoc.querySelector(".table.tien.bgatable").outerHTML
     : null;
 
   setInputValue("table", tableValue);
 
   // wiring
   let wiringValue = htmlDoc.querySelector(".converter_info")
-    ? htmlDoc.querySelector(".converter_info").innerHTML
+    ? htmlDoc.querySelector(".converter_info").outerHTML
     : null;
 
   setInputValue("wiring", wiringValue);
@@ -1023,7 +1021,7 @@ document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("html").addEventListener("paste", (event) => {
     const pastedText = event.clipboardData.getData("text");
 
-    test(pastedText);
+    autoGenerate(pastedText);
   });
 
   const pasteButton = document.getElementById("pasteButton");
@@ -1034,7 +1032,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const text = await navigator.clipboard.readText();
       pasteTarget.value = text;
 
-      test(text);
+      autoGenerate(text);
     } catch (error) {
       console.error("Failed to read clipboard contents:", error);
     }

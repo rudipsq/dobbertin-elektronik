@@ -7,7 +7,176 @@
     <title>Template generator</title>
 
     <link rel="stylesheet" href="../stylesheets/global.css" />
-    <link rel="stylesheet" href="../stylesheets/template_generator.css" />
+
+    <!-- <link rel="stylesheet" href="../stylesheets/template_generator.css" /> -->
+    <style>
+      main {
+        min-height: auto;
+
+        display: flex;
+
+        padding: 20px;
+      }
+
+      main > div {
+        width: calc(100% - 10px);
+        max-width: 1030px;
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0;
+
+        border-radius: 20px;
+        border: solid var(--c-background-3) 1px;
+        box-shadow: var(--e-big-shadow);
+        background-color: var(--c-background-2);
+
+        padding: 0px;
+      }
+
+      @media screen and (max-width: 680px) {
+        main > div {
+          padding: 0px;
+        }
+      }
+
+      section {
+        width: auto;
+
+        grid-column: span 2;
+
+        box-shadow: none;
+        border: none;
+        border-radius: 0;
+
+        background-color: transparent;
+
+        overflow: auto;
+      }
+
+      section h2 {
+        margin-top: 36px;
+      }
+
+      section > div {
+        display: flex;
+        gap: 8px;
+      }
+
+      #description_section > div,
+      #manual_section > div {
+        display: flex;
+        flex-direction: column;
+      }
+
+      #description_section > div > div,
+      #manual_section > div > div {
+        display: flex;
+        gap: 8px;
+      }
+
+      #description_section button,
+      #manual_section button {
+        width: 100px;
+      }
+
+      section input:not([type="checkbox"]) {
+        flex: 1;
+
+        border: none;
+        border-radius: 5px;
+        border: solid rgba(0, 0, 0, 0.2) 1px;
+      }
+
+      section textarea {
+        flex: 1;
+        resize: vertical;
+      }
+
+      section:not(#description_section, #manual_section) label {
+        width: 100px;
+        display: block;
+      }
+
+      #basic_information_section {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+
+      #basic_information_section div:focus-within,
+      #description_section div div:focus-within,
+      #manual_section div div:focus-within,
+      #package_section div div:focus-within,
+      #optional_section div:focus-within,
+      #programmers_section div div:focus-within,
+      #programmers_section > div:nth-child(5):focus-within {
+        border-radius: 5px;
+        background-color: var(--c-background-3);
+      }
+
+      #programmers,
+      #package {
+        padding-top: 16px;
+      }
+
+      #programmers {
+        display: flex;
+        flex-direction: column;
+      }
+
+      #programmers div {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+      }
+
+      /* - - - buttons - - - */
+      button {
+        border: none;
+        border-radius: 5px;
+        border: solid rgba(0, 0, 0, 0.2) 1px;
+
+        cursor: pointer;
+
+        padding: 4px;
+        margin-top: 4px;
+      }
+
+      .add_button {
+        background-color: rgb(0, 199, 0);
+      }
+
+      .generate_button {
+        padding: 10px;
+      }
+
+      /* MANUAL */
+      #manual {
+        display: block;
+      }
+
+      #manual p {
+        margin-top: 8px;
+      }
+
+      #manual > div {
+        display: flex;
+        gap: 5px;
+      }
+
+      #table_link_destination,
+      #table_link_output,
+      #table_folder_destination,
+      #image_folder_destination,
+      #package_folder_destination {
+        background-color: yellow;
+      }
+
+      .copypaste {
+        gap: 0;
+      }
+    </style>
   </head>
   <body>
     <main>
@@ -43,18 +212,8 @@
 
           <div>
             <label for="price">Price:</label>
-            <input
-              type="text"
-              name="price"
-              id="price_en"
-              placeholder="Ask for price"
-            />
-            <input
-              type="text"
-              name="price"
-              id="price_de"
-              placeholder="Preis auf Anfrage"
-            />
+            <input type="text" name="price" id="price_en" />
+            <input type="text" name="price" id="price_de" />
           </div>
 
           <div>
@@ -82,13 +241,18 @@
           </div>
 
           <div>
-            <label for="image1">Image 1 file name:</label>
+            <label for="image1">Image </label>
             <input type="text" name="image1" id="image1" />
           </div>
 
           <div>
-            <label for="image2">Image 2 file name:</label>
-            <input type="text" name="image2" id="image2" />
+            <label for="image2">Hover Image</label>
+            <input
+              type="text"
+              name="image2"
+              id="image2"
+              placeholder=" enter manually if image on hover exists"
+            />
           </div>
         </section>
 
@@ -166,7 +330,7 @@
             <textarea
               name="table"
               id="table"
-              placeholder="<table class='...</table>"
+              placeholder=" <table class='...</table>"
             ></textarea>
           </div>
 
@@ -178,7 +342,7 @@
             <textarea
               name="wiring"
               id="wiring"
-              placeholder="<table class='...</table>"
+              placeholder=" <table class='...</table>"
             ></textarea>
           </div>
         </section>

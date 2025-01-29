@@ -166,6 +166,12 @@ table {
   gap: 20px;
 
   overflow: auto;
+
+  padding-left: 10px;
+}
+
+#wiring_section tbody {
+  margin-left: 5px;
 }
 
 #wiring_section tbody :first-child {
@@ -241,6 +247,7 @@ table {
 /* - - - table section - - - */
 #table_section {
   grid-column: span 2;
+  margin-left: 5px;
 }
 
 #table_section tbody :first-child {
