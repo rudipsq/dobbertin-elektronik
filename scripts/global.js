@@ -6,24 +6,6 @@ const translations = {
   "imprint.html": "impressum.html",
 };
 
-// function switchLanguage(targetLang = "en") {
-//   const currentPath = window.location.pathname;
-//   const pathParts = currentPath.split("/").filter(Boolean);
-
-//   pathParts[0] = targetLang;
-
-//   // Check and translate specific path segments
-//   for (let i = 1; i < pathParts.length; i++) {
-//     if (translations[pathParts[i]]) {
-//       pathParts[i] = translations[pathParts[i]];
-//     }
-//   }
-
-//   window.location.href = "/" + pathParts.join("/");
-// }
-
-// returns the current displayed language key
-
 function switchLanguage(targetLang = "en") {
   const currentPath = window.location.pathname;
   const pathParts = currentPath.split("/").filter(Boolean);
@@ -53,21 +35,6 @@ function switchLanguage(targetLang = "en") {
 
   window.location.href = "/" + pathParts.join("/");
 }
-
-// function getLanguage() {
-//   const pathParts = window.location.pathname.split("/").filter(Boolean);
-//   const languageCodes = ["en", "de"];
-
-//   for (const part of pathParts) {
-//     if (languageCodes.includes(part)) {
-//       return part;
-//     }
-//   }
-
-//   return null;
-// }
-
-// updates the header height
 
 function getLanguage() {
   const pathParts = window.location.pathname.split("/").filter(Boolean);
