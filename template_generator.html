@@ -6,10 +6,388 @@
 
     <title>Template generator</title>
 
-    <link rel="stylesheet" href="../stylesheets/global.css" />
+    <!-- <link rel="stylesheet" href="../stylesheets/global.css" /> -->
 
     <!-- <link rel="stylesheet" href="../stylesheets/template_generator.css" /> -->
     <style>
+      :root {
+        /* colors */
+        --c-text: rgb(0, 0, 0);
+        --c-primary: #daf4ff;
+        --c-background-1: rgb(255, 255, 255);
+        --c-background-2: rgb(250, 250, 250);
+        --c-background-3: rgb(230, 230, 230);
+
+        /* elements */
+        --e-header-height: 80px;
+        --e-big-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+        --e-small-shadow: 0px 1px 10px rgba(0, 0, 0, 0.08);
+      }
+
+      /* - - - FONT - - - */
+      @font-face {
+        font-family: "Inter";
+        src: url("../font/inter-medium.ttf") format("truetype");
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: "Inter";
+        src: url("../font/inter-bold.ttf") format("truetype");
+        font-weight: 700;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: "Inter";
+        src: url("../font/inter-extrabold.ttf") format("truetype");
+        font-weight: 900;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: "Inter";
+        src: url("../font/inter-lightitalic.ttf") format("truetype");
+        font-weight: 300;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      /* - - - GENERAL ELEMENTS - - - */
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        font-variation-settings: "wght" 500;
+
+        color: var(--c-text);
+      }
+
+      a {
+        color: var(--c-text);
+      }
+
+      p,
+      li,
+      th,
+      td,
+      a,
+      input {
+        font-size: 14px;
+      }
+
+      /* - - - TEXT CLASSES - - - */
+      .bold {
+        font-weight: 900;
+      }
+
+      .italic {
+        font-weight: 300;
+      }
+
+      /* api text */
+      span[data-api] {
+        font-weight: 600;
+      }
+
+      /* - - - NAVIGATION - - - */
+      header {
+        width: 100%;
+
+        position: fixed;
+        top: 0;
+        z-index: 10;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+
+        background-color: var(--c-background-1);
+        border-bottom: solid var(--c-background-3) 1px;
+
+        box-shadow: var(--e-big-shadow);
+      }
+
+      header > div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+
+        padding: 10px 15px 5px 15px;
+      }
+
+      header > div img {
+        width: 100%;
+        height: auto;
+      }
+
+      header nav {
+        display: flex;
+        gap: 10px;
+      }
+
+      /* header a tag states */
+      header nav a {
+        outline: solid rgba(255, 255, 255, 0) 1px;
+        border-radius: 50px;
+        padding: 3px 9px;
+        text-decoration: none;
+
+        transition: background-color 0.12s ease, outline 0.12s ease,
+          transform 0.12s ease;
+      }
+
+      header nav a.active {
+        background-color: var(--c-primary);
+        outline: solid var(--c-primary) 1px;
+      }
+
+      header nav a:hover {
+        outline: solid var(--c-primary) 1px;
+      }
+
+      header nav a:active {
+        transform: scale(0.95);
+      }
+
+      /* header language switcher */
+      header #language_switcher button {
+        position: absolute;
+        top: 7px;
+        right: 12px;
+
+        width: 30px;
+        height: 30px;
+
+        border: none;
+
+        overflow: hidden;
+        cursor: pointer;
+
+        background-color: transparent;
+
+        transition: transform 0.08s ease;
+      }
+
+      header #language_switcher button:active {
+        transform: scale(0.95);
+      }
+
+      header #language_switcher button img {
+        width: 100%;
+        height: 100%;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        transition: all 0.12s ease;
+      }
+
+      header #language_switcher button img:nth-child(1):hover {
+        opacity: 0;
+      }
+
+      header #language_switcher button img:nth-child(2) {
+        opacity: 0;
+      }
+
+      header #language_switcher button img:nth-child(2):hover {
+        opacity: 1;
+      }
+
+      @media screen and (max-width: 910px) {
+        header nav {
+          display: grid;
+          grid-template-rows: repeat(3, 1fr);
+          grid-auto-flow: column;
+          gap: 5px;
+        }
+
+        header #language_switcher button {
+          top: auto;
+
+          bottom: 7px;
+          right: 12px;
+        }
+
+        header nav :first-child {
+          position: absolute;
+          translate: -40px 22px;
+
+          width: 32px;
+          height: 32px;
+
+          font-size: 0;
+
+          background-image: url(../img/icon/home.png);
+          background-position: center;
+          background-size: contain;
+          background-repeat: no-repeat;
+
+          border-radius: 0;
+
+          padding: 0;
+        }
+
+        header nav :first-child.active {
+          background-color: transparent;
+          outline: none;
+        }
+
+        header nav :last-child {
+          grid-column-start: 1;
+          grid-row-start: 3;
+        }
+      }
+
+      /* - - - MAIN - - - */
+      main {
+        max-width: 100%;
+        min-height: calc(100vh - var(--e-header-height) - 120px);
+
+        padding: 20px;
+        padding-top: calc(var(--e-header-height) + 50px + 20px);
+        padding-bottom: 60px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 60px;
+      }
+
+      @media screen and (max-width: 680px) {
+        main {
+          padding-left: 5px;
+          padding-right: 5px;
+        }
+      }
+
+      section {
+        width: calc(100% - 40px);
+        max-width: 1070px;
+
+        border-radius: 20px;
+        border: solid var(--c-background-3) 1px;
+        /* box-shadow: 0px 6px 0px var(--c-background-3); */
+
+        padding: 15px;
+
+        background-color: var(--c-background-2);
+        box-shadow: var(--e-big-shadow);
+      }
+
+      section h1 {
+        font-size: 1.85em;
+        margin-bottom: 4px;
+      }
+
+      section h2 {
+        font-size: 1.45em;
+        margin: 28px 0 4px 0;
+      }
+
+      section h3 {
+        font-size: 1.25em;
+        margin: 16px 0 4px 0;
+      }
+
+      section ul {
+        padding: 4px 0 4px 20px;
+      }
+
+      /* - - - FOOTER - - - */
+      footer {
+        padding: 20px;
+
+        display: flex;
+      }
+
+      footer > div {
+        width: 100%;
+
+        background-color: var(--c-background-2);
+
+        border-radius: 20px;
+        border: solid var(--c-background-3) 1px;
+        box-shadow: 0px 6px 0px var(--c-background-3);
+
+        padding: 15px;
+
+        box-shadow: var(--e-big-shadow);
+      }
+
+      footer > div > div {
+        height: 100%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 4px;
+      }
+
+      footer div:nth-child(1) {
+        float: left;
+      }
+
+      footer div:nth-child(2) {
+        float: right;
+
+        margin-left: 20px;
+        text-align: end;
+      }
+
+      @media screen and (max-width: 680px) {
+        footer {
+          padding: 5px;
+        }
+      }
+
+      @media screen and (max-width: 480px) {
+        footer > div {
+          display: flex;
+          flex-direction: column;
+        }
+
+        footer > div > div {
+          height: 100%;
+
+          display: flex;
+          flex-direction: column;
+          gap: 6px;
+        }
+
+        footer div:nth-child(1) {
+          float: none;
+          text-align: center;
+
+          margin-bottom: 20px;
+        }
+
+        footer div:nth-child(2) {
+          float: none;
+          margin: 0;
+
+          display: grid;
+          grid-template-rows: repeat(2, 1fr);
+          grid-auto-flow: column;
+        }
+
+        footer div:nth-child(2) :nth-child(2),
+        footer div:nth-child(2) :nth-child(3) {
+          text-align: left;
+        }
+      }
+
       main {
         min-height: auto;
 
@@ -477,6 +855,6 @@
       </div>
     </main>
 
-    <script src="../scripts/template_generator.js"></script>
+    <script src="./template_generator.js"></script>
   </body>
 </html>
