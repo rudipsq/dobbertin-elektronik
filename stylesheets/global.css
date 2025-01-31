@@ -1,13 +1,13 @@
 :root {
   /* colors */
   --c-text: rgb(0, 0, 0);
-  --c-primary: #daf4ff;
+  --c-primary: #daf4ff; /* primary color for accents */
   --c-background-1: rgb(255, 255, 255);
   --c-background-2: rgb(250, 250, 250);
   --c-background-3: rgb(230, 230, 230);
 
   /* elements */
-  --e-header-height: 80px;
+  --e-header-height: 80px; /* dont change */
   --e-big-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
   --e-small-shadow: 0px 1px 10px rgba(0, 0, 0, 0.08);
 }
@@ -266,7 +266,6 @@ section {
 
   border-radius: 20px;
   border: solid var(--c-background-3) 1px;
-  /* box-shadow: 0px 6px 0px var(--c-background-3); */
 
   padding: 15px;
 

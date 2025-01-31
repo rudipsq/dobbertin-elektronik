@@ -53,8 +53,6 @@ thead {
 
   background-color: var(--c-background-2);
   border-radius: 20px;
-  /* border: solid var(--c-background-3) 2px;
-  box-shadow: 0px 3px 0px var(--c-background-3); */
   border: solid var(--c-background-3) 1px;
   box-shadow: var(--e-small-shadow);
 
@@ -142,8 +140,6 @@ td:nth-child(4) {
 
   background-color: var(--c-background-2);
   border-radius: 20px;
-  /* border: solid var(--c-background-3) 2px;
-  box-shadow: 0px 3px 0px var(--c-background-3); */
   border: solid var(--c-background-3) 1px;
   box-shadow: var(--e-small-shadow);
 

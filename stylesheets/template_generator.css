@@ -19,7 +19,6 @@ main > div {
   box-shadow: var(--e-big-shadow);
   background-color: var(--c-background-2);
 
-  /* padding: 20px; */
   padding: 0px;
 }
 
@@ -56,18 +55,12 @@ section > div {
 #manual_section > div {
   display: flex;
   flex-direction: column;
-  /* gap: 8px; */
-  /* here */
-
-  /* width: 100%; */
 }
 
 #description_section > div > div,
 #manual_section > div > div {
   display: flex;
   gap: 8px;
-
-  /* width: 100%; */
 }
 
 #description_section button,
@@ -143,16 +136,11 @@ button {
 }
 
 .generate_button {
-  /* height: 40px; */
-
-  /* margin: 5px; */
   padding: 10px;
 }
 
 /* MANUAL */
 #manual {
-  /* margin-top: 35px; */
-
   display: block;
 }
 

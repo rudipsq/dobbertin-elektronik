@@ -17,7 +17,6 @@ main > div {
   box-shadow: var(--e-big-shadow);
   background-color: var(--c-background-2);
 
-  /* padding: 20px; */
   padding: 0px;
 }
 
@@ -115,9 +114,6 @@ table {
   min-height: 280px;
 
   border-radius: 10px;
-  /* overflow: hidden; */
-
-  /* height: fit-content; */
 }
 
 #image_section > div img {
@@ -180,7 +176,6 @@ table {
 
 #wiring_section td {
   border-bottom: solid rgb(199, 199, 199) 1px;
-  /* border-left: solid rgb(199, 199, 199) 1px; */
 }
 
 #wiring_section td:not(:first-child) {
@@ -277,7 +272,6 @@ table {
 
 #programmers_section #programmer_list > div {
   width: fit-content;
-  /* height: 30px; */
 
   display: flex;
 

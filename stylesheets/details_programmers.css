@@ -18,7 +18,6 @@ main > div {
   box-shadow: var(--e-big-shadow);
   background-color: var(--c-background-2);
 
-  /* padding: 20px; */
   padding: 0;
 }
 

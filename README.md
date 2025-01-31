@@ -1,17 +1,18 @@
 # dobbertin-elektronik
  
-## TODO
-
-- [ ] template generator: one page html, integrated js, css erstellen
-- [ ] use_api_data.js path austauschen
-
-
-
 
 
 ## HTML Texte bearbeiten
 bold text: <span class="bold">TEXT</span>
 api text: <span data-api="beep2_devices">PLACEHOLDER</span>
+
+
+
+## Farben ändern
+./stylesheets/global.css
+
+--c-primary: #daf4ff; kann angepasst werden
+
 
 
 ## Struktur
@@ -49,5 +50,17 @@ structure
 └── en: same structure as "de" folder
 
 
-# TODO
+
+## Template Genetator
+1. kompletten HTML Code der Elnec Seite kopieren
+2. falls vorhanden: "Hover Image" hinzufügen
+3. für "Short description" und "Manual": 1. Copy EN -> mit deepl übersetzen -> Paste DE
+4. "Programmers" und "Note" kontrollieren
+5. "generate english template" oder "generate german template" klicken
+6. HTML Datei speichern
+7. Bilder von der Elnec Seite downloaden (+packages Bilder)
+
+
+
+## ToDo
 - testen ob API daten angezeigt werden (falls nicht: falscher pfad in /scripts/use_api_data.js)
