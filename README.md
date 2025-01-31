@@ -14,6 +14,13 @@ api text: <span data-api="beep2_devices">PLACEHOLDER</span>
 --c-primary: #daf4ff; kann angepasst werden
 
 
+api text style:
+./stylesheets/global.css
+span[data-api] {
+  font-weight: 600;
+  color: red;
+}
+
 
 ## Struktur
 
